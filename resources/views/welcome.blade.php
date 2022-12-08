@@ -9,8 +9,8 @@
     <div>
         @include('layouts.banner')
         <div class="absolute lg:top-48 top-52 lg:left-72">
-            <div class="text-white font-extrabold p-8 bg-blue-700" id="slogan">        
-                <p class="flex justify-center text-white font-semibold">MIKIYA INTERNATIONAL <br> COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY (MICOHSAT) <br> BARI</p>
+            <div class="text-white font-extrabold p-8" id="slogan">        
+                <p class="flex justify-center text-white font-semibold shadow-lg p-5">MIKIYA INTERNATIONAL <br> COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY (MICOHSAT) <br> BARI</p>
             </div>
         </div>
     </div>
