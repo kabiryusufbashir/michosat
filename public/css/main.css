@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+
+body{
+    font-family: "Poppins";
+}
+
+/* Social Media  */
+#social-links ul{
+    padding-left: 0;
+}
+#social-links ul li {
+    display: inline-block;
+} 
+#social-links ul li a {
+    padding: 6px;
+    border-radius: 5px;
+    margin: 1px;
+    font-size: 20px;
+}
+#social-links .fa-facebook{
+     color: #0d6efd;
+}
+#social-links .fa-twitter{
+     color: deepskyblue;
+}
+#social-links .fa-linkedin{
+     color: #0e76a8;
+}
+#social-links .fa-whatsapp{
+    color: #25D366
+}
+#social-links .fa-reddit{
+    color: #FF4500;;
+}
+
+#social-links .fa-telegram{
+    color: #0088cc;
+}
+
+#container{
+    width: 100%;
+    float: left;
+}
+
+#nav .fas{
+    font-size: 20px;
+}
+
+#nav{
+    font-size: 14px;
+}
+
+.fas{
+    font-size: 28px;
+    color: white;
+}
+
+/* #footer{
+    background: #c4930a;
+} */
+
+#slogan{
+    font-size: 200%;
+    text-align: center;
+    margin: 0px auto;
+}
+
+@media only screen and (max-width:768px)
+{
+    body{
+        font-size: 90%;
+    }
+
+    #banner-img{
+        height: 90vh;
+    }    
+}
