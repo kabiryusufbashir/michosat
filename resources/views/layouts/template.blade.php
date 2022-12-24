@@ -56,13 +56,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
-                                    Our Staff
+                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/#msgFromDirector">
+                                    Message From The Chairman 
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
-                                    Message From Director
+                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/#staffSection">
+                                    Our Staff
                                 </a>
                             </li>
                         </ul>
@@ -187,7 +187,7 @@
 
         <!-- Footer  -->
         <div class="relative top-12">
-            <div id="footer" class="bg-green-700 py-12 px-8 lg:px-24 lg:grid grid-cols-5 gap-8 text-white">
+            <div id="footer" class="bg-gray-200 py-12 px-8 lg:px-24 lg:grid grid-cols-5 gap-8 text-gray-700">
                 <div class="col-span-2">
                     <div>
                         <h1 class="text-3xl font-bold mb-4">Office Address</h1>
@@ -205,7 +205,7 @@
                 <div class="col-span-1">
                     <div>
                         <h1 class="text-3xl font-bold mb-4">Navigation</h1>
-                        <nav class="list-none text-white">
+                        <nav class="list-none text-gray-700">
                             <li class="py-1 hover:text-gray-800">
                                 <a class="flex items-center py-1" href="/">
                                     <span>Home</span>
@@ -217,12 +217,12 @@
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="/#aims-objectives">
+                                <a class="flex items-center py-1" href="/#staffSection">
                                     <span>Our Staff</span>
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="/#mission">
+                                <a class="flex items-center py-1" href="#">
                                     <span>Laboratory</span>
                                 </a>
                             </li>
@@ -242,7 +242,7 @@
                 <div class="col-span-1">
                     <div>
                         <h1 class="text-3xl font-bold mb-4">Academics</h1>
-                        <nav class="list-none text-white">
+                        <nav class="list-none text-gray-700">
                             <li class="py-1 hover:text-gray-800">
                                 <a class="flex items-center py-1" href="/">
                                     <span>Available Courses</span>
@@ -269,7 +269,7 @@
                 <div class="col-span-1">    
                     <div>
                         <h1 class="text-3xl font-bold mb-4">Follow Us</h1>
-                        <nav class="list-none text-white">
+                        <nav class="list-none text-gray-700">
                             <li class="py-1 hover:text-gray-800">
                                 <a class="flex items-center py-1" href="https://twitter.com/bornowomendevt">
                                     <span><i class="fa-brands fa-twitter text-xl"></i></span> &nbsp;&nbsp;
