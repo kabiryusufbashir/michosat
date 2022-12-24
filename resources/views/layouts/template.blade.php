@@ -51,7 +51,7 @@
                         </a>
                         <ul class="dropdown-menu min-w-max absolute w-full bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
                             <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
+                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/#about-us">
                                     About Us
                                 </a>
                             </li>
@@ -76,7 +76,7 @@
                         </a>
                         <ul class="dropdown-menu min-w-max absolute w-full bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
                             <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
+                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/courses">
                                     AVAILABLE COURSES
                                 </a>
                             </li>
@@ -97,17 +97,17 @@
                         <ul class="dropdown-menu min-w-max absolute w-full bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
                             <li>
                                 <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
+                                    ENTRY REQUIREMENT
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
                                     APPLY NOW
                                 </a>
                             </li>
                             <li>
                                 <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
                                     PROCESS OF ADMISSION
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
-                                    ENTRY REQUIREMENT
                                 </a>
                             </li>
                         </ul>
@@ -192,7 +192,7 @@
                     <div>
                         <h1 class="text-3xl font-bold mb-4">Office Address</h1>
                         <p class="py-1 text-left lg:w-2/3 w-full">
-                            No. 1 Engr. Surajo Garba Complex beside Bari Science Academy <br> along Falgore road Bari Town of Rogo LG <br> Kano State
+                            No. 1 Engr. Surajo Garba Complex beside Bari Science Academy along Falgore road Bari Town of Rogo LG <br> Kano State
                         </p>
                     </div>
                     <div class="mt-4">
@@ -244,17 +244,17 @@
                         <h1 class="text-3xl font-bold mb-4">Academics</h1>
                         <nav class="list-none text-gray-700">
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="/">
+                                <a class="flex items-center py-1" href="/courses">
                                     <span>Available Courses</span>
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="/#about-us">
+                                <a class="flex items-center py-1" href="#">
                                     <span>Academic Calendar</span>
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="/#mission">
+                                <a class="flex items-center py-1" href="#">
                                     <span>Apply Now</span>
                                 </a>
                             </li>
@@ -298,7 +298,7 @@
                     </div>
                 </div>
             </div>
-            <div class="py-7 text-center text-xs bg-green-900 text-white">
+            <div class="py-7 text-center text-xs bg-green-700 text-white">
                 <footer>
                     Designed & Developed by <a class="hover:text-green-600 " href="#">Bari IT Consult</a><br>
                     Copyright © @php echo date('Y') @endphp MICOHSAT. All Rights Reserved 

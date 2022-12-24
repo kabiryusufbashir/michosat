@@ -36,15 +36,17 @@
                 </div>
             </div>
             <div class="shadow-lg p-3">
-                <div class="flex m-10">
-                    <div>
-                        <img class="w-24" src="{{ asset('images/objective.png') }}" alt="Objective">
+                <a href="/courses">
+                    <div class="flex m-10 items-center">
+                        <div>
+                            <img class="w-24" src="{{ asset('images/objective.png') }}" alt="Objective">
+                        </div>
+                        <div class="ml-8">
+                            Available Courses
+                        </div>
                     </div>
-                    <div class="ml-8">
-                        Available Courses
-                    </div>
-                </div>
-                <div class="flex m-10">
+                </a>
+                <div class="flex m-10 items-center">
                     <div>
                         <img class="w-24" src="{{ asset('images/objective.png') }}" alt="Objective">
                     </div>
@@ -52,7 +54,7 @@
                         Process Of Admission
                     </div>
                 </div>
-                <div class="flex m-10">
+                <div class="flex m-10 items-center">
                     <div>
                         <img class="w-24" src="{{ asset('images/objective.png') }}" alt="Objective">
                     </div>

@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/future-projects', function () {
-    return view('future_project');
+Route::get('/courses', function () {
+    return view('courses');
 });
 
 Route::get('/contact', function () {
