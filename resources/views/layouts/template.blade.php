@@ -112,31 +112,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="py-1 hover:text-green-600 text-gray-700 dropdown relative hover:border-b-2 hover:border-green-600">
-                        <a class="flex" href="#" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                            FACILITIES
-                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                                <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
-                            </svg>
-                        </a>
-                        <ul class="dropdown-menu min-w-max absolute w-full bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
-                            <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
-                                    LABORATORY
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
-                                    LIBRARY
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
-                                    ACCOMODATION
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="py-1 hover:text-green-600 text-gray-700 hover:border-b-2 hover:border-green-600"><a href="/contact">Contact Us</a></li>
                 </nav>
             </div>
@@ -219,21 +194,6 @@
                             <li class="py-1 hover:text-gray-800">
                                 <a class="flex items-center py-1" href="/#staffSection">
                                     <span>Our Staff</span>
-                                </a>
-                            </li>
-                            <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="#">
-                                    <span>Laboratory</span>
-                                </a>
-                            </li>
-                            <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="#">
-                                    <span>library</span>
-                                </a>
-                            </li>
-                            <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="#">
-                                    <span>Accomodation</span>
                                 </a>
                             </li>
                         </nav>

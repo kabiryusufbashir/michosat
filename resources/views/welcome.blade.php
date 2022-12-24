@@ -39,29 +39,33 @@
                 <a href="/courses">
                     <div class="flex m-10 items-center">
                         <div>
-                            <img class="w-24" src="{{ asset('images/objective.png') }}" alt="Objective">
+                            <img class="w-24" src="{{ asset('images/courses.png') }}" alt="Courses">
                         </div>
                         <div class="ml-8">
                             Available Courses
                         </div>
                     </div>
                 </a>
-                <div class="flex m-10 items-center">
-                    <div>
-                        <img class="w-24" src="{{ asset('images/objective.png') }}" alt="Objective">
+                <a href="/process-of-admission">
+                    <div class="flex m-10 items-center">
+                        <div>
+                            <img class="w-24" src="{{ asset('images/admission.png') }}" alt="Admission">
+                        </div>
+                        <div class="ml-8">
+                            Process Of Admission
+                        </div>
                     </div>
-                    <div class="ml-8">
-                        Process Of Admission
+                </a>
+                <a href="#">
+                    <div class="flex m-10 items-center">
+                        <div>
+                            <img class="w-24" src="{{ asset('images/year.png') }}" alt="Year">
+                        </div>
+                        <div class="ml-8">
+                            Academic Year
+                        </div>
                     </div>
-                </div>
-                <div class="flex m-10 items-center">
-                    <div>
-                        <img class="w-24" src="{{ asset('images/objective.png') }}" alt="Objective">
-                    </div>
-                    <div class="ml-8">
-                        Academic Year
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
         <!-- msgFromDirector  -->

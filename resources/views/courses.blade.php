@@ -9,6 +9,9 @@
     <div class="pt-8 pb-5 text-left">
         <!-- About Us  -->
         <div class="text-center text-3xl font-semibold mt-8">Available Courses</div>
+        <div>
+            <img class="w-24 mx-auto mt-8" src="{{ asset('images/courses.png') }}" alt="Courses">
+        </div>
         <div class="lg:px-24 px-8 py-8 my-4">
             <div>
                 <div class="text-gray-700 my-4">
