@@ -5,19 +5,10 @@
 @endsection
 
 @section('body-content')
-    <!-- Banner -->
-    <div>
-        @include('layouts.banner')
-        <div class="absolute lg:top-54 top-64">
-            <div class="bg-white font-extrabold p-8 ml-auto" id="slogan">        
-                <p class="text-gray-700 font-semibold p-3">Entry Requirement</p>
-            </div>
-        </div>
-    </div>
     <!-- Body Contents  -->
     <div class="pt-8 pb-5 text-left">
         <!-- About Us  -->
-        <div class="text-center text-3xl font-semibold mt-4">Entry Requirement</div>
+        <div class="text-center text-3xl font-semibold mt-8">Entry Requirement</div>
         <div class="lg:px-24 px-8 py-8 my-4">
             <div>
                 <div class="text-gray-700 my-4">

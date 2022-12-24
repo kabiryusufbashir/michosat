@@ -26,6 +26,10 @@ Route::get('/entry', function () {
     return view('entry');
 });
 
+Route::get('/process-of-admission', function () {
+    return view('process_of_admission');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });

@@ -101,13 +101,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
-                                    APPLY NOW
+                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/process-of-admission">
+                                    PROCESS OF ADMISSION
                                 </a>
                             </li>
                             <li>
                                 <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
-                                    PROCESS OF ADMISSION
+                                    APPLY NOW
                                 </a>
                             </li>
                         </ul>
@@ -190,7 +190,7 @@
             <div id="footer" class="bg-gray-200 py-12 px-8 lg:px-24 lg:grid grid-cols-5 gap-8 text-gray-700">
                 <div class="col-span-2">
                     <div>
-                        <h1 class="text-3xl font-bold mb-4">Office Address</h1>
+                        <h1 class="text-3xl font-bold mb-4">Address</h1>
                         <p class="py-1 text-left lg:w-2/3 w-full">
                             No. 1 Engr. Surajo Garba Complex beside Bari Science Academy along Falgore road Bari Town of Rogo LG <br> Kano State
                         </p>
@@ -259,13 +259,13 @@
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="#">
-                                    <span>Apply Now</span>
+                                <a class="flex items-center py-1" href="/process-of-admission">
+                                    <span>Process of Admission</span>
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
                                 <a class="flex items-center py-1" href="#">
-                                    <span>Process of Admission</span>
+                                    <span>Apply Now</span>
                                 </a>
                             </li>
                         </nav>

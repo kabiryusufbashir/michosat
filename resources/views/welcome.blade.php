@@ -28,7 +28,7 @@
                 </div>
                 <div class="text-gray-700 my-8">
                     <p>
-                        Our Mission To effectively train a qualitative health care providers with the use of higher groomed staff at both Academic and Professional level. To be Leading institution in the production of well trained and qualitative health care providers across the community.
+                        Our Mission is to effectively train a qualitative health care providers with the use of higher groomed staff at both Academic and Professional level. To be Leading institution in the production of well trained and qualitative health care providers across the community.
                     </p>
                 </div>
                 <div class="bg-green-700 rounded p-3 w-1/4 text-white my-8 text-center">
