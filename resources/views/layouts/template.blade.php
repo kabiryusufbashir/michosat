@@ -96,7 +96,7 @@
                         </a>
                         <ul class="dropdown-menu min-w-max absolute w-full bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
                             <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
+                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/entry">
                                     ENTRY REQUIREMENT
                                 </a>
                             </li>
@@ -251,6 +251,11 @@
                             <li class="py-1 hover:text-gray-800">
                                 <a class="flex items-center py-1" href="#">
                                     <span>Academic Calendar</span>
+                                </a>
+                            </li>
+                            <li class="py-1 hover:text-gray-800">
+                                <a class="flex items-center py-1" href="/entry">
+                                    <span>Entry Requirement</span>
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">

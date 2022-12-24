@@ -22,6 +22,10 @@ Route::get('/courses', function () {
     return view('courses');
 });
 
+Route::get('/entry', function () {
+    return view('entry');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
