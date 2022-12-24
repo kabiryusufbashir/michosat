@@ -27,16 +27,17 @@
                 <div id="menu" class="lg:hidden cursor-pointer lg:ml-auto">
                     <svg class="w-10 h-10 text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 </div>
-                <div class="flex items-center">
-                    <a href="/">
+                <a href="/">
+                    <div class="flex items-center">
                         <div>
                             <img class="w-16 lg:w-24 lg:ml-0" src="{{ asset('images/micohsat.png') }}" alt="MICOHSAT Logo">
                         </div>
-                    </a>
-                    <span class="ml-5 font-extrabold text-green-700">
-                        MIKIYA INTERNATIONAL <br> COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY (MICOHSAT) <br> BARI
-                    </span>
-                </div>
+                        <span class="ml-5 font-extrabold text-gray-700">
+                            <!-- MIKIYA INTERNATIONAL <br> COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY (MICOHSAT) <br> BARI -->
+                            MICOHSAT <br> BARI
+                        </span>
+                    </div>
+                </a>
             </div>
             <div class="lg:col-span-3 hidden lg:block">
                 <nav class="lg:flex justify-between list-none uppercase font-medium items-center">
