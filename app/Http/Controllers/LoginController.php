@@ -11,6 +11,11 @@ use App\Models\Student;
 
 class LoginController extends Controller
 {
+
+    public function loginForm(){
+        return view('loginform');
+    }
+
     public function login(Request $request){
         $data = $request->validate([
             'user_id' => ['required'],

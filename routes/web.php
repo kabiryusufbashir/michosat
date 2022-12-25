@@ -28,34 +28,26 @@ Route::get('/contact', [DashboardController::class, 'contact'])->name('contact')
 
 //Application
 Route::post('/applynow', [ApplicationController::class, 'applyNow'])->name('applynow');
+Route::get('/apply/login', [ApplicationController::class, 'applicationLogin'])->name('application-login');
+Route::post('/applynow/login', [ApplicationController::class, 'applyNowLogin'])->name('applynowlogin');
+Route::get('/apply/logout', [ApplicationController::class, 'applicationLogout'])->name('application-logout');
 
-// STUDENTS 
+// APPLICATION PORTAL 
 Route::group(['prefix' => 'application'], function () {
-    Route::middleware([GlobalData::class])->group(function(){
-        Route::get('/dashboard', [ApplicationController::class, 'dashboard'])->name('application-dashboard')->middleware('auth:applications');
+    Route::get('/dashboard', [ApplicationController::class, 'dashboard'])->name('application-dashboard')->middleware('auth:application');
     
-        // PAYMENT
-        Route::get('/payment', [ApplicationController::class, 'payment'])->name('student-payment')->middleware('auth:applications');
-        Route::post('/payment/submit', [ApplicationController::class, 'paymentSemester'])->name('student-payment-semester')->middleware('auth:applications');
-        
-        // COURSE
-        Route::get('/course', [ApplicationController::class, 'course'])->name('student-course-reg')->middleware('auth:applications');
-        Route::get('/course/registration', [ApplicationController::class, 'courseRegistration'])->name('student-course-registration')->middleware('auth:applications');
-        Route::post('/course/registration/submit', [ApplicationController::class, 'courseRegistrationSubmit'])->name('student-course-registration-submit')->middleware('auth:applications');
-        Route::post('/course/registration/submit/completed', [ApplicationController::class, 'courseRegistrationCompleted'])->name('student-course-registration-completed')->middleware('auth:applications');
-        Route::post('/course/registration/submit/check', [ApplicationController::class, 'courseRegistrationCheck'])->name('student-course-registration-check')->middleware('auth:applications');
-        Route::post('/course/registration/submit/print', [ApplicationController::class, 'courseRegistrationPrint'])->name('student-course-registration-print')->middleware('auth:applications');
-        Route::delete('/course/registration/{course}', [ApplicationController::class, 'courseRegistrationDelete'])->name('student-course-registration-delete')->middleware('auth:applications');     
+    // PAYMENT
+    Route::get('/payment', [ApplicationController::class, 'payment'])->name('student-payment')->middleware('auth:application');
+    Route::post('/payment/submit', [ApplicationController::class, 'applicationPaymentReceipt'])->name('application-payment-receipt')->middleware('auth:application');
 
-        // SETTINGS
-        Route::get('/settings', [ApplicationController::class, 'settings'])->name('student-settings')->middleware('auth:applications');
-        Route::post('/settings-photo', [ApplicationController::class, 'settingsPhoto'])->name('student-settings-photo')->middleware('auth:applications');
-        Route::post('/settings-password', [ApplicationController::class, 'settingsPassword'])->name('student-settings-password')->middleware('auth:applications');
-        
-    });
+    // SETTINGS
+    Route::get('/settings', [ApplicationController::class, 'settings'])->name('student-settings')->middleware('auth:application');
+    Route::post('/settings-photo', [ApplicationController::class, 'settingsPhoto'])->name('student-settings-photo')->middleware('auth:application');
+    Route::post('/settings-password', [ApplicationController::class, 'settingsPassword'])->name('student-settings-password')->middleware('auth:application');
 });
 
 // Login 
+Route::get('/login', [LoginController::class, 'loginForm'])->name('login-form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/student/login', [LoginController::class, 'studentLogin'])->name('login-student');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

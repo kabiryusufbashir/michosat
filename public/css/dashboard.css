@@ -1,0 +1,68 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+
+body{
+    font-family: "Poppins";
+}
+
+.yus-container-scrollbar{
+    height: 51vh;
+}
+
+.yus-container-scrollbar{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.yus-container-scrollbar::-webkit-scrollbar{
+    width: 10px;
+}
+
+.yus-container-scrollbar::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+.yus-container-scrollbar::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 10px;
+}
+
+.yus-container-scrollbar::-webkit-scrollbar-thumb:hover{
+    background: #555;
+}
+
+.hide-scroll-bar{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scroll-bar::-webkit-scrollbar{
+    display: none;
+}
+
+#modal{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 300;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#modal-header{
+    height: 65px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#modal-content{
+    margin: 2% auto;
+    width: 600px;
+    background-color: #fff;
+}

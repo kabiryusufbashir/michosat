@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Application;
+use App\Models\Applicationreceipt;
 
 class ApplicationController extends Controller
 {
@@ -17,7 +18,6 @@ class ApplicationController extends Controller
             'email' => 'required|',
             'old_password' => ['required'],
         ]);
-
         
         $full_name = $request->name;
         $email = $request->email;
@@ -35,13 +35,11 @@ class ApplicationController extends Controller
                     'year' => '2022/2023',
                 ]);
                 
-                dd('Stored');
-                
                 try{
-                    if(Auth::guard('application')->attempt(['email' => $email, 'password' => $password])){
+                    if(Auth::guard('application')->attempt(['email' => $email, 'password' => $request->old_password])){
                         try{
                             $request->session()->regenerate();
-                            return redirect()->route('student-dashboard');
+                            return redirect()->route('application-dashboard');
                         }catch(Exception $e){
                             return back()->with('error', $e->getMessage());            
                         }
@@ -55,16 +53,84 @@ class ApplicationController extends Controller
             }else{
                 return redirect()->route('apply')->with('error', $email.' Already Exists');
             }
-
         }catch(Exception $e){
-            return redirect()->route('all-department')->with('error', 'Please try again... '.$e);
+            return redirect()->route('apply')->with('error', 'Please try again... '.$e);
         }
     }
 
-    
-    public function logout(Request $request)
+    public function applicationLogin(){
+        return view('applicationlogin');
+    }
+
+    public function applyNowLogin(Request $request){
+        $data = $request->validate([
+            'email' => 'required|',
+            'old_password' => ['required'],
+        ]);
+
+        try{
+            if(Auth::guard('application')->attempt(['email' => $request->email, 'password' => $request->old_password])){
+                try{
+                    $request->session()->regenerate();
+                    return redirect()->route('application-dashboard');
+                }catch(Exception $e){
+                    return back()->with('error', $e->getMessage());            
+                }
+            }else{
+                return back()->with('error', 'Incorrect Login Credentials');
+            }
+        }catch(Exception $e){
+            return back()->with('error', $e->getMessage());
+        }
+    }
+
+    public function dashboard(){
+        $email = Auth::guard('application')->user()->email;
+
+        $check_record = Applicationreceipt::where('email', $email)->count();
+
+        if($check_record == 0){
+            $page_title = 'payment';
+        }else{
+            $page_title = 'dashboard';
+        }
+        
+
+        return view('application.index', compact('page_title'));
+    }
+
+    public function applicationPaymentReceipt(Request $request){
+        $data = $request->validate([
+            'receipt' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+
+        $applicant_email = Auth::guard('application')->user()->email;
+        $receipt = $request->receipt;
+
+        $receiptimageName = '/images/payment/application/.'.$request->receipt->extension();  
+
+        try{
+
+            $session = Applicationreceipt::create([
+                'email'=> $applicant_email,
+                'receipt'=> $receiptimageName,
+                'amount'=> '4000',
+                'year'=> '2022/2023',
+                'status'=> 1,
+            ]);
+            
+            $request->receipt->move('images/payment/application', $receiptimageName);
+                 
+            return redirect()->route('application-dashboard')->with('success', 'Payment Submitted');
+        
+        }catch(Exception $e){
+            return redirect()->route('application-dashboard')->with('error', 'Please try again... '.$e);
+        }        
+    }
+
+    public function applicationLogout(Request $request)
     {   
-        Auth::guard('applications')->logout();
+        Auth::guard('application')->logout();
         return redirect()->route('front');
     }
 }

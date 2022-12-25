@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('page-title')
-    Apply Now - MICOHSAT
+    Login - MICOHSAT
 @endsection
 
 @section('body-content')
@@ -11,7 +11,7 @@
         <div class="lg:px-24 px-8 py-8 my-8 lg:grid grid-cols-2 gap-10 items-center">
             <div>
                 <div class="text-gray-700 my-8">
-                    <h1 class="text-3xl font-semibold"> Start your application 2022/2023 Application NOW!!!</h1>
+                    <h1 class="text-3xl font-semibold">Login to Complete your <br>Application NOW!!!</h1>
                 </div>
                 <div>
                     <img class="w-40 mx-auto mt-8" src="{{ asset('images/apply.png') }}" alt="Apply">
@@ -20,14 +20,10 @@
             <div class="shadow-lg p-3">
                 <!-- Application  -->
                 <div class="login-div">
-                    <h1 class="text-xl text-center font-medium">Create Account</h1>
+                    <h1 class="text-xl text-center font-medium">Login</h1>
                     <div class="text-xl text-left">@include('layouts.messages')</div>
-                    <form action="{{ route('applynow') }}" method="POST">
+                    <form action="{{ route('applynowlogin') }}" method="POST">
                         @csrf
-                        <div class="my-3">
-                            <label for="full_name" class="font-medium">Full Name</label><br>
-                            <input required class="input-field" type="text" name="name" id="name" placeholder="Full Name">
-                        </div>
                         <div class="my-3">
                             <label for="staff_id" class="font-medium">Email Address</label><br>
                             <input required class="input-field" type="email" name="email" id="email" placeholder="Email Address">
@@ -37,11 +33,11 @@
                             <input class="input-field" type="password" name="old_password" id="password" placeholder="Enter Password">
                         </div>
                         <div class="my-3">
-                            <input type="submit" value="Create Account" class="bg-green-600 w-full py-3 text-white text-sm rounded cursor-pointer">
+                            <input type="submit" value="LOGIN" class="bg-green-600 w-full py-3 text-white text-sm rounded cursor-pointer">
                         </div>
                     </form>
-                    <a class="hover:text-green-600" href="{{ route('application-login') }}">
-                        <div class="text-center py-5">Already have an Account? Login to Complete your application</div>
+                    <a href="{{ route('apply') }}">
+                        <div class="text-center">Don't have an Account? Create an Account Now!</div>
                     </a>
                 </div>
             </div>
