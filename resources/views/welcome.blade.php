@@ -11,9 +11,11 @@
         <div class="absolute lg:top-54 top-64">
             <div class="bg-white font-extrabold p-8 ml-auto" id="slogan">        
                 <p class="text-gray-700 font-semibold p-3">2022/2023 admission is ongoing. 
-                    <span class="bg-green-700 rounded p-6 text-white my-8 text-center">
-                        Apply Now
-                    </span>
+                    <a href="{{ route('apply') }}">
+                        <span class="bg-green-700 rounded p-6 text-white my-8 text-center">
+                            Apply Now
+                        </span>
+                    </a>
                  </p>
             </div>
         </div>
@@ -31,9 +33,11 @@
                         Our Mission is to effectively train a qualitative health care providers with the use of higher groomed staff at both Academic and Professional level. To be Leading institution in the production of well trained and qualitative health care providers across the community.
                     </p>
                 </div>
-                <div class="bg-green-700 rounded p-3 w-1/4 text-white my-8 text-center">
-                    Apply Now
-                </div>
+                <a href="{{ route('apply') }}">
+                    <div class="bg-green-700 rounded p-3 w-1/4 text-white my-8 text-center">
+                        Apply Now
+                    </div>
+                </a>
             </div>
             <div class="shadow-lg p-3">
                 <a href="/courses">

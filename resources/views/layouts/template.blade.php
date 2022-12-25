@@ -21,7 +21,7 @@
     </head>
     <body>
         <!-- Navigation  -->
-        <div class="text-center text-2xl text-green-600">@include('layouts.messages')</div>
+        {{-- <div class="text-center text-2xl text-green-600">@include('layouts.messages')</div> --}}
         <div id="navDesktop" class="z-40 fixed bg-white w-full lg:grid grid-cols-5 gap-3 shadow lg:px-24 px-8 py-4 flex justify-between items-center">
             <div class="flex justify-between w-full items-center lg:col-span-2">
                 <div id="menu" class="lg:hidden cursor-pointer lg:ml-auto">
@@ -76,7 +76,7 @@
                         </a>
                         <ul class="dropdown-menu min-w-max absolute w-full bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
                             <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/courses">
+                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="{{ route('courses') }}">
                                     AVAILABLE COURSES
                                 </a>
                             </li>
@@ -96,7 +96,7 @@
                         </a>
                         <ul class="dropdown-menu min-w-max absolute w-full bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none" aria-labelledby="dropdownMenuButton2">
                             <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="/entry">
+                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="{{ route('entry') }}">
                                     ENTRY REQUIREMENT
                                 </a>
                             </li>
@@ -106,7 +106,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="#">
+                                <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="{{ route('apply') }}">
                                     APPLY NOW
                                 </a>
                             </li>
@@ -204,7 +204,7 @@
                         <h1 class="text-3xl font-bold mb-4">Academics</h1>
                         <nav class="list-none text-gray-700">
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="/courses">
+                                <a class="flex items-center py-1" href="{{ route('courses') }}">
                                     <span>Available Courses</span>
                                 </a>
                             </li>
@@ -214,17 +214,17 @@
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="/entry">
+                                <a class="flex items-center py-1" href="{{ route('entry') }}">
                                     <span>Entry Requirement</span>
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="/process-of-admission">
+                                <a class="flex items-center py-1" href="{{ route('process-of-admission') }}">
                                     <span>Process of Admission</span>
                                 </a>
                             </li>
                             <li class="py-1 hover:text-gray-800">
-                                <a class="flex items-center py-1" href="#">
+                                <a class="flex items-center py-1" href="{{ route('apply') }}">
                                     <span>Apply Now</span>
                                 </a>
                             </li>
