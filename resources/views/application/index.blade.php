@@ -92,7 +92,7 @@
                                 <!-- Gender  -->
                                 <div class="my-4">
                                     <label for="gender" class="input-title">Gender</label><br>
-                                    <select name="gender" class="input-field">
+                                    <select required name="gender" class="input-field">
                                         <option value=""></option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
@@ -104,7 +104,7 @@
                                 <!-- DOB  -->
                                 <div class="my-4">
                                     <label for="dob" class="input-title">Date of Birth</label><br>
-                                    <input type="date" name="dob" placeholder="Date of Birth" class="input-field">
+                                    <input required type="date" name="dob" placeholder="Date of Birth" class="input-field">
                                     @error('dob')
                                         {{$message}}
                                     @enderror
@@ -112,7 +112,7 @@
                                 <!-- Marital Status  -->
                                 <div class="my-4">
                                     <label for="marital_status" class="input-title">Marital Status</label><br>
-                                    <select name="marital_status" class="input-field">
+                                    <select required name="marital_status" class="input-field">
                                         <option value=""></option>
                                         <option value="Male">Single</option>
                                         <option value="Female">Married</option>
@@ -125,15 +125,23 @@
                                 <!-- Phone  -->
                                 <div class="my-4">
                                     <label for="phone" class="input-title">Phone</label><br>
-                                    <input type="text" name="phone" placeholder="Phone" class="input-field">
+                                    <input required type="text" name="phone" placeholder="Phone" class="input-field">
                                     @error('phone')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- State  -->
+                                <div class="my-4">
+                                    <label for="state" class="input-title">State</label><br>
+                                    <input required type="text" name="address" placeholder="State" class="input-field">
+                                    @error('state')
                                         {{$message}}
                                     @enderror
                                 </div>
                                 <!-- Address  -->
                                 <div class="my-4">
                                     <label for="address" class="input-title">Address</label><br>
-                                    <input type="text" name="address" placeholder="Address" class="input-field">
+                                    <input required type="text" name="address" placeholder="Address" class="input-field">
                                     @error('address')
                                         {{$message}}
                                     @enderror
@@ -141,11 +149,23 @@
                             </div>
                             <!-- step 2 -->
                             <div id="stepTwo" class="hidden">
+                                <!-- Photo  -->
+                                <div class="my-4">
+                                    <label for="name" class="text-lg font-medium border-b-4 border-green-700">Applicant Photo</label><br>
+                                    <div class="grid grid-cols-2 gap-2 items-center mt-3">
+                                        <div>
+                                            <input required type="file" name="photo">
+                                        </div>
+                                    </div>
+                                    @error('photo')
+                                        {{$message}}
+                                    @enderror
+                                </div>
                                 <!-- Programme  -->
                                 <div class="my-4">
                                     <label for="programme" class="input-title">Programme</label><br>
                                     <div>
-                                        <select name="programme" class="input-field">
+                                        <select required name="programme" class="input-field">
                                             <option></option>
                                             @foreach($programmes as $programme)
                                                 <option value="{{ $programme->id }}">{{ $programme->name }}</option>
@@ -156,18 +176,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <!-- Photo  -->
-                                <div class="my-4">
-                                    <label for="name" class="text-lg font-medium border-b-4 border-green-700">Applicant Photo</label><br>
-                                    <div class="grid grid-cols-2 gap-2 items-center mt-3">
-                                        <div>
-                                            <input type="file" name="photo">
-                                        </div>
-                                    </div>
-                                    @error('photo')
-                                        {{$message}}
-                                    @enderror
-                                </div>
+                                
                             </div>
                             <!-- Step 3  -->
                             <div id="stepThree" class="hidden">
