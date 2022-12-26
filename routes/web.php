@@ -114,6 +114,13 @@ Route::group(['prefix' => 'admin'], function (){
     Route::patch('/student/{student}/update/step_4', [DashboardController::class, 'updateStudentStep4'])->name('student-update-step-4')->middleware('auth:web');
     Route::delete('/student/{student}', [DashboardController::class, 'deleteStudent'])->name('student-delete')->middleware('auth:web');
 
+    // Application
+    Route::get('/application', [DashboardController::class, 'application'])->name('root-application')->middleware('auth:web');
+    Route::get('/allapplication', [DashboardController::class, 'allApplication'])->name('all-application')->middleware('auth:web');
+    Route::get('/check-payment', [DashboardController::class, 'checkPayment'])->name('check-payment')->middleware('auth:web');
+    Route::get('/check-payment/{check_payment}/edit', [DashboardController::class, 'checkPaymentEdit'])->name('check-payment-edit')->middleware('auth:web');
+    Route::patch('/check-payment/{check_payment}/update', [DashboardController::class, 'checkPaymentUpdate'])->name('check-payment-update')->middleware('auth:web');
+    
     // Registration
     Route::get('/registration', [DashboardController::class, 'registration'])->name('root-registration')->middleware('auth:web');
     Route::post('/registration-create', [DashboardController::class, 'createRegistration'])->name('registration-create')->middleware('auth:web');

@@ -16,6 +16,18 @@ class Applicationreceipt extends Model
         'amount',
         'year',
         'status',
+        'registered_by',
     ];
+
+    public function dateFormat($date){
+        if($date){
+            //l : a full textual representation of a day
+            //F : a full textual representation of a month
+            $date_format = date('g:i a, l d, F Y', strtotime($date));
+                return $date_format;
+        }else{
+            return '';
+        }
+    }
 
 }

@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Response;
 
 use App\Models\User;
+use App\Models\Application;
+use App\Models\Applicationreceipt;
 use App\Models\Department;
 use App\Models\Programme;
 use App\Models\Course;
@@ -144,6 +146,41 @@ class DashboardController extends Controller
             }
         }catch(Exception $e){
             return redirect()->route('root-settings')->with('error', 'Please try again... '.$e);
+        }
+    }
+
+    // Registration 
+    public function application(){
+        return view('dashboard.application.index');
+    }
+
+    public function allApplication(){
+        $registrations = Application::orderby('id', 'desc')->paginate(20);
+        return view('dashboard.application.application', compact('registrations'));
+    }
+
+    public function checkPayment(){
+        $check_payments = Applicationreceipt::orderby('created_at', 'asc')->where('status', 1)->paginate(20);
+        return view('dashboard.application.check_payment', compact('check_payments'));
+    }
+
+    public function checkPaymentEdit($id){
+        $check_payment = Applicationreceipt::findOrFail($id);
+        return view('dashboard.application.check_payment_edit', compact('check_payment'));
+    }
+
+    public function checkPaymentUpdate(Request $request, $id){
+        
+        $registered_by = Auth::user()->id;
+
+        try{
+            $registration = Applicationreceipt::where('id', $id)->update([
+                'status' => 2,
+                'registered_by' => $registered_by,
+            ]);
+            return redirect()->route('check-payment')->with('success', 'Payment Confirmed');
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
         }
     }
 

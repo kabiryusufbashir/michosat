@@ -11,6 +11,18 @@
             </span>
         </div>
     </a>
+    <!-- Application  -->
+    <a href="{{ route('root-application') }}">
+        <div class="nav-link-div">
+            <span>
+                @include('icons.registration')
+            </span>
+            &nbsp;&nbsp;
+            <span class="text-sm">
+                Application
+            </span>
+        </div>
+    </a>
     <!-- Department  -->
     <a href="{{ route('root-department') }}">
         <div class="nav-link-div">

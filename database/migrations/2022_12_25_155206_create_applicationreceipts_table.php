@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('amount');
             $table->string('year');
             $table->integer('status');
+            $table->integer('registered_by')->nullable();
             $table->timestamps();
         });
     }

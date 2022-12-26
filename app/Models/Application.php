@@ -29,23 +29,66 @@ class Application extends Authenticatable
 
     }
 
-    
     public function checkPaymentStatus()
     {
         $applicant_email = Auth::guard('application')->user()->email;
         
         $payment = Applicationreceipt::where('email', $applicant_email)->first();
-        $payment_status = $payment->status;
-
-        if($payment_status == ''){
+        
+        if(!empty($payment)){
+            $payment_status = $payment->status;
+    
+            if($payment_status == ''){
+                return 'Not Paid';
+            }else if($payment_status == 1){
+                return 'Processing';
+            }else if($payment_status == 2){
+                return 'Paid';
+            }else if($payment_status == 3){
+                return 'Rejected';
+            }
+        }else{
             return 'Not Paid';
-        }else if($payment_status == 1){
-            return 'Processing';
-        }else if($payment_status == 2){
-            return 'Paid';
-        }else if($payment_status == 3){
-            return 'Rejected';
         }
 
     }
+
+    public function applicantPaymentStatus($email)
+    {
+        $payment = Applicationreceipt::where('email', $email)->first();
+        
+        if(!empty($payment)){
+            $payment_status = $payment->status;
+    
+            if($payment_status == ''){
+                return 'Not Paid';
+            }else if($payment_status == 1){
+                return 'Processing';
+            }else if($payment_status == 2){
+                return 'Paid';
+            }else if($payment_status == 3){
+                return 'Rejected';
+            }
+        }else{
+            return 'Not Paid';
+        }
+    }
+
+    public function applicantAdmissionStatus($email)
+    {
+        $payment = Applicationreceipt::where('email', $email)->first();
+        
+        if(!empty($payment)){
+            $payment_status = $payment->status;
+    
+            if($payment_status == 5){
+                return 'Admitted';
+            }else{
+                return 'Not Yet!';
+            }
+        }else{
+            return 'Not Yet!';
+        }
+    }
+
 }
