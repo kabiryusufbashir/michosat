@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\Application;
 use App\Models\Applicationreceipt;
+use App\Models\Programme;
 
 class ApplicationController extends Controller
 {
@@ -85,18 +86,28 @@ class ApplicationController extends Controller
     }
 
     public function dashboard(){
+
+        $programmes = Programme::orderby('name', 'asc')->get();
         $email = Auth::guard('application')->user()->email;
 
-        $check_record = Applicationreceipt::where('email', $email)->count();
+        $check_record = Applicationreceipt::where('email', $email)->first();
 
-        if($check_record == 0){
-            $page_title = 'payment';
+        if(!empty($check_record)){
+            $payment_status = $check_record->status;
+            if($payment_status == 0){
+                $page_title = 'payment';
+            }else if($payment_status == 1){
+                $page_title = 'dashboard';
+            }else if($payment_status == 2){
+                $page_title = 'document';
+            }
         }else{
             $page_title = 'dashboard';
         }
+
         
 
-        return view('application.index', compact('page_title'));
+        return view('application.index', compact('page_title', 'programmes'));
     }
 
     public function applicationPaymentReceipt(Request $request){

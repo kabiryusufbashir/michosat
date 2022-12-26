@@ -29,6 +29,24 @@ class Application extends Authenticatable
 
     }
 
+    public function checkApplicationProgress()
+    {
+        $applicant_email = Auth::guard('application')->user()->email;
+        
+        $check_payment_session = Applicationreceipt::where('email', $applicant_email)->first();
+
+        if(!empty($check_payment_session)){
+            $check_payment_session_status = $check_payment_session->status;
+            if($check_payment_session_status == 2){
+                return 1;
+            }else{
+                return '';
+            }
+        }else{
+            return '';
+        }
+    }
+
     public function checkPaymentStatus()
     {
         $applicant_email = Auth::guard('application')->user()->email;
