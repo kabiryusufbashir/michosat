@@ -64,9 +64,33 @@ class Application extends Authenticatable
                 return 'Paid';
             }else if($payment_status == 3){
                 return 'Rejected';
+            }else{
+                return 'Paid';
             }
         }else{
             return 'Not Paid';
+        }
+
+    }
+
+    public function checkRegistrationStatus()
+    {
+        $applicant_email = Auth::guard('application')->user()->email;
+        
+        $payment = Applicationreceipt::where('email', $applicant_email)->first();
+        
+        if(!empty($payment)){
+            $payment_status = $payment->status;
+    
+            if($payment_status <= 3){
+                return 'Not Completed';
+            }else if($payment_status >= 4){
+                return 'Application Completed';
+            }else{
+                return 'Not Completed';
+            }
+        }else{
+            return 'Not Completed';
         }
 
     }

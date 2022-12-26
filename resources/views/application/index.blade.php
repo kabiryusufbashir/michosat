@@ -34,7 +34,7 @@
                             <div class="font-semibold mb-1 text-2xl flex items-center">
                                 <div class="font-medium mb-1 text-sm">Registration Status: &nbsp;</div>
                                 <div class="font-medium mb-1 text-sm">
-                                    Not Completed 
+                                    {{ Auth::guard('application')->user()->checkRegistrationStatus() }} 
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                                 <span>Step 3: 0'Level Result  /</span>
                             </a>
                         </div>
-                        <form action="{{ route('application-payment-receipt') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('application-registration-form') }}" method="POST" enctype="multipart/form-data">
                             <h1 class="py-2 font-semibold">Complete Your Registration {{ Auth::guard('application')->user()->name }}</h1>
                             @csrf
                             <!-- Step 1  -->
@@ -114,9 +114,9 @@
                                     <label for="marital_status" class="input-title">Marital Status</label><br>
                                     <select required name="marital_status" class="input-field">
                                         <option value=""></option>
-                                        <option value="Male">Single</option>
-                                        <option value="Female">Married</option>
-                                        <option value="Female">Divorced</option>
+                                        <option value="Single">Single</option>
+                                        <option value="Married">Married</option>
+                                        <option value="Divorced">Divorced</option>
                                     </select>
                                     @error('marital_status')
                                         {{$message}}
@@ -133,7 +133,7 @@
                                 <!-- State  -->
                                 <div class="my-4">
                                     <label for="state" class="input-title">State</label><br>
-                                    <input required type="text" name="address" placeholder="State" class="input-field">
+                                    <input required type="text" name="state" placeholder="State" class="input-field">
                                     @error('state')
                                         {{$message}}
                                     @enderror
@@ -193,13 +193,16 @@
                                 <div id="subjectSection" class="my-4"></div>
                                 <div id="addField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div>
                                 <br><br>
-                                
-                                <div class="text-center my-4">
+                                <div class="flex items-center my-4">
+                                    <span><input type="checkbox" name="agree" id="agreeBtn"></span>
+                                    <span class="ml-1 text-xs">I agree that whatever Information I given is correct to the best of my understanding and I will be held accountable for any wrong Information given.</span>
+                                </div>
+                                <div id="submitBtn" class="text-center my-4 hidden">
                                     <button class="submit-btn">SUBMIT</button>
                                 </div>
                             </div>
                             <!-- Indicator  -->
-                            <div id="indicator" class="flex justify-around">
+                            <div id="indicator" class="flex justify-around my-5">
                                 <div id="stepOneIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 1: Personal Data</div>
                                 <div id="stepTwoIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 2: Programme & Photo</div>
                                 <div id="stepThreeIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 3: 0' Level Result</div>
@@ -221,6 +224,18 @@
 
                         addField.addEventListener('click', ()=>{
                             subjectSection.insertAdjacentHTML('beforeend', divContent)
+                        })
+
+                        //Agree
+                        let agreeBtn = document.querySelector('#agreeBtn')
+                        let submitBtn = document.querySelector('#submitBtn')
+                        
+                        agreeBtn.addEventListener('click', ()=>{
+                            if(submitBtn.classList.contains('hidden')){
+                                submitBtn.classList.remove('hidden');
+                            }else{
+                                submitBtn.classList.add('hidden');
+                            }
                         })
 
                         //Indicator

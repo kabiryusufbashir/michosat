@@ -39,6 +39,9 @@ Route::group(['prefix' => 'application'], function () {
     // PAYMENT
     Route::get('/payment', [ApplicationController::class, 'payment'])->name('student-payment')->middleware('auth:application');
     Route::post('/payment/submit', [ApplicationController::class, 'applicationPaymentReceipt'])->name('application-payment-receipt')->middleware('auth:application');
+    
+    // Registration 
+    Route::post('/registration/submit', [ApplicationController::class, 'applicationRegistrationForm'])->name('application-registration-form')->middleware('auth:application');
 
     // SETTINGS
     Route::get('/settings', [ApplicationController::class, 'settings'])->name('student-settings')->middleware('auth:application');

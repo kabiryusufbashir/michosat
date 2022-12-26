@@ -35,9 +35,9 @@
             </span>
         </div>
     </a>
-    <!-- Timetable  -->
+    <!-- Slip  -->
     <a href="#">
-        <div class="{{ ($page_title == 'timetable') ? 'active-nav-link-div' : 'nav-link-div' }}">
+        <div class="{{ ($page_title == 'slip') ? 'active-nav-link-div' : 'nav-link-div' }}">
             <span>
                 @include('icons.timetable')
             </span>
