@@ -52,7 +52,7 @@
                         <div class="text-xl py-2 text-gray-500">Personal Information</div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4 border">
+                <div class="grid grid-cols-4 gap-4 border">
                     <div class="px-6 py-2  text-gray-500 font-semibold">
                         NAME
                     </div>
@@ -60,7 +60,7 @@
                         {{ Auth::guard('application')->user()->name }}
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4 border">
+                <div class="grid grid-cols-4 gap-4 border">
                     <div class="px-6 py-2  text-gray-500 font-semibold">
                         PROGRAMME
                     </div>
@@ -146,7 +146,7 @@
                         <div class="text-xl py-2 text-gray-500">Next of Kin Information</div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4 border">
+                <div class="grid grid-cols-4 gap-4 border">
                     <div class="px-6 py-2 text-gray-500 font-semibold">
                         NAME
                     </div>

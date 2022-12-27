@@ -41,6 +41,8 @@ class Application extends Authenticatable
                 return 1;
             }else if($check_payment_session_status == 4){
                 return 2;
+            }else if($check_payment_session_status == 5){
+                return 3;
             }else{
                 return '';
             }
@@ -118,9 +120,11 @@ class Application extends Authenticatable
         }
     }
 
-    public function applicantAdmissionStatus($email)
+    public function applicantAdmissionStatus()
     {
-        $payment = Applicationreceipt::where('email', $email)->first();
+        $applicant_email = Auth::guard('application')->user()->email;
+        
+        $payment = Applicationreceipt::where('email', $applicant_email)->first();
         
         if(!empty($payment)){
             $payment_status = $payment->status;

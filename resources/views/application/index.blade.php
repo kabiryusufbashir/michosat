@@ -45,7 +45,7 @@
                             <div class="font-semibold mb-1 text-2xl flex items-center">
                                 <div class="font-medium mb-1 text-sm">Admission Status: &nbsp;</div>
                                 <div class="font-medium mb-1 text-sm">
-                                    Not Yet 
+                                    {{ Auth::guard('application')->user()->applicantAdmissionStatus() }} 
                                 </div>
                             </div>
                         </div>
@@ -489,6 +489,23 @@
                         <a href="{{ route('print-slip') }}">
                             <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center py-3 cursor-pointer">
                                 Print your Acknowledge Slip {{ Auth::guard('application')->user()->name }}
+                            </div>
+                        </a>
+                    </div>
+                @endif
+                <!-- Admission Letter  -->
+                @if(Auth::guard('application')->user()->checkApplicationProgress() == 3)
+                    <div class="bg-white lg:py-6 px-6 text-gray-600 mb-5 ml-4 mr-8 rounded">
+                        <a href="{{ route('print-slip') }}">
+                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center py-3 cursor-pointer">
+                                Print Acknowledge Slip
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-white lg:py-6 px-6 text-gray-600 mb-5 ml-4 mr-8 rounded">
+                        <a href="{{ route('print-admission') }}">
+                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center py-3 cursor-pointer">
+                                Print Admission Letter
                             </div>
                         </a>
                     </div>

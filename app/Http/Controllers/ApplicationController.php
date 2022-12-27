@@ -106,6 +106,8 @@ class ApplicationController extends Controller
                 $page_title = 'document';
             }else if($payment_status == 4){
                 $page_title = 'slip';
+            }else if($payment_status == 5){
+                $page_title = 'letter';
             }
         }else{
             $page_title = 'dashboard';
@@ -304,6 +306,18 @@ class ApplicationController extends Controller
         $school = User::where('category', 1)->first();
 
         return view('application.print', compact('page_title', 'school', 'applicant_bio', 'applicant_result', 'applicant_result_a_level'));
+    }
+
+    public function printAdmissionLetter(){
+        $applicant_email = Auth::guard('application')->user()->email;
+
+        $applicant_bio = Applicantbio::where('applicant_email', $applicant_email)->first();
+        
+        $page_title = 'letter';
+        
+        $school = User::where('category', 1)->first();
+
+        return view('application.admission', compact('page_title', 'school', 'applicant_bio'));
     }
 
     public function settingsPassword(Request $request){

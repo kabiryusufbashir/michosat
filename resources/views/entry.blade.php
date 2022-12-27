@@ -28,7 +28,13 @@
                         1. Matured, highly discipline individuals who posses all the attributes of being healthy physically, mentally and morally sound <br>
                         2. There is no age limit provided the candidate satisfies basic entry requirement. <br>
                         3. Good citizen with readiness to learn, lack of criminal tendencies and ability to abide by the rules and regulation of the school. <br>
-                        4. Intending candidates must at least posses (5) credit passes in either WACE, GCE, SSCE, NECO or NABTEB in not more than two sitting in English, Mathematics, Biology, Chemistry, Physics.
+                        4. Intending candidates must at least posses Five (5) credit in English, Mathematics, Biology, Chemistry, Physics. <br>
+                        5. HNDCH; in addition to 1 above possession of National Diploma Community Health (NDCH) is compulsory. <br>
+                        6. PHNDCH; in addition to 1 above, possession of CHEW is compulsory. <br>
+                        7. CHEW retraining; in addition to 1 above, possession of JCHEW certificate is compulsory. <br>
+                        8. ADHPE; in addition to 1 above, possession of DHPE is compulsory. <br>
+                        9. DHPE retraining; in addition to 1 above, possession of Certificate in Health Promotion and Education (CHPE) is compulsory. <br>
+                        10. JCHEW ; 3 Credit and 2 passes are acceptable
                     </p>
                 </div>
             </div>

@@ -43,7 +43,19 @@
             </span>
             &nbsp;&nbsp;
             <span class="text-sm">
-                Print Acknowledge Slip
+                Acknowledge Slip
+            </span>
+        </div>
+    </a>
+    <!-- Letter  -->
+    <a href="#">
+        <div class="{{ ($page_title == 'letter') ? 'active-nav-link-div' : 'nav-link-div' }}">
+            <span>
+                @include('icons.timetable')
+            </span>
+            &nbsp;&nbsp;
+            <span class="text-sm">
+                Admission Letter
             </span>
         </div>
     </a>

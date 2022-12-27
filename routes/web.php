@@ -42,7 +42,8 @@ Route::group(['prefix' => 'application'], function () {
     
     // Registration 
     Route::post('/submit', [ApplicationController::class, 'applicationRegistrationForm'])->name('application-registration-form')->middleware('auth:application');
-    Route::get('/print', [ApplicationController::class, 'printSlip'])->name('print-slip')->middleware('auth:application');
+    Route::get('/print/slip', [ApplicationController::class, 'printSlip'])->name('print-slip')->middleware('auth:application');
+    Route::get('/print/admission/letter', [ApplicationController::class, 'printAdmissionLetter'])->name('print-admission')->middleware('auth:application');
 
     // SETTINGS
     Route::post('/settings-password', [ApplicationController::class, 'settingsPassword'])->name('applicant-settings-password')->middleware('auth:application');
@@ -122,6 +123,9 @@ Route::group(['prefix' => 'admin'], function (){
     Route::get('/check-payment', [DashboardController::class, 'checkPayment'])->name('check-payment')->middleware('auth:web');
     Route::get('/check-payment/{check_payment}/edit', [DashboardController::class, 'checkPaymentEdit'])->name('check-payment-edit')->middleware('auth:web');
     Route::patch('/check-payment/{check_payment}/update', [DashboardController::class, 'checkPaymentUpdate'])->name('check-payment-update')->middleware('auth:web');
+    Route::get('/check-application', [DashboardController::class, 'checkApplication'])->name('check-application')->middleware('auth:web');
+    Route::get('/check-application/{check_application}/edit', [DashboardController::class, 'checkApplicationEdit'])->name('check-application-edit')->middleware('auth:web');
+    Route::patch('/check-application/{check_application}/update', [DashboardController::class, 'checkApplicationUpdate'])->name('check-application-update')->middleware('auth:web');
     
     // Registration
     Route::get('/registration', [DashboardController::class, 'registration'])->name('root-registration')->middleware('auth:web');

@@ -11,6 +11,9 @@ use Illuminate\Http\Response;
 
 use App\Models\User;
 use App\Models\Application;
+use App\Models\Applicantbio;
+use App\Models\Applicantresult;
+use App\Models\Applicantresultalevel;
 use App\Models\Applicationreceipt;
 use App\Models\Department;
 use App\Models\Programme;
@@ -164,6 +167,7 @@ class DashboardController extends Controller
         return view('dashboard.application.check_payment', compact('check_payments'));
     }
 
+    
     public function checkPaymentEdit($id){
         $check_payment = Applicationreceipt::findOrFail($id);
         return view('dashboard.application.check_payment_edit', compact('check_payment'));
@@ -179,6 +183,42 @@ class DashboardController extends Controller
                 'registered_by' => $registered_by,
             ]);
             return redirect()->route('check-payment')->with('success', 'Payment Confirmed');
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
+    }
+
+    public function checkApplication(){
+        $check_applications = Applicantbio::orderby('created_at', 'asc')->where('year', '2022/2023')->paginate(40);
+        return view('dashboard.application.check_applications', compact('check_applications'));
+    }
+
+    public function checkApplicationEdit($id){
+        $applicant_bio = Applicantbio::findOrFail($id);
+        $applicant_email = $applicant_bio->applicant_email;
+        
+        $applicant_result = Applicantresult::where('applicant_email', $applicant_email)->get();
+        $applicant_result_a_level = Applicantresultalevel::where('applicant_email', $applicant_email)->get();
+
+        $applicant_name = Application::select('name')->where('email', $applicant_email)->first();
+        $applicant_fullname = $applicant_name->name;
+
+        return view('dashboard.application.check_applications_edit', compact('applicant_bio', 'applicant_result', 'applicant_result_a_level', 'applicant_fullname'));
+    }
+
+    
+    public function checkApplicationUpdate(Request $request, $id){
+        
+        $registered_by = Auth::user()->id;
+
+        try{
+            $registration = Applicationreceipt::where('email', $id)->update([
+                'status' => 5,
+                'registered_by' => $registered_by,
+            ]);
+            
+            return redirect()->route('check-application')->with('success', 'Applicant admitted!');
+
         }catch(Exception $e){
             return back()->with('error', 'Please try again... '.$e);
         }

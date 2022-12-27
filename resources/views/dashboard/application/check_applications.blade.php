@@ -17,8 +17,8 @@
             <!-- User Info  -->
             @include('includes.root_user_info')
             <div class="text-center text-xl text-gray-600 mt-2 ml-4 mr-7 rounded py-3">@include('includes.messages')</div>
-            <!-- Settings Menu  -->
-            @include('includes.root_application_index')
+            <!-- All Department  -->
+            @include('includes.root_application_check_application')
         </div>
     </div>
 @endsection

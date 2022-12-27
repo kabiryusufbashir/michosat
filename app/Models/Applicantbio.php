@@ -43,4 +43,16 @@ class Applicantbio extends Model
             return '';
         }
     }
+
+    
+    public function dateFormat($date){
+        if($date){
+            //l : a full textual representation of a day
+            //F : a full textual representation of a month
+            $date_format = date('g:i a, l d, F Y', strtotime($date));
+                return $date_format;
+        }else{
+            return '';
+        }
+    }
 }
