@@ -11,6 +11,7 @@ use App\Models\Application;
 use App\Models\Applicationreceipt;
 use App\Models\Programme;
 use App\Models\Applicantresult;
+use App\Models\Applicantresultalevel;
 use App\Models\Applicantbio;
 
 class ApplicationController extends Controller
@@ -120,9 +121,10 @@ class ApplicationController extends Controller
         ]);
 
         $applicant_email = Auth::guard('application')->user()->email;
+        $applicant_name = Auth::guard('application')->user()->name;
         $receipt = $request->receipt;
 
-        $receiptimageName = '/images/payment/application/.'.$request->receipt->extension();  
+        $receiptimageName = '/images/payment/application/.'.$applicant_name.$request->receipt->extension();  
 
         try{
 
@@ -149,15 +151,28 @@ class ApplicationController extends Controller
             'dob' => ['required'],
             'marital_status' => ['required'],
             'phone' => ['required'],
-            'state' => ['required'],
+            'city' => ['required'],
             'address' => ['required'],
+            'lga' => ['required'],
+            'state' => ['required'],
+            'country' => ['required'],
+            'kin_name' => ['required'],
+            'kin_relation' => ['required'],
+            'kin_phone' => ['required'],
+            'kin_city' => ['required'],
+            'kin_address' => ['required'],
+            'kin_lga' => ['required'],
+            'kin_state' => ['required'],
+            'kin_country' => ['required'],
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'programme' => ['required'],
         ]);
 
         $applicant_email = Auth::guard('application')->user()->email;
+        $applicant_name = Auth::guard('application')->user()->name;
         $photo = $request->photo;
-        $imageName = '/images/application/applicant/.'.$request->photo->extension();  
+
+        $imageName = '/images/application/applicant/.'.$applicant_name.$request->photo->extension();  
 
         try{
          
@@ -167,10 +182,22 @@ class ApplicationController extends Controller
                 'dob' => $request->dob,
                 'marital_status' => $request->marital_status,
                 'phone' => $request->phone,
-                'state' => $request->state,
                 'address' => $request->address,
+                'city' => $request->city,
+                'lga' => $request->lga,
+                'state' => $request->state,
+                'country' => $request->country,
+                'kin_name' => $request->kin_name,
+                'kin_relation' => $request->kin_relation,
+                'kin_phone' => $request->phone,
+                'kin_address' => $request->address,
+                'kin_city' => $request->city,
+                'kin_lga' => $request->lga,
+                'kin_state' => $request->state,
+                'kin_country' => $request->country,
                 'photo' => $imageName,
                 'programme' => $request->programme,
+                'year' => '2022/2023',
             ]);
 
             $request->photo->move('images/application/applicant', $imageName);
@@ -199,7 +226,7 @@ class ApplicationController extends Controller
                     $delete_previous_record = Applicantresult::where('applicant_email', $applicant_email)->delete();
                     if($result = $data['subject_name']){
                         for($x=0; $x<count($result); $x++){
-                            $result_add = new Applicationresult;
+                            $result_add = new Applicantresult;
                             $result_add['applicant_email'] = $applicant_email;
                             $result_add['subject'] = $data['subject_name'][$x];
                             $result_add['grade'] = $data['subject_grade'][$x];
@@ -208,14 +235,51 @@ class ApplicationController extends Controller
                     }
                 }
 
-                //Update Logic
                 try{
-                    $registration = Applicationreceipt::where('email', $applicant_email)->update([
-                        'status' => 4,
-                    ]);
-                    
-                    return back()->with('success', 'Application Submitted');
-        
+
+                    // Add Result A Level 
+                    $aLevel = Array(
+                        'subject_name' => $request->subject_name,
+                        'subject_grade' => $request->subject_grade,
+                    );
+
+                    $check_record = Applicantresultalevel::where('applicant_email', $applicant_email)->count();
+                        
+                        if($check_record == 0){
+                            if($result = $aLevel['subject_name']){
+                                for($x=0; $x<count($result); $x++){
+                                    $result_add = new Applicantresultalevel;
+                                    $result_add['applicant_email'] = $applicant_email;
+                                    $result_add['subject'] = $data['subject_name'][$x];
+                                    $result_add['grade'] = $data['subject_grade'][$x];
+                                    $result_add->save();
+                                }
+                            }
+                        }else{
+                            $delete_previous_record = Applicantresultalevel::where('applicant_email', $applicant_email)->delete();
+                            if($result = $aLevel['subject_name']){
+                                for($x=0; $x<count($result); $x++){
+                                    $result_add = new Applicantresultalevel;
+                                    $result_add['applicant_email'] = $applicant_email;
+                                    $result_add['subject'] = $data['subject_name'][$x];
+                                    $result_add['grade'] = $data['subject_grade'][$x];
+                                    $result_add->save();
+                                }
+                            }
+                        }
+
+                    //Update Logic
+                    try{
+                        $registration = Applicationreceipt::where('email', $applicant_email)->update([
+                            'status' => 4,
+                        ]);
+                        
+                        return back()->with('success', 'Application Submitted');
+            
+                    }catch(Exception $e){
+                        return back()->with('error', 'Please try again... '.$e);
+                    }
+
                 }catch(Exception $e){
                     return back()->with('error', 'Please try again... '.$e);
                 }

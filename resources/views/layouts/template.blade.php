@@ -30,11 +30,11 @@
                 <a href="/">
                     <div class="flex items-center">
                         <div>
-                            <img class="w-16 lg:w-24 lg:ml-0" src="{{ asset('images/micohsat.png') }}" alt="MICOHSAT Logo">
+                            <img class="w-16 lg:w-24 lg:ml-0" src="{{ asset('images/micohsat.png') }}" alt="MICOSHAT Logo">
                         </div>
                         <span class="ml-5 font-extrabold text-gray-700">
-                            <!-- MIKIYA INTERNATIONAL <br> COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY (MICOHSAT) <br> BARI -->
-                            MICOHSAT <br> BARI
+                            <!-- MIKIYA INTERNATIONAL <br> COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY (MICOSHAT) <br> BARI -->
+                            MICOSHAT <br> BARI
                         </span>
                     </div>
                 </a>
@@ -266,7 +266,7 @@
             <div class="py-7 text-center text-xs bg-green-700 text-white">
                 <footer>
                     Designed & Developed by <a class="hover:text-green-600 " href="#">Bari IT Consult</a><br>
-                    Copyright © @php echo date('Y') @endphp MICOHSAT. All Rights Reserved 
+                    Copyright © @php echo date('Y') @endphp MICOSHAT. All Rights Reserved 
                 </footer>
             </div>
         </div>

@@ -30,9 +30,9 @@
                     </div>
                     <div class="bg-white py-7 px-3 text-gray-600 my-5 rounded">
                         <div>
-                            <div class="font-medium mb-1 text-lg">Registration:</div>
+                            <div class="font-medium mb-1 text-lg">Application:</div>
                             <div class="font-semibold mb-1 text-2xl flex items-center">
-                                <div class="font-medium mb-1 text-sm">Registration Status: &nbsp;</div>
+                                <div class="font-medium mb-1 text-sm">Application Status: &nbsp;</div>
                                 <div class="font-medium mb-1 text-sm">
                                     {{ Auth::guard('application')->user()->checkRegistrationStatus() }} 
                                 </div>
@@ -78,10 +78,16 @@
                                 <span>Step 1: Personal Data /</span>
                             </a>
                             <a id="indicatorNavTwo" href="#">
-                                <span>Step 2: Programme and Photo /</span>
+                                <span>Step 2: Next of Kin /</span>
                             </a>
-                            <a id="indicatorNavThree"  href="#">
-                                <span>Step 3: 0'Level Result  /</span>
+                            <a id="indicatorNavThree" href="#">
+                                <span>Step 3: Programme and Photo /</span>
+                            </a>
+                            <a id="indicatorNavFour"  href="#">
+                                <span>Step 4: 0' Level Result  /</span>
+                            </a>
+                            <a id="indicatorNavFive"  href="#">
+                                <span>Step 5: A' Level Result  /</span>
                             </a>
                         </div>
                         <form action="{{ route('application-registration-form') }}" method="POST" enctype="multipart/form-data">
@@ -130,14 +136,6 @@
                                         {{$message}}
                                     @enderror
                                 </div>
-                                <!-- State  -->
-                                <div class="my-4">
-                                    <label for="state" class="input-title">State</label><br>
-                                    <input required type="text" name="state" placeholder="State" class="input-field">
-                                    @error('state')
-                                        {{$message}}
-                                    @enderror
-                                </div>
                                 <!-- Address  -->
                                 <div class="my-4">
                                     <label for="address" class="input-title">Address</label><br>
@@ -146,9 +144,108 @@
                                         {{$message}}
                                     @enderror
                                 </div>
+                                <!-- City  -->
+                                <div class="my-4">
+                                    <label for="city" class="input-title">City</label><br>
+                                    <input required type="text" name="city" placeholder="City" class="input-field">
+                                    @error('city')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- LGA  -->
+                                <div class="my-4">
+                                    <label for="lga" class="input-title">LGA</label><br>
+                                    <input required type="text" name="lga" placeholder="LGA" class="input-field">
+                                    @error('lga')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- State  -->
+                                <div class="my-4">
+                                    <label for="state" class="input-title">State</label><br>
+                                    <input required type="text" name="state" placeholder="State" class="input-field">
+                                    @error('state')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- Country  -->
+                                <div class="my-4">
+                                    <label for="country" class="input-title">Country</label><br>
+                                    <input required type="text" name="country" placeholder="Country" class="input-field">
+                                    @error('country')
+                                        {{$message}}
+                                    @enderror
+                                </div>
                             </div>
                             <!-- step 2 -->
                             <div id="stepTwo" class="hidden">
+                                <!-- Name  -->
+                                <div class="my-4">
+                                    <label for="kin_name" class="input-title">Name</label><br>
+                                    <input required type="text" name="kin_name" placeholder="Name" class="input-field">
+                                    @error('kin_name')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- Relationship  -->
+                                <div class="my-4">
+                                    <label for="kin_relation" class="input-title">Relationship</label><br>
+                                    <input required type="text" name="kin_relation" placeholder="Relationship" class="input-field">
+                                    @error('kin_relation')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- Phone  -->
+                                <div class="my-4">
+                                    <label for="kin_phone" class="input-title">Phone</label><br>
+                                    <input required type="text" name="kin_phone" placeholder="Phone" class="input-field">
+                                    @error('kin_phone')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- Address  -->
+                                <div class="my-4">
+                                    <label for="kin_address" class="input-title">Address</label><br>
+                                    <input required type="text" name="kin_address" placeholder="Address" class="input-field">
+                                    @error('kin_address')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- City  -->
+                                <div class="my-4">
+                                    <label for="kin_city" class="input-title">City</label><br>
+                                    <input required type="text" name="kin_city" placeholder="City" class="input-field">
+                                    @error('kin_city')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- LGA  -->
+                                <div class="my-4">
+                                    <label for="kin_lga" class="input-title">LGA</label><br>
+                                    <input required type="text" name="kin_lga" placeholder="LGA" class="input-field">
+                                    @error('kin_lga')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- State  -->
+                                <div class="my-4">
+                                    <label for="kin_state" class="input-title">State</label><br>
+                                    <input required type="text" name="kin_state" placeholder="State" class="input-field">
+                                    @error('kin_state')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- Country  -->
+                                <div class="my-4">
+                                    <label for="kin_country" class="input-title">Country</label><br>
+                                    <input required type="text" name="kin_country" placeholder="Country" class="input-field">
+                                    @error('kin_country')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <!-- step 3 -->
+                            <div id="stepThree" class="hidden">
                                 <!-- Photo  -->
                                 <div class="my-4">
                                     <label for="name" class="text-lg font-medium border-b-4 border-green-700">Applicant Photo</label><br>
@@ -178,8 +275,24 @@
                                 </div>
                                 
                             </div>
-                            <!-- Step 3  -->
-                            <div id="stepThree" class="hidden">
+                            <!-- Step 4 -->
+                            <div id="stepFour" class="hidden">
+                                <div class="border-b-2 my-2">
+                                    <label for="subject" class="input-title">Subject</label><br>
+                                    <div class="flex">
+                                        <input type="text" name="subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
+                                        <input type="text" name="subject_grade[]" placeholder="Grade" class="input-field mb-2">
+                                        @error('subject')
+                                            {{$message}}
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div id="subjectSection" class="my-4"></div>
+                                <div id="addField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div>
+                                <br><br>
+                            </div>
+                            <!-- Step 5 -->
+                            <div id="stepFive" class="hidden">
                                 <div class="border-b-2 my-2">
                                     <label for="subject" class="input-title">Subject</label><br>
                                     <div class="flex">
@@ -204,8 +317,10 @@
                             <!-- Indicator  -->
                             <div id="indicator" class="flex justify-around my-5">
                                 <div id="stepOneIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 1: Personal Data</div>
-                                <div id="stepTwoIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 2: Programme & Photo</div>
-                                <div id="stepThreeIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 3: 0' Level Result</div>
+                                <div id="stepTwoIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 2: Next of Kin</div>
+                                <div id="stepThreeIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 3: Programme & Photo</div>
+                                <div id="stepFourIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 4: 0' Level Result</div>
+                                <div id="stepFiveIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 5: A' Level Result</div>
                             </div>
                         </form>
                     </div>                    
@@ -243,16 +358,22 @@
                         let stepOneIndicator = document.querySelector('#stepOneIndicator')
                         let stepTwoIndicator = document.querySelector('#stepTwoIndicator')
                         let stepThreeIndicator = document.querySelector('#stepThreeIndicator')
+                        let stepFourIndicator = document.querySelector('#stepFourIndicator')
+                        let stepFiveIndicator = document.querySelector('#stepFiveIndicator')
                         
                         // Steps 
                         let stepOne = document.querySelector('#stepOne')
                         let stepTwo = document.querySelector('#stepTwo')
                         let stepThree = document.querySelector('#stepThree')
+                        let stepFour = document.querySelector('#stepFour')
+                        let stepFive = document.querySelector('#stepFive')
                         
                         // NavIndicator 
                         let indicatorNavOne = document.querySelector('#indicatorNavOne')
                         let indicatorNavTwo = document.querySelector('#indicatorNavTwo')
                         let indicatorNavThree = document.querySelector('#indicatorNavThree')
+                        let indicatorNavFour = document.querySelector('#indicatorNavFour')
+                        let indicatorNavFive = document.querySelector('#indicatorNavFive')
                         
                         stepOneIndicator.addEventListener('click', ()=>{
                             
@@ -260,10 +381,14 @@
                                 stepOne.classList.remove('hidden');
                                 stepTwo.classList.add('hidden');
                                 stepThree.classList.add('hidden');
+                                stepFour.classList.add('hidden');
+                                stepFive.classList.add('hidden');
                             
                                 indicatorNavOne.classList.add('active-nav-indicator')
                                 indicatorNavTwo.classList.remove('active-nav-indicator')
                                 indicatorNavThree.classList.remove('active-nav-indicator')
+                                indicatorNavFour.classList.remove('active-nav-indicator')
+                                indicatorNavFive.classList.remove('active-nav-indicator')
                             
                             }
                             
@@ -275,28 +400,70 @@
                                 stepTwo.classList.remove('hidden');
                                 stepOne.classList.add('hidden');
                                 stepThree.classList.add('hidden');
+                                stepFour.classList.add('hidden');
+                                stepFive.classList.add('hidden');
                                 
-                                indicatorNavOne.classList.remove('active-nav-indicator')
                                 indicatorNavTwo.classList.add('active-nav-indicator')
+                                indicatorNavOne.classList.remove('active-nav-indicator')
                                 indicatorNavThree.classList.remove('active-nav-indicator')
+                                indicatorNavFour.classList.remove('active-nav-indicator')
+                                indicatorNavFive.classList.remove('active-nav-indicator')
                             }
 
                         })
 
                         stepThreeIndicator.addEventListener('click', ()=>{
-                            
                             if(stepThree.classList.contains('hidden')){
                                 stepThree.classList.remove('hidden');
                                 stepOne.classList.add('hidden');
                                 stepTwo.classList.add('hidden');
+                                stepFour.classList.add('hidden');
+                                stepFive.classList.add('hidden');
                                 
+                                indicatorNavThree.classList.add('active-nav-indicator')
                                 indicatorNavOne.classList.remove('active-nav-indicator')
                                 indicatorNavTwo.classList.remove('active-nav-indicator')
-                                indicatorNavThree.classList.add('active-nav-indicator')
+                                indicatorNavFour.classList.remove('active-nav-indicator')
+                                indicatorNavFive.classList.remove('active-nav-indicator')
                             
                             }
 
                         })
+
+                        stepFourIndicator.addEventListener('click', ()=>{
+                            if(stepFour.classList.contains('hidden')){
+                                stepFour.classList.remove('hidden');
+                                stepOne.classList.add('hidden');
+                                stepTwo.classList.add('hidden');
+                                stepThree.classList.add('hidden');
+                                stepFive.classList.add('hidden');
+                                
+                                indicatorNavFour.classList.add('active-nav-indicator')
+                                indicatorNavOne.classList.remove('active-nav-indicator')
+                                indicatorNavTwo.classList.remove('active-nav-indicator')
+                                indicatorNavThree.classList.remove('active-nav-indicator')
+                                indicatorNavFive.classList.remove('active-nav-indicator')
+                            
+                            }
+                        })
+
+                        stepFiveIndicator.addEventListener('click', ()=>{
+                            if(stepFive.classList.contains('hidden')){
+                                stepFive.classList.remove('hidden');
+                                stepOne.classList.add('hidden');
+                                stepTwo.classList.add('hidden');
+                                stepThree.classList.add('hidden');
+                                stepFour.classList.add('hidden');
+                                
+                                indicatorNavFive.classList.add('active-nav-indicator')
+                                indicatorNavOne.classList.remove('active-nav-indicator')
+                                indicatorNavTwo.classList.remove('active-nav-indicator')
+                                indicatorNavThree.classList.remove('active-nav-indicator')
+                                indicatorNavFour.classList.remove('active-nav-indicator')
+                            
+                            }
+                        })
+
                     </script>
                 @endif
             </div>

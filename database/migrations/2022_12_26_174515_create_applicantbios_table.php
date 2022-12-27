@@ -20,10 +20,22 @@ return new class extends Migration
             $table->string('dob');
             $table->string('marital_status');
             $table->string('phone');
-            $table->string('state');
             $table->string('address');
+            $table->string('city');
+            $table->string('lga');
+            $table->string('state');
+            $table->string('country');
+            $table->string('kin_name');
+            $table->string('kin_relation');
+            $table->string('kin_phone');
+            $table->string('kin_address');
+            $table->string('kin_city');
+            $table->string('kin_lga');
+            $table->string('kin_state');
+            $table->string('kin_country');
             $table->string('photo');
             $table->string('programme');
+            $table->string('year');
             $table->timestamps();
         });
     }
