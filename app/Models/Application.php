@@ -39,6 +39,8 @@ class Application extends Authenticatable
             $check_payment_session_status = $check_payment_session->status;
             if($check_payment_session_status == 2){
                 return 1;
+            }else if($check_payment_session_status == 4){
+                return 2;
             }else{
                 return '';
             }

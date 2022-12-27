@@ -72,7 +72,7 @@
                 @endif  
                 <!-- Upload Document  -->
                 @if(Auth::guard('application')->user()->checkApplicationProgress() == 1)
-                    <div class="bg-white lg:py-6 px-6 text-gray-600 mb-5 ml-4 mr-8 rounded col-span-2">
+                    <div class="bg-white lg:py-6 px-6 text-gray-600 mb-5 ml-4 mr-8 rounded">
                         <div class="mb-4">
                             <a id="indicatorNavOne" href="#" class="active-nav-indicator">
                                 <span>Step 1: Personal Data /</span>
@@ -296,15 +296,15 @@
                                 <div class="border-b-2 my-2">
                                     <label for="subject" class="input-title">Subject</label><br>
                                     <div class="flex">
-                                        <input type="text" name="subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
-                                        <input type="text" name="subject_grade[]" placeholder="Grade" class="input-field mb-2">
+                                        <input type="text" name="a_level_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
+                                        <input type="text" name="a_level_subject_grade[]" placeholder="Grade" class="input-field mb-2">
                                         @error('subject')
                                             {{$message}}
                                         @enderror
                                     </div>
                                 </div>
-                                <div id="subjectSection" class="my-4"></div>
-                                <div id="addField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div>
+                                <div id="aLevelSubjectSection" class="my-4"></div>
+                                <div id="aLeveladdField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div>
                                 <br><br>
                                 <div class="flex items-center my-4">
                                     <span><input type="checkbox" name="agree" id="agreeBtn"></span>
@@ -339,6 +339,22 @@
 
                         addField.addEventListener('click', ()=>{
                             subjectSection.insertAdjacentHTML('beforeend', divContent)
+                        })
+
+                        // Add Subject A Level 
+                        let aLeveladdField = document.querySelector('#aLeveladdField')
+                        let aLevelSubjectSection = document.querySelector('#aLevelSubjectSection')
+                        const a_level_divContent = 
+                                '<div class="border-b-2 my-2">'+
+                                    '<label for="subject" class="input-title">Subject</label><br>'+
+                                    '<div class="flex">'+
+                                        '<input type="text" name="a_level_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
+                                        '<input type="text" name="a_level_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
+                                    '</div>'+
+                                '</div>'
+
+                        aLeveladdField.addEventListener('click', ()=>{
+                            aLevelSubjectSection.insertAdjacentHTML('beforeend', divContent)
                         })
 
                         //Agree
@@ -465,6 +481,16 @@
                         })
 
                     </script>
+                @endif
+                <!-- Print Slip  -->
+                @if(Auth::guard('application')->user()->checkApplicationProgress() == 2)
+                    <div class="bg-white lg:py-6 px-6 text-gray-600 mb-5 ml-4 mr-8 rounded">
+                        <a href="{{ route('print-slip') }}">
+                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center py-3 cursor-pointer">
+                                Print your Acknowledge Slip {{ Auth::guard('application')->user()->name }}
+                            </div>
+                        </a>
+                    </div>
                 @endif
             </div>
         </div>

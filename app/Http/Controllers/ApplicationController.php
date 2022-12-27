@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\User;
 use App\Models\Application;
 use App\Models\Applicationreceipt;
 use App\Models\Programme;
@@ -110,8 +111,6 @@ class ApplicationController extends Controller
             $page_title = 'dashboard';
         }
 
-        
-
         return view('application.index', compact('page_title', 'programmes'));
     }
 
@@ -124,7 +123,7 @@ class ApplicationController extends Controller
         $applicant_name = Auth::guard('application')->user()->name;
         $receipt = $request->receipt;
 
-        $receiptimageName = '/images/payment/application/.'.$applicant_name.$request->receipt->extension();  
+        $receiptimageName = '/images/payment/application/'.$applicant_name.'.'.$request->receipt->extension();  
 
         try{
 
@@ -172,7 +171,7 @@ class ApplicationController extends Controller
         $applicant_name = Auth::guard('application')->user()->name;
         $photo = $request->photo;
 
-        $imageName = '/images/application/applicant/.'.$applicant_name.$request->photo->extension();  
+        $imageName = '/images/application/applicant/'.$applicant_name.'.'.$request->photo->extension();  
 
         try{
          
@@ -189,12 +188,12 @@ class ApplicationController extends Controller
                 'country' => $request->country,
                 'kin_name' => $request->kin_name,
                 'kin_relation' => $request->kin_relation,
-                'kin_phone' => $request->phone,
-                'kin_address' => $request->address,
-                'kin_city' => $request->city,
-                'kin_lga' => $request->lga,
-                'kin_state' => $request->state,
-                'kin_country' => $request->country,
+                'kin_phone' => $request->kin_phone,
+                'kin_address' => $request->kin_address,
+                'kin_city' => $request->kin_city,
+                'kin_lga' => $request->kin_lga,
+                'kin_state' => $request->kin_state,
+                'kin_country' => $request->kin_country,
                 'photo' => $imageName,
                 'programme' => $request->programme,
                 'year' => '2022/2023',
@@ -239,30 +238,30 @@ class ApplicationController extends Controller
 
                     // Add Result A Level 
                     $aLevel = Array(
-                        'subject_name' => $request->subject_name,
-                        'subject_grade' => $request->subject_grade,
+                        'a_level_subject_name' => $request->a_level_subject_name,
+                        'a_level_subject_grade' => $request->a_level_subject_grade,
                     );
 
                     $check_record = Applicantresultalevel::where('applicant_email', $applicant_email)->count();
                         
                         if($check_record == 0){
-                            if($result = $aLevel['subject_name']){
+                            if($result = $aLevel['a_level_subject_name']){
                                 for($x=0; $x<count($result); $x++){
                                     $result_add = new Applicantresultalevel;
                                     $result_add['applicant_email'] = $applicant_email;
-                                    $result_add['subject'] = $data['subject_name'][$x];
-                                    $result_add['grade'] = $data['subject_grade'][$x];
+                                    $result_add['subject'] = $aLevel['a_level_subject_name'][$x];
+                                    $result_add['grade'] = $aLevel['a_level_subject_grade'][$x];
                                     $result_add->save();
                                 }
                             }
                         }else{
                             $delete_previous_record = Applicantresultalevel::where('applicant_email', $applicant_email)->delete();
-                            if($result = $aLevel['subject_name']){
+                            if($result = $aLevel['a_level_subject_name']){
                                 for($x=0; $x<count($result); $x++){
                                     $result_add = new Applicantresultalevel;
                                     $result_add['applicant_email'] = $applicant_email;
-                                    $result_add['subject'] = $data['subject_name'][$x];
-                                    $result_add['grade'] = $data['subject_grade'][$x];
+                                    $result_add['subject'] = $aLevel['a_level_subject_name'][$x];
+                                    $result_add['grade'] = $aLevel['a_level_subject_grade'][$x];
                                     $result_add->save();
                                 }
                             }
@@ -291,6 +290,20 @@ class ApplicationController extends Controller
         }catch(Exception $e){
             return back->with('error', 'Please try again... '.$e);
         }
+    }
+
+    public function printSlip(){
+        $applicant_email = Auth::guard('application')->user()->email;
+
+        $applicant_bio = Applicantbio::where('applicant_email', $applicant_email)->first();
+        $applicant_result = Applicantresult::where('applicant_email', $applicant_email)->get();
+        $applicant_result_a_level = Applicantresultalevel::where('applicant_email', $applicant_email)->get();
+
+        $page_title = 'slip';
+        
+        $school = User::where('category', 1)->first();
+
+        return view('application.print', compact('page_title', 'school', 'applicant_bio', 'applicant_result', 'applicant_result_a_level'));
     }
 
     public function applicationLogout(Request $request)

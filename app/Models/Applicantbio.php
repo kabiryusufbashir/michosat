@@ -32,4 +32,15 @@ class Applicantbio extends Model
         'programme',
         'year',
     ];
+
+    
+    public function programme($id)
+    {
+        if($id != 0){
+            $programme = Programme::where('id', $id)->first(); 
+            return $programme->name;
+        }else{
+            return '';
+        }
+    }
 }
