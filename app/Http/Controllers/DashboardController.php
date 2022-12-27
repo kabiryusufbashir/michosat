@@ -50,6 +50,11 @@ class DashboardController extends Controller
         return view('process_of_admission');
     }
 
+    public function calendarFront(){
+        $calendars = Calendar::orderby('session', 'asc')->get();
+        return view('calendar', compact('calendars'));
+    }
+
     public function apply(){
         return view('apply');
     }
@@ -152,7 +157,7 @@ class DashboardController extends Controller
         }
     }
 
-    // Registration 
+    // Application 
     public function application(){
         return view('dashboard.application.index');
     }
@@ -167,7 +172,6 @@ class DashboardController extends Controller
         return view('dashboard.application.check_payment', compact('check_payments'));
     }
 
-    
     public function checkPaymentEdit($id){
         $check_payment = Applicationreceipt::findOrFail($id);
         return view('dashboard.application.check_payment_edit', compact('check_payment'));
