@@ -306,6 +306,34 @@ class ApplicationController extends Controller
         return view('application.print', compact('page_title', 'school', 'applicant_bio', 'applicant_result', 'applicant_result_a_level'));
     }
 
+    public function settingsPassword(Request $request){
+        $data = $request->validate([
+            'old_password' => ['required'],
+            'new_password' => 'required|confirmed',
+        ]);
+
+        $student_id = Auth::guard('application')->user()->id;
+        $student_password = Auth::guard('application')->user()->password;
+        
+        try{
+            if(Hash::check($request->old_password, $student_password)){
+                
+                $new_password = Hash::make($request->new_password);
+                
+                $password = Application::where('id', $student_id)->update([
+                    'password'=> $new_password
+                ]);
+                
+
+                return back()->with('success', 'Password Changed Successfully');
+            }else{
+                return back()->with('error', 'Old Password Doesn\'t Match!');
+            }
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
+    }
+
     public function applicationLogout(Request $request)
     {   
         Auth::guard('application')->logout();

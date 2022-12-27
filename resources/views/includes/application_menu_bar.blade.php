@@ -48,14 +48,14 @@
         </div>
     </a>
     <!-- Settings  -->
-    <a href="{{ route('student-settings') }}">
+    <a id="systemPasswordLink">
         <div class="{{ ($page_title == 'settings') ? 'active-nav-link-div' : 'nav-link-div' }}">
             <span>
                 @include('icons.settings')
             </span>
             &nbsp;&nbsp;
             <span class="text-sm">
-                Settings
+                Change Password
             </span>
         </div>
     </a>

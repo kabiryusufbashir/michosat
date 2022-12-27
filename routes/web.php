@@ -45,9 +45,7 @@ Route::group(['prefix' => 'application'], function () {
     Route::get('/print', [ApplicationController::class, 'printSlip'])->name('print-slip')->middleware('auth:application');
 
     // SETTINGS
-    Route::get('/settings', [ApplicationController::class, 'settings'])->name('student-settings')->middleware('auth:application');
-    Route::post('/settings-photo', [ApplicationController::class, 'settingsPhoto'])->name('student-settings-photo')->middleware('auth:application');
-    Route::post('/settings-password', [ApplicationController::class, 'settingsPassword'])->name('student-settings-password')->middleware('auth:application');
+    Route::post('/settings-password', [ApplicationController::class, 'settingsPassword'])->name('applicant-settings-password')->middleware('auth:application');
 });
 
 // Login 

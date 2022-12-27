@@ -51,6 +51,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-center text-xl text-gray-600 mt-2 ml-4 mr-7 rounded py-3">@include('includes.messages')</div>
                 <!-- Upload Receipt -->
                 @if(Auth::guard('application')->user()->checkPayment() == 0)
                     <div class="bg-white lg:py-24 px-6 text-gray-600 ml-4 mr-8  mb-5 rounded col-span-2">
@@ -494,5 +495,7 @@
                 @endif
             </div>
         </div>
+        <!-- System Password  -->
+        @include('application.system_password')
     </div>
 @endsection
