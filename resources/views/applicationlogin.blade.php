@@ -14,7 +14,7 @@
                     <h1 class="text-3xl font-semibold">Login to Complete your <br>Application NOW!!!</h1>
                 </div>
                 <div>
-                    <img class="w-40 mx-auto mt-8" src="{{ asset('images/apply.png') }}" alt="Apply">
+                    <img class="lg:w-40 w-24 mx-auto mt-8" src="{{ asset('images/apply.png') }}" alt="Apply">
                 </div>
             </div>
             <div class="shadow-lg p-3">

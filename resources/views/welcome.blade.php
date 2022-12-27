@@ -8,11 +8,11 @@
     <!-- Banner -->
     <div>
         @include('layouts.banner')
-        <div class="absolute lg:top-54 top-64">
+        <div class="absolute lg:top-54 top-24 hidden lg:block">
             <div class="bg-white font-extrabold p-8 ml-auto" id="slogan">        
                 <p class="text-gray-700 font-semibold p-3">2022/2023 admission is ongoing. 
                     <a href="{{ route('apply') }}">
-                        <span class="bg-green-700 rounded p-6 text-white my-8 text-center">
+                        <span class="bg-green-700 rounded lg:p-6 p-2 text-white lg:my-8 my-2 text-center">
                             Apply Now
                         </span>
                     </a>
@@ -23,9 +23,9 @@
     <!-- Body Contents  -->
     <div class="pt-8 pb-5 text-justify">
         <!-- About Us  -->
-        <div id="about-us" class="lg:px-24 px-8 py-8 mt-8 lg:grid grid-cols-2 gap-10">
+        <div id="about-us" class="lg:px-24 px-8 py-8 lg:mt-8 lg:grid grid-cols-2 gap-10">
             <div>
-                <div class="text-gray-700 my-8">
+                <div class="text-gray-700 lg:my-8">
                     <h1 class="text-3xl font-semibold">Welcome to the MICOSHAT, your gateway to the best health professional courses</h1>
                 </div>
                 <div class="text-gray-700 my-8">
@@ -34,7 +34,7 @@
                     </p>
                 </div>
                 <a href="{{ route('apply') }}">
-                    <div class="bg-green-700 rounded p-3 w-1/4 text-white my-8 text-center">
+                    <div class="bg-green-700 rounded p-3 lg:w-1/4 w-full text-white my-8 text-center">
                         Apply Now
                     </div>
                 </a>
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="{{ route('calendar-front') }}">
                     <div class="flex m-10 items-center">
                         <div>
                             <img class="w-24" src="{{ asset('images/year.png') }}" alt="Year">

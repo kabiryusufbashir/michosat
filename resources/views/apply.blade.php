@@ -8,16 +8,16 @@
     <!-- Body Contents  -->
     <div class="pt-8 pb-5 text-left">
         <!-- Apply Form  -->
-        <div class="lg:px-24 px-8 py-8 my-8 lg:grid grid-cols-2 gap-10 items-center">
+        <div class="lg:px-24 px-8 py-8 lg:my-8 lg:grid grid-cols-2 gap-10 items-center">
             <div>
                 <div class="text-gray-700 my-8">
                     <h1 class="text-3xl font-semibold"> Start your application 2022/2023 Application NOW!!!</h1>
                 </div>
                 <div>
-                    <img class="w-40 mx-auto mt-8" src="{{ asset('images/apply.png') }}" alt="Apply">
+                    <img class="lg:w-40 w-24 mx-auto mt-8" src="{{ asset('images/apply.png') }}" alt="Apply">
                 </div>
             </div>
-            <div class="shadow-lg p-3">
+            <div class="shadow-lg lg:p-3">
                 <!-- Application  -->
                 <div class="login-div">
                     <h1 class="text-xl text-center font-medium">Create Account</h1>
