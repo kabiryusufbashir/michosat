@@ -128,23 +128,47 @@
                 </li>
                 <hr>
                 <li class="py-3 px-8">
-                    <a href="#" class="flex justify-between items-center">
-                        <span>Board of Trustees</span>
+                    <a href="{{ route('courses') }}" class="flex justify-between items-center">
+                        <span>Availabe Courses</span>
                         &nbsp;&nbsp;
                         <span><i class="fa-solid fa-users text-2xl"></i></span>
                     </a>
                 </li>
                 <hr>
                 <li class="py-3 px-8">
-                    <a href="/future-projects" class="flex justify-between border-b-1 items-center">
-                        <span>Future Project</span>
+                    <a href="{{ route('calendar-front') }}" class="flex justify-between border-b-1 items-center">
+                        <span>Academic Calendar</span>
                         &nbsp;&nbsp;
                         <span><i class="fa-solid fa-briefcase text-2xl"></i></span>
                     </a>
                 </li>
                 <hr>
                 <li class="py-3 px-8">
-                    <a href="/contact" class="flex justify-between items-center">
+                    <a href="{{ route('entry') }}" class="flex justify-between border-b-1 items-center">
+                        <span>Entry Requirement</span>
+                        &nbsp;&nbsp;
+                        <span><i class="fa-solid fa-briefcase text-2xl"></i></span>
+                    </a>
+                </li>
+                <hr>
+                <li class="py-3 px-8">
+                    <a href="{{ route('process-of-admission') }}" class="flex justify-between border-b-1 items-center">
+                        <span>Process of Admission</span>
+                        &nbsp;&nbsp;
+                        <span><i class="fa-solid fa-briefcase text-2xl"></i></span>
+                    </a>
+                </li>
+                <hr>
+                <li class="py-3 px-8">
+                    <a href="{{ route('apply') }}" class="flex justify-between border-b-1 items-center">
+                        <span>Apply Now</span>
+                        &nbsp;&nbsp;
+                        <span><i class="fa-solid fa-briefcase text-2xl"></i></span>
+                    </a>
+                </li>
+                <hr>
+                <li class="py-3 px-8">
+                    <a href="#" class="flex justify-between items-center">
                         <span>Contact Us</span>
                         &nbsp;&nbsp;
                         <span><i class="fa-solid fa-headset text-2xl"></i></span>
