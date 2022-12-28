@@ -114,6 +114,8 @@ class Application extends Authenticatable
                 return 'Paid';
             }else if($payment_status == 3){
                 return 'Rejected';
+            }else if($payment_status >= 4){
+                return 'Paid';
             }
         }else{
             return 'Not Paid';

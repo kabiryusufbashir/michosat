@@ -17,9 +17,6 @@
                                 <th scope="col" class="px-6 py-2  text-gray-500">
                                     PAYMENT
                                 </th>
-                                <th scope="col" class="px-6 py-2  text-gray-500">
-                                    ADMISSION STATUS
-                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,9 +31,7 @@
                                     <td class="px-6 py-4 text-sm text-gray-500">
                                         {{ $registration->applicantPaymentStatus($registration->email) }}
                                     </td>
-                                    <td class="px-6 py-4 text-sm text-gray-500">
-                                        {{ $registration->applicantAdmissionStatus($registration->email) }}
-                                    </td>
+                                    
                                 </tr>
                             @endforeach
                         </tbody>
