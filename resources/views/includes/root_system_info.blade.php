@@ -5,6 +5,6 @@
     </div>
     <!-- School Title  -->
     <div>
-        <h1 class="text-center font-semibold px-10">{{ \App\Models\User::where(['category' => 1])->pluck('name')->first() }}</h1>
+        <h1 class="text-center font-semibold px-10 hidden lg:block">{{ \App\Models\User::where(['category' => 1])->pluck('name')->first() }}</h1>
     </div>
 </div>

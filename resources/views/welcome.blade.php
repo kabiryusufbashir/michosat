@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('page-title')
-    Home - MICOSHAT
+    Home - MICOHSAT
 @endsection
 
 @section('body-content')
@@ -26,7 +26,7 @@
         <div id="about-us" class="lg:px-24 px-8 py-8 lg:mt-8 lg:grid grid-cols-2 gap-10">
             <div>
                 <div class="text-gray-700 lg:my-8">
-                    <h1 class="text-3xl font-semibold">Welcome to the MICOSHAT, your gateway to the best health professional courses</h1>
+                    <h1 class="text-3xl font-semibold">Welcome to the MICOHSAT, your gateway to the best health professional courses</h1>
                 </div>
                 <div class="text-gray-700 my-8">
                     <p>
@@ -84,7 +84,7 @@
             <div class="mx-auto pb-8">
                 <p class="text-center lg:w-1/2 mx-auto">
                     Schools of Health play a vital role in ensuring sustainable societies and driving economic as well as social development of a nation. 
-                    This is achieved through innovative teaching, research and knowledge transfer. Our aim at MICOSHAT is to be a leading institution in the production of well trained and qualitative health care providers across the community by provide a conducive learning environment, modern teaching aids and equipments, being driven by competent academic staff with proven track records in their area of expertise.
+                    This is achieved through innovative teaching, research and knowledge transfer. Our aim at MICOHSAT is to be a leading institution in the production of well trained and qualitative health care providers across the community by provide a conducive learning environment, modern teaching aids and equipments, being driven by competent academic staff with proven track records in their area of expertise.
                 </p>
             </div>
         </div>

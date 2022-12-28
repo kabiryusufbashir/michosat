@@ -23,7 +23,7 @@
                         2. Pre HND in Community Health (PHNDCH) 1 year <br>
                         3. National Diploma in Community Health (NDCH) 2 years <br>
                         4. Diploma in Community Health Extension Worker (CHEW) 3 years <br>
-                        5. CHEW retraining 2 years
+                        5. CHEW retraining 2 years <br>
                         6. Junior Community Health Extension Worker (JCHEW) 2 years
                     </p>
                 </div>

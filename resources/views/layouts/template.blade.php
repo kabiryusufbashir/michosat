@@ -30,11 +30,11 @@
                 <a href="/">
                     <div class="flex items-center">
                         <div>
-                            <img class="w-16 lg:w-24 lg:ml-0" src="{{ asset('images/micohsat.png') }}" alt="MICOSHAT Logo">
+                            <img class="w-16 lg:w-24 lg:ml-0" src="{{ asset('images/micohsat.png') }}" alt="MICOHSAT Logo">
                         </div>
                         <span class="ml-5 font-extrabold text-gray-700">
-                            <!-- MIKIYA INTERNATIONAL <br> COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY (MICOSHAT) <br> BARI -->
-                            MICOSHAT <br> BARI
+                            <!-- MIKIYA INTERNATIONAL <br> COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY (MICOHSAT) <br> BARI -->
+                            MICOHSAT <br> BARI
                         </span>
                     </div>
                 </a>
@@ -44,7 +44,7 @@
                     <li class="py-1 hover:text-green-600 text-gray-700 hover:border-b-2 hover:border-green-600"><a href="/">Home</a></li>
                     <li class="py-1 hover:text-green-600 text-gray-700 dropdown relative hover:border-b-2 hover:border-green-600">
                         <a class="flex" href="#" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                            About MICOSHAT
+                            About MICOHSAT
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down" class="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                                 <path fill="currentColor" d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"></path>
                             </svg>
@@ -290,7 +290,7 @@
             <div class="py-7 text-center text-xs bg-green-700 text-white">
                 <footer>
                     Designed & Developed by <a class="hover:text-green-600 " href="#">Bari IT Consult</a><br>
-                    Copyright © @php echo date('Y') @endphp MICOSHAT. All Rights Reserved 
+                    Copyright © @php echo date('Y') @endphp MICOHSAT. All Rights Reserved 
                 </footer>
             </div>
         </div>

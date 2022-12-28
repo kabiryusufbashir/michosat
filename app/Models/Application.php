@@ -60,7 +60,7 @@ class Application extends Authenticatable
         if(!empty($payment)){
             $payment_status = $payment->status;
     
-            if($payment_status == ''){
+            if($payment_status == 0 || $payment_status == ''){
                 return 'Not Paid';
             }else if($payment_status == 1){
                 return 'Processing';

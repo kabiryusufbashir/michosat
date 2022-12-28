@@ -7,20 +7,31 @@
 @section('contents')
     <div class="grid grid-cols-6">
         <!-- Navigation  -->
-        <div class="bg-white col-span-1">
+        <div class="bg-white lg:col-span-1 col-span-1">
             @include('includes.root_system_info')
             <!-- Menu Bar  -->
             @include('includes.application_menu_bar')
         </div>
         <!-- Statistics Content -->
-        <div class="col-span-5 mt-2">
+        <div class="lg:col-span-5 col-span-5 mt-2">
             <div class="ml-4 mr-8 mb-4">    
+                <div class="text-center text-xl text-gray-600 mt-2 ml-4 mr-7 rounded py-3">@include('includes.messages')</div>
                 <!-- Stat  -->
-                <div class="grid grid-cols-3 gap-3 ml-4 mr-8 mb-4">
+                <div class="bg-white py-7 px-3 text-gray-600 my-5 rounded">
+                    <div>
+                        <div class="font-medium mb-1 lg:text-lg">Welcome, </div>
+                        <div class="font-semibold mb-1 lg:text-2xl lg:flex items-center">
+                            <div class="font-medium mb-1 text-sm">
+                                {{ Auth::guard('application')->user()->name }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:grid grid-cols-3 gap-3 lg:ml-4 lg:mr-8 mb-4 hidden">
                     <div class="bg-white py-7 px-3 text-gray-600 my-5 rounded">
                         <div>
-                            <div class="font-medium mb-1 text-lg">Application:</div>
-                            <div class="font-semibold mb-1 text-2xl flex items-center">
+                            <div class="font-medium mb-1 lg:text-lg">Application:</div>
+                            <div class="font-semibold mb-1 lg:text-2xl lg:flex items-center">
                             <div class="font-medium mb-1 text-sm">Payment Status: &nbsp;</div>
                                 <div class="font-medium mb-1 text-sm">
                                     {{ Auth::guard('application')->user()->checkPaymentStatus() }}
@@ -30,8 +41,8 @@
                     </div>
                     <div class="bg-white py-7 px-3 text-gray-600 my-5 rounded">
                         <div>
-                            <div class="font-medium mb-1 text-lg">Application:</div>
-                            <div class="font-semibold mb-1 text-2xl flex items-center">
+                            <div class="font-medium mb-1 lg:text-lg">Application:</div>
+                            <div class="font-semibold mb-1 lg:text-2xl lg:flex items-center">
                                 <div class="font-medium mb-1 text-sm">Application Status: &nbsp;</div>
                                 <div class="font-medium mb-1 text-sm">
                                     {{ Auth::guard('application')->user()->checkRegistrationStatus() }} 
@@ -41,8 +52,8 @@
                     </div>
                     <div class="bg-white py-7 px-3 text-gray-600 my-5 rounded">
                         <div>
-                            <div class="font-medium mb-1 text-lg">Admission:</div>
-                            <div class="font-semibold mb-1 text-2xl flex items-center">
+                            <div class="font-medium mb-1 lg:text-lg">Admission:</div>
+                            <div class="font-semibold mb-1 lg:text-2xl lg:flex items-center">
                                 <div class="font-medium mb-1 text-sm">Admission Status: &nbsp;</div>
                                 <div class="font-medium mb-1 text-sm">
                                     {{ Auth::guard('application')->user()->applicantAdmissionStatus() }} 
@@ -51,15 +62,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center text-xl text-gray-600 mt-2 ml-4 mr-7 rounded py-3">@include('includes.messages')</div>
                 <!-- Upload Receipt -->
                 @if(Auth::guard('application')->user()->checkPayment() == 0)
-                    <div class="bg-white lg:py-24 px-6 text-gray-600 ml-4 mr-8  mb-5 rounded col-span-2">
-                        <form action="{{ route('application-payment-receipt') }}" method="POST" class="w-2/3" enctype="multipart/form-data">
+                    <div class="bg-white lg:py-24 py-8 px-6 text-gray-600 lg:ml-4 lg:mr-8 mb-5 rounded col-span-2">
+                        <form action="{{ route('application-payment-receipt') }}" method="POST" class="lg:w-2/3 w-full" enctype="multipart/form-data">
                             <h1 class="py-2 font-semibold">Upload your Application payment receipt {{ Auth::guard('application')->user()->name }}</h1>
                             @csrf
-                                <div class="flex my-5">
-                                    <label for="semester" class="text-lg font-medium border-b-4 border-green-700 ml-4">Application Payment Receipt</label><br>
+                                <div class="lg:flex my-5">
+                                    <label for="semester" class="text-lg font-medium border-b-4 border-green-700 lg:ml-4">Application Payment Receipt</label><br><br>
                                     <input class="input-field" type="file" name="receipt">
                                     @error('receipt')
                                         {{$message}}
@@ -73,8 +83,8 @@
                 @endif  
                 <!-- Upload Document  -->
                 @if(Auth::guard('application')->user()->checkApplicationProgress() == 1)
-                    <div class="bg-white lg:py-6 px-6 text-gray-600 mb-5 ml-4 mr-8 rounded">
-                        <div class="mb-4">
+                    <div class="bg-white lg:py-6 py-3 px-6 text-gray-600 mb-5 lg:ml-4 lg:mr-8 rounded">
+                        <div class="mb-4 lg:flex grid lg:text-sm text-xs mt-5">
                             <a id="indicatorNavOne" href="#" class="active-nav-indicator">
                                 <span>Step 1: Personal Data /</span>
                             </a>
@@ -280,7 +290,7 @@
                             <div id="stepFour" class="hidden">
                                 <div class="border-b-2 my-2">
                                     <label for="subject" class="input-title">Subject</label><br>
-                                    <div class="flex">
+                                    <div class="lg:flex grid">
                                         <input type="text" name="subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
                                         <input type="text" name="subject_grade[]" placeholder="Grade" class="input-field mb-2">
                                         @error('subject')
@@ -296,7 +306,7 @@
                             <div id="stepFive" class="hidden">
                                 <div class="border-b-2 my-2">
                                     <label for="subject" class="input-title">Subject</label><br>
-                                    <div class="flex">
+                                    <div class="lg:flex">
                                         <input type="text" name="a_level_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
                                         <input type="text" name="a_level_subject_grade[]" placeholder="Grade" class="input-field mb-2">
                                         @error('subject')
@@ -316,7 +326,7 @@
                                 </div>
                             </div>
                             <!-- Indicator  -->
-                            <div id="indicator" class="flex justify-around my-5">
+                            <div id="indicator" class="lg:flex grid justify-around my-5">
                                 <div id="stepOneIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 1: Personal Data</div>
                                 <div id="stepTwoIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 2: Next of Kin</div>
                                 <div id="stepThreeIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 3: Programme & Photo</div>
@@ -332,7 +342,7 @@
                         const divContent = 
                                 '<div class="border-b-2 my-2">'+
                                     '<label for="subject" class="input-title">Subject</label><br>'+
-                                    '<div class="flex">'+
+                                    '<div class="lg:flex grid">'+
                                         '<input type="text" name="subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
                                         '<input type="text" name="subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
                                     '</div>'+
@@ -348,7 +358,7 @@
                         const a_level_divContent = 
                                 '<div class="border-b-2 my-2">'+
                                     '<label for="subject" class="input-title">Subject</label><br>'+
-                                    '<div class="flex">'+
+                                    '<div class="lg:flex grid">'+
                                         '<input type="text" name="a_level_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
                                         '<input type="text" name="a_level_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
                                     '</div>'+
@@ -485,26 +495,26 @@
                 @endif
                 <!-- Print Slip  -->
                 @if(Auth::guard('application')->user()->checkApplicationProgress() == 2)
-                    <div class="bg-white lg:py-6 px-6 text-gray-600 mb-5 ml-4 mr-8 rounded">
+                    <div class="bg-white py-6 px-6 text-gray-600 mb-5 lg:ml-4 lg:mr-8 rounded">
                         <a href="{{ route('print-slip') }}">
-                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center py-3 cursor-pointer">
-                                Print your Acknowledge Slip {{ Auth::guard('application')->user()->name }}
+                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center p-3 cursor-pointer text-xs lg:text-sm">
+                                Print Acknowledge Slip
                             </div>
                         </a>
                     </div>
                 @endif
                 <!-- Admission Letter  -->
                 @if(Auth::guard('application')->user()->checkApplicationProgress() == 3)
-                    <div class="bg-white lg:py-6 px-6 text-gray-600 mb-5 ml-4 mr-8 rounded">
+                    <div class="bg-white py-6 px-6 text-gray-600 mb-5 lg:ml-4 lg:mr-8 rounded">
                         <a href="{{ route('print-slip') }}">
-                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center py-3 cursor-pointer">
+                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center p-3 cursor-pointer text-xs lg:text-sm">
                                 Print Acknowledge Slip
                             </div>
                         </a>
                     </div>
-                    <div class="bg-white lg:py-6 px-6 text-gray-600 mb-5 ml-4 mr-8 rounded">
+                    <div class="bg-white py-6 px-6 text-gray-600 mb-5 lg:ml-4 lg:mr-8 rounded">
                         <a href="{{ route('print-admission') }}">
-                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center py-3 cursor-pointer">
+                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center p-3 cursor-pointer text-xs lg:text-sm">
                                 Print Admission Letter
                             </div>
                         </a>

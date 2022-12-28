@@ -31,7 +31,7 @@
 }
 
 .active-nav-indicator{
-    @apply bg-green-600 text-white rounded items-center px-4 py-2 mx-7 mb-4 cursor-pointer;
+    @apply bg-green-600 text-white rounded items-center lg:px-4 py-2 lg:mx-7 lg:mb-4 cursor-pointer;
 }
 
 .settings-menu-div{
