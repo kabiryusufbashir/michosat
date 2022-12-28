@@ -304,7 +304,19 @@
                             </div>
                             <!-- Step 5 -->
                             <div id="stepFive" class="hidden">
-                                <div class="border-b-2 my-2">
+                                <!-- A Level Photo  -->
+                                <div class="my-4">
+                                    <label for="name" class="text-lg font-medium border-b-4 border-green-700">Upload A' Level Result</label><br>
+                                    <div class="grid grid-cols-2 gap-2 items-center mt-3">
+                                        <div>
+                                            <input required type="file" name="applicant_a_level_result">
+                                        </div>
+                                    </div>
+                                    @error('applicant_a_level_result')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- <div class="border-b-2 my-2">
                                     <label for="subject" class="input-title">Subject</label><br>
                                     <div class="lg:flex">
                                         <input type="text" name="a_level_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
@@ -313,9 +325,9 @@
                                             {{$message}}
                                         @enderror
                                     </div>
-                                </div>
-                                <div id="aLevelSubjectSection" class="my-4"></div>
-                                <div id="aLeveladdField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div>
+                                </div> -->
+                                <!-- <div id="aLevelSubjectSection" class="my-4"></div> -->
+                                <!-- <div id="aLeveladdField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div> -->
                                 <br><br>
                                 <div class="flex items-center my-4">
                                     <span><input type="checkbox" name="agree" id="agreeBtn"></span>
@@ -353,20 +365,20 @@
                         })
 
                         // Add Subject A Level 
-                        let aLeveladdField = document.querySelector('#aLeveladdField')
-                        let aLevelSubjectSection = document.querySelector('#aLevelSubjectSection')
-                        const a_level_divContent = 
-                                '<div class="border-b-2 my-2">'+
-                                    '<label for="subject" class="input-title">Subject</label><br>'+
-                                    '<div class="lg:flex grid">'+
-                                        '<input type="text" name="a_level_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
-                                        '<input type="text" name="a_level_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
-                                    '</div>'+
-                                '</div>'
+                        // let aLeveladdField = document.querySelector('#aLeveladdField')
+                        // let aLevelSubjectSection = document.querySelector('#aLevelSubjectSection')
+                        // const a_level_divContent = 
+                        //         '<div class="border-b-2 my-2">'+
+                        //             '<label for="subject" class="input-title">Subject</label><br>'+
+                        //             '<div class="lg:flex grid">'+
+                        //                 '<input type="text" name="a_level_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
+                        //                 '<input type="text" name="a_level_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
+                        //             '</div>'+
+                        //         '</div>'
 
-                        aLeveladdField.addEventListener('click', ()=>{
-                            aLevelSubjectSection.insertAdjacentHTML('beforeend', divContent)
-                        })
+                        // aLeveladdField.addEventListener('click', ()=>{
+                        //     aLevelSubjectSection.insertAdjacentHTML('beforeend', divContent)
+                        // })
 
                         //Agree
                         let agreeBtn = document.querySelector('#agreeBtn')

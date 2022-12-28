@@ -245,7 +245,7 @@
                 </div>
                 <!-- A ' Level  -->
                 <div>
-                    @if(count($applicant_result_a_level) > 0)
+                    @if($applicant_bio->applicant_a_level_result)
                         <div class="my-3">
                             <div class="flex flex-col">
                                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -260,25 +260,10 @@
                                                     </tr>
                                                     <tr class="text-left whitespace-nowrap">
                                                         <th class="px-6 py-2  text-gray-500 border">
-                                                            SUBJECT
-                                                        </th>
-                                                        <th class="px-6 py-2  text-gray-500 border">
-                                                            GRADE
+                                                            <img class="w-72 mx-auto" src="{{ $applicant_bio->applicant_a_level_result }}" alt="">
                                                         </th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    @foreach($applicant_result_a_level as $course)
-                                                        <tr class="divide-y divide-gray-300 border-b-2">
-                                                            <td class="px-6 py-4 text-sm text-gray-500 border">
-                                                                {{ $course->subject }}
-                                                            </td>
-                                                            <td class="px-6 py-4 text-sm text-gray-500 border">
-                                                                {{ $course->grade }}
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach     
-                                                </tbody>
                                             </table>
                                         </div>
                                     </div>

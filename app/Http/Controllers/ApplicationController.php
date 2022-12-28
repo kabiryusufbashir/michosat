@@ -172,8 +172,10 @@ class ApplicationController extends Controller
         $applicant_email = Auth::guard('application')->user()->email;
         $applicant_name = Auth::guard('application')->user()->name;
         $photo = $request->photo;
+        $applicant_a_level_result = $request->applicant_a_level_result;
 
         $imageName = '/images/application/applicant/'.$applicant_name.'.'.$request->photo->extension();  
+        $applicant_a_level_resultimageName = '/images/application/applicant_a_level_result/'.$applicant_name.'.'.$request->applicant_a_level_result->extension();  
 
         try{
          
@@ -197,11 +199,13 @@ class ApplicationController extends Controller
                 'kin_state' => $request->kin_state,
                 'kin_country' => $request->kin_country,
                 'photo' => $imageName,
+                'applicant_a_level_result' => $applicant_a_level_resultimageName,
                 'programme' => $request->programme,
                 'year' => '2022/2023',
             ]);
 
             $request->photo->move('images/application/applicant', $imageName);
+            $request->applicant_a_level_result->move('images/application/applicant_a_level_result', $applicant_a_level_resultimageName);
             
             // Add Result 
             $data = Array(

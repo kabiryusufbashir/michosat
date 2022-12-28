@@ -31,6 +31,7 @@ class Applicantbio extends Model
         'photo',
         'programme',
         'year',
+        'applicant_a_level_result'
     ];
 
     

@@ -8,7 +8,7 @@
     <!-- Banner -->
     <div>
         @include('layouts.banner')
-        <div class="absolute lg:top-54 top-24 hidden lg:block">
+        <div class="absolute lg:top-72 top-24 hidden lg:block">
             <div class="bg-white font-extrabold p-8 ml-auto" id="slogan">        
                 <p class="text-gray-700 font-semibold p-3">2022/2023 admission is ongoing. 
                     <a href="{{ route('apply') }}">
