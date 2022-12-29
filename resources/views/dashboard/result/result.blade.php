@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Results - AKCILS
+    Results
 @endsection
 
 @section('contents')

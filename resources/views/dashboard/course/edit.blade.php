@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Course - AKCILS
+    Course
 @endsection
 
 @section('contents')

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Payment - AKCILS
+    Payment
 @endsection
 
 @section('contents')

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Staff - AKCILS
+    Staff
 @endsection
 
 @section('contents')

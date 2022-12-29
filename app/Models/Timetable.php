@@ -33,8 +33,12 @@ class Timetable extends Model
     public function department($id){
         if($id){
             $department = Department::where('id', $id)->first();
-            $department_name = $department->name;
-            return $department_name;
+            if($department){
+                $department_name = $department->name;
+                return $department_name;
+            }else{
+                return '';
+            }
         }else{
             return '';
         }
@@ -43,10 +47,14 @@ class Timetable extends Model
     public function course($id){
         if($id){
             $course = Course::where('id', $id)->first();
-            $course_name = $course->name;
-            $course_code = $course->course_code;
-            $full_course = $course_code.'-'.$course_name;
-            return $full_course;
+            if($course){
+                $course_name = $course->name;
+                $course_code = $course->course_code;
+                $full_course = $course_code.'-'.$course_name;
+                return $full_course;
+            }else{
+                return '';
+            }
         }else{
             return '';
         }

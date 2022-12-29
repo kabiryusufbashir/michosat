@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Settings - AKCILS
+    Settings
 @endsection
 
 @section('contents')

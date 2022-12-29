@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Dashboard - AKCILS
+    Dashboard
 @endsection
 
 @section('contents')

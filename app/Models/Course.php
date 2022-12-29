@@ -24,7 +24,11 @@ class Course extends Model
     {
         if($id != ''){
             $department = Department::where('id', $id)->first(); 
-            return $department->name;
+            if($department){
+                return $department->name;
+            }else{
+                return '';
+            }
         }else{
             return '';
         }

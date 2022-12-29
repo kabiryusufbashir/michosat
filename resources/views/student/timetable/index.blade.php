@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Timetable - AKCILS
+    Timetable
 @endsection
 
 @section('contents')

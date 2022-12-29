@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Register Course - AKCILS
+    Register Course
 @endsection
 
 @section('contents')

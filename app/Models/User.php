@@ -48,10 +48,14 @@ class User extends Authenticatable
 
     public function StaffDepartment($staff_id)
     {
-        $staff = Staff::where('user_id', $staff_id)->first();
-        $staff_department = Department::where('id', $staff->department)->first();
-        if($staff->department != 0){
-            return $staff_department->name;
+        if($staff_id){
+            $staff = Staff::where('user_id', $staff_id)->first();
+            $staff_department = Department::where('id', $staff->department)->first();
+            if($staff_department){
+                return $staff_department->name;
+            }else{
+                return '';
+            }
         }else{
             return '';
         }
@@ -100,7 +104,7 @@ class User extends Authenticatable
             $student_dept = $student->department;
                 if($student_dept){
                     $student_department = Department::where('id', $student_dept)->first();
-                    if($student->department != 0){
+                    if($student_department){
                         return $student_department->name;
                     }else{
                         return '';

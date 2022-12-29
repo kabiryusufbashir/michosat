@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Application - MICOHSAT
+    Application
 @endsection
 
 @section('contents')

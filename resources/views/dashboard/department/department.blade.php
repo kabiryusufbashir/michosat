@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Departments - AKCILS
+    Departments
 @endsection
 
 @section('contents')

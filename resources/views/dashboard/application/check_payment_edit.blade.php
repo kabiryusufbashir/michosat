@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    APPLICATION Payment - MICOHSAT
+    APPLICATION Payment
 @endsection
 
 @section('contents')

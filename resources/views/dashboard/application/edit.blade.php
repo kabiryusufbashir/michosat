@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Registration - AKCILS
+    Registration - MICOHSAT
 @endsection
 
 @section('contents')

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Calendars - AKCILS
+    Calendars
 @endsection
 
 @section('contents')
