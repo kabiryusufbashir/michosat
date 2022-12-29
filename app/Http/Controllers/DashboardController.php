@@ -202,12 +202,28 @@ class DashboardController extends Controller
         $applicant_email = $applicant_bio->applicant_email;
         
         $applicant_result = Applicantresult::where('applicant_email', $applicant_email)->get();
+
+        $applicant_result_first = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'First')->get();
+        $applicant_result_first_type = Applicantresult::select('exam_type')->where('applicant_email', $applicant_email)->where('sitting', 'First')->pluck('exam_type')->first();
+        $applicant_result_first_no = Applicantresult::select('exam_no')->where('applicant_email', $applicant_email)->where('sitting', 'First')->pluck('exam_no')->first();
+        $applicant_result_first_year = Applicantresult::select('exam_year')->where('applicant_email', $applicant_email)->where('sitting', 'First')->pluck('exam_year')->first();
+        $applicant_result_first_center = Applicantresult::select('exam_center')->where('applicant_email', $applicant_email)->where('sitting', 'First')->pluck('exam_center')->first();
+        
+        $applicant_result_second = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'Second')->get();
+        $applicant_result_second_type = Applicantresult::select('exam_type')->where('applicant_email', $applicant_email)->where('sitting', 'Second')->pluck('exam_type')->first();
+        $applicant_result_second_no = Applicantresult::select('exam_no')->where('applicant_email', $applicant_email)->where('sitting', 'Second')->pluck('exam_no')->first();
+        $applicant_result_second_year = Applicantresult::select('exam_year')->where('applicant_email', $applicant_email)->where('sitting', 'Second')->pluck('exam_year')->first();
+        $applicant_result_second_center = Applicantresult::select('exam_center')->where('applicant_email', $applicant_email)->where('sitting', 'Second')->pluck('exam_center')->first();
+        
         $applicant_result_a_level = Applicantresultalevel::where('applicant_email', $applicant_email)->get();
 
         $applicant_name = Application::select('name')->where('email', $applicant_email)->first();
         $applicant_fullname = $applicant_name->name;
 
-        return view('dashboard.application.check_applications_edit', compact('applicant_bio', 'applicant_result', 'applicant_result_a_level', 'applicant_fullname'));
+        return view('dashboard.application.check_applications_edit', compact('applicant_bio', 'applicant_result',
+        'applicant_result_first', 'applicant_result_first_type', 'applicant_result_first_no', 'applicant_result_first_year', 'applicant_result_first_center',    
+        'applicant_result_second', 'applicant_result_second_type', 'applicant_result_second_no', 'applicant_result_second_year', 'applicant_result_second_center',
+        'applicant_result_a_level', 'applicant_fullname'));
     }
 
     

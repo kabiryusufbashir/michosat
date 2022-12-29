@@ -181,9 +181,9 @@
                     </div>
                     <!-- Result -->
                     <div class="grid grid-cols-2 gap-4 bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
-                        <!-- O Level  -->
-                        <div>
-                            @if(count($applicant_result) > 0)
+                        @if($applicant_result_first)
+                            <!-- O Level  -->
+                            <div>
                                 <div class="my-3">
                                     <div class="flex flex-col">
                                         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -196,6 +196,19 @@
                                                                     0' Level Result
                                                                 </th>
                                                             </tr>
+                                                            <tr class="text-left whitespace-nowrap border-b">
+                                                                <th class="px-6 py-2  text-gray-500">
+                                                                    First Sitting
+                                                                </th>
+                                                            </tr>
+                                                            <tr class="text-left whitespace-nowrap border-b">
+                                                                <th class="px-6 py-2  text-gray-500">
+                                                                    Exam Type: {{ $applicant_result_first_type }} <br>
+                                                                    Exam No: {{ $applicant_result_first_no }} <br>
+                                                                    Exam Year: {{ $applicant_result_first_year }} <br>
+                                                                    Exam Center: {{ $applicant_result_first_center }} <br>
+                                                                </th>
+                                                            </tr>
                                                             <tr class="text-left whitespace-nowrap">
                                                                 <th class="px-6 py-2  text-gray-500 border">
                                                                     SUBJECT
@@ -206,7 +219,7 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            @foreach($applicant_result as $course)
+                                                            @foreach($applicant_result_first as $course)
                                                                 <tr class="divide-y divide-gray-300 border-b-2">
                                                                     <td class="px-6 py-4 text-sm text-gray-500 border">
                                                                         {{ $course->subject }}
@@ -223,11 +236,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endif
-                        </div>
-                        <!-- A ' Level  -->
-                        <div>
-                            @if($applicant_bio->applicant_a_level_result)
+                            </div>
+                        @endif     
+                        @if($applicant_result_second)
+                            <!-- O Level  -->
+                            <div>
                                 <div class="my-3">
                                     <div class="flex flex-col">
                                         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -237,24 +250,80 @@
                                                         <thead class="border">
                                                             <tr class="text-left whitespace-nowrap border-b">
                                                                 <th class="px-6 py-2  text-gray-500">
-                                                                    A' Level Result
+                                                                    0' Level Result
+                                                                </th>
+                                                            </tr>
+                                                            <tr class="text-left whitespace-nowrap border-b">
+                                                                <th class="px-6 py-2  text-gray-500">
+                                                                    Second Sitting
+                                                                </th>
+                                                            </tr>
+                                                            <tr class="text-left whitespace-nowrap border-b">
+                                                                <th class="px-6 py-2  text-gray-500">
+                                                                    Exam Type: {{ $applicant_result_second_type }} <br>
+                                                                    Exam No: {{ $applicant_result_second_no }} <br>
+                                                                    Exam Year: {{ $applicant_result_second_year }} <br>
+                                                                    Exam Center: {{ $applicant_result_second_center }} <br>
                                                                 </th>
                                                             </tr>
                                                             <tr class="text-left whitespace-nowrap">
                                                                 <th class="px-6 py-2  text-gray-500 border">
-                                                                    <img class="w-72 mx-auto hover:w-full" src="{{ $applicant_bio->applicant_a_level_result }}" alt="">
+                                                                    SUBJECT
+                                                                </th>
+                                                                <th class="px-6 py-2  text-gray-500 border">
+                                                                    GRADE
                                                                 </th>
                                                             </tr>
                                                         </thead>
+                                                        <tbody>
+                                                            @foreach($applicant_result_second as $course)
+                                                                <tr class="divide-y divide-gray-300 border-b-2">
+                                                                    <td class="px-6 py-4 text-sm text-gray-500 border">
+                                                                        {{ $course->subject }}
+                                                                    </td>
+                                                                    <td class="px-6 py-4 text-sm text-gray-500 border">
+                                                                        {{ $course->grade }}
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach     
+                                                        </tbody>
                                                     </table>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            @endif
-                        </div>
-                        
+                            </div>
+                        @endif     
+                    </div>
+                    <!-- A ' Level  -->
+                    <div class="bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
+                        @if($applicant_bio->applicant_a_level_result)
+                            <div class="my-3">
+                                <div class="flex flex-col">
+                                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                                            <div class="overflow-hidden">
+                                                <table class="w-full"">
+                                                    <thead class="border">
+                                                        <tr class="text-left whitespace-nowrap border-b">
+                                                            <th class="px-6 py-2  text-gray-500">
+                                                                A' Level Result
+                                                            </th>
+                                                        </tr>
+                                                        <tr class="text-left whitespace-nowrap">
+                                                            <th class="px-6 py-2  text-gray-500 border">
+                                                                <img class="w-72 mx-auto" src="{{ $applicant_bio->applicant_a_level_result }}" alt="">
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                     <!-- check_application Edit  -->
                     <form action="{{ route('check-application-update', $applicant_bio->applicant_email) }}" method="POST" class="px-6 lg:px-8 py-8">

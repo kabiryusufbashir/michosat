@@ -288,19 +288,110 @@
                             </div>
                             <!-- Step 4 -->
                             <div id="stepFour" class="hidden">
-                                <div class="border-b-2 my-2">
-                                    <label for="subject" class="input-title">Subject</label><br>
-                                    <div class="lg:flex grid">
-                                        <input type="text" name="subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
-                                        <input type="text" name="subject_grade[]" placeholder="Grade" class="input-field mb-2">
-                                        @error('subject')
-                                            {{$message}}
-                                        @enderror
+                                <div class="grid grid-cols-2 gap-4">
+                                    <!-- Subject one  -->
+                                    <div>
+                                        <h1 class="py-2 font-semibold">First Sitting</h1>
+                                        <div class="border-b-2 my-2">
+                                            <label for="one_exam_type" class="input-title">Exam Type</label><br>
+                                            <div class="">
+                                                <select type="text" name="one_exam_type" class="input-field mb-2">
+                                                    <option value=""></option>
+                                                    <option value="NECO">NECO</option>
+                                                    <option value="WAEC">WAEC</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                                @error('one_exam_type')
+                                                    {{$message}}
+                                                @enderror
+                                            </div>
+                                            <label for="one_exam_no" class="input-title">Exam No</label><br>
+                                            <div class="">
+                                                <input type="text" name="one_exam_no" class="input-field mb-2">
+                                                @error('one_exam_no')
+                                                    {{$message}}
+                                                @enderror
+                                            </div>
+                                            <label for="one_exam_year" class="input-title">Exam Year</label><br>
+                                            <div class="">
+                                                <input type="text" name="one_exam_year" class="input-field mb-2">
+                                                @error('one_exam_year')
+                                                    {{$message}}
+                                                @enderror
+                                            </div>
+                                            <label for="one_exam_center" class="input-title">Exam Center</label><br>
+                                            <div class="">
+                                                <input type="text" name="one_exam_center" class="input-field mb-2">
+                                                @error('one_exam_center')
+                                                    {{$message}}
+                                                @enderror
+                                            </div>
+                                            <!-- Subject  -->
+                                            <label for="one_subject" class="input-title">Subject</label><br>
+                                            <div class="lg:flex grid">
+                                                <input type="text" name="one_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
+                                                <input type="text" name="one_subject_grade[]" placeholder="Grade" class="input-field mb-2">
+                                                @error('one_subject')
+                                                    {{$message}}
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div id="one_subjectSection" class="my-4"></div>
+                                        <div id="one_addField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div>
+                                        <br><br>
+                                    </div>
+                                    <!-- Subject Two  -->
+                                    <div>
+                                        <h1 class="py-2 font-semibold">Second Sitting</h1>
+                                        <div class="border-b-2 my-2">
+                                            <label for="two_exam_type" class="input-title">Exam Type</label><br>
+                                            <div class="">
+                                                <select type="text" name="two_exam_type" class="input-field mb-2">
+                                                    <option value=""></option>
+                                                    <option value="NECO">NECO</option>
+                                                    <option value="WAEC">WAEC</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                                @error('two_exam_type')
+                                                    {{$message}}
+                                                @enderror
+                                            </div>
+                                            <label for="two_exam_no" class="input-title">Exam No</label><br>
+                                            <div class="">
+                                                <input type="text" name="two_exam_no" class="input-field mb-2">
+                                                @error('two_exam_no')
+                                                    {{$message}}
+                                                @enderror
+                                            </div>
+                                            <label for="two_exam_year" class="input-title">Exam Year</label><br>
+                                            <div class="">
+                                                <input type="text" name="two_exam_year" class="input-field mb-2">
+                                                @error('two_exam_year')
+                                                    {{$message}}
+                                                @enderror
+                                            </div>
+                                            <label for="two_exam_center" class="input-title">Exam Center</label><br>
+                                            <div class="">
+                                                <input type="text" name="two_exam_center" class="input-field mb-2">
+                                                @error('two_exam_center')
+                                                    {{$message}}
+                                                @enderror
+                                            </div>
+                                            <!-- Subject  -->
+                                            <label for="two_subject" class="input-title">Subject</label><br>
+                                            <div class="lg:flex grid">
+                                                <input type="text" name="two_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
+                                                <input type="text" name="two_subject_grade[]" placeholder="Grade" class="input-field mb-2">
+                                                @error('two_subject')
+                                                    {{$message}}
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div id="two_subjectSection" class="my-4"></div>
+                                        <div id="two_addField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div>
+                                        <br><br>
                                     </div>
                                 </div>
-                                <div id="subjectSection" class="my-4"></div>
-                                <div id="addField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div>
-                                <br><br>
                             </div>
                             <!-- Step 5 -->
                             <div id="stepFive" class="hidden">
@@ -309,7 +400,7 @@
                                     <label for="name" class="text-lg font-medium border-b-4 border-green-700">Upload A' Level Result</label><br>
                                     <div class="grid grid-cols-2 gap-2 items-center mt-3">
                                         <div>
-                                            <input required type="file" name="applicant_a_level_result">
+                                            <input type="file" name="applicant_a_level_result">
                                         </div>
                                     </div>
                                     @error('applicant_a_level_result')
@@ -326,8 +417,8 @@
                                         @enderror
                                     </div>
                                 </div> -->
-                                <!-- <div id="aLevelSubjectSection" class="my-4"></div> -->
-                                <!-- <div id="aLeveladdField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div> -->
+                                <!-- <div id="two_SubjectSection" class="my-4"></div> -->
+                                <!-- <div id="two_addField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div> -->
                                 <br><br>
                                 <div class="flex items-center my-4">
                                     <span><input type="checkbox" name="agree" id="agreeBtn"></span>
@@ -348,37 +439,37 @@
                         </form>
                     </div>                    
                     <script>
-                        // Add Subject 
-                        let addField = document.querySelector('#addField')
-                        let subjectSection = document.querySelector('#subjectSection')
+                        // Add One Subject 
+                        let one_addField = document.querySelector('#one_addField')
+                        let one_subjectSection = document.querySelector('#one_subjectSection')
                         const divContent = 
                                 '<div class="border-b-2 my-2">'+
                                     '<label for="subject" class="input-title">Subject</label><br>'+
                                     '<div class="lg:flex grid">'+
-                                        '<input type="text" name="subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
-                                        '<input type="text" name="subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
+                                        '<input type="text" name="one_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
+                                        '<input type="text" name="one_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
                                     '</div>'+
                                 '</div>'
 
-                        addField.addEventListener('click', ()=>{
-                            subjectSection.insertAdjacentHTML('beforeend', divContent)
+                        one_addField.addEventListener('click', ()=>{
+                            one_subjectSection.insertAdjacentHTML('beforeend', divContent)
                         })
 
-                        // Add Subject A Level 
-                        // let aLeveladdField = document.querySelector('#aLeveladdField')
-                        // let aLevelSubjectSection = document.querySelector('#aLevelSubjectSection')
-                        // const a_level_divContent = 
-                        //         '<div class="border-b-2 my-2">'+
-                        //             '<label for="subject" class="input-title">Subject</label><br>'+
-                        //             '<div class="lg:flex grid">'+
-                        //                 '<input type="text" name="a_level_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
-                        //                 '<input type="text" name="a_level_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
-                        //             '</div>'+
-                        //         '</div>'
+                        // Add Second Subject 
+                        let two_addField = document.querySelector('#two_addField')
+                        let two_SubjectSection = document.querySelector('#two_SubjectSection')
+                        const two_divContent = 
+                                '<div class="border-b-2 my-2">'+
+                                    '<label for="subject" class="input-title">Subject</label><br>'+
+                                    '<div class="lg:flex grid">'+
+                                        '<input type="text" name="two_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
+                                        '<input type="text" name="two_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
+                                    '</div>'+
+                                '</div>'
 
-                        // aLeveladdField.addEventListener('click', ()=>{
-                        //     aLevelSubjectSection.insertAdjacentHTML('beforeend', divContent)
-                        // })
+                        two_addField.addEventListener('click', ()=>{
+                            two_subjectSection.insertAdjacentHTML('beforeend', two_divContent)
+                        })
 
                         //Agree
                         let agreeBtn = document.querySelector('#agreeBtn')

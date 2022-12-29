@@ -289,7 +289,7 @@
             </div>
             <div class="py-7 text-center text-xs bg-green-700 text-white">
                 <footer>
-                    Designed & Developed by <a class="hover:text-green-600 " href="#">Bari IT Consult</a><br>
+                    Designed & Developed by <a class="hover:text-green-600 " href="#">BITCAGS LTD</a><br>
                     Copyright © @php echo date('Y') @endphp MICOHSAT. All Rights Reserved 
                 </footer>
             </div>

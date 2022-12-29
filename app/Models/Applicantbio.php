@@ -39,7 +39,11 @@ class Applicantbio extends Model
     {
         if($id != 0){
             $programme = Programme::where('id', $id)->first(); 
-            return $programme->name;
+            if($programme){
+                return $programme->name;
+            }else{
+                return '';
+            }
         }else{
             return '';
         }
