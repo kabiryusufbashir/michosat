@@ -1,16 +1,22 @@
 @extends('layouts.template')
 
 @section('page-title')
-    Contact us - Binaail Masaajid Foundation
+    Contact us - MICOHSAT
 @endsection
 
 @section('body-content')
     <!-- Banner -->
     <div>
-        <img id="banner-img" class="object-cover w-full sm:h-screen lg:h-auto" src="{{ asset('images/bg-1.jpg') }}" alt="BINAAIL MASAAJID WAL MADAARIS FOUDNDATION">
-        <div class="absolute lg:top-48 top-52 right-0">
-            <div class="text-white font-extrabold py-8 px-24 bg-green-700" id="slogan">        
-                <p class="flex justify-center">CONTACT US</p>
+        @include('layouts.banner')
+        <div class="absolute lg:top-72 top-24 hidden lg:block">
+            <div class="bg-white font-extrabold p-8 ml-auto" id="slogan">        
+                <p class="text-gray-700 font-semibold p-3">2022/2023 admission is ongoing. 
+                    <a href="{{ route('apply') }}">
+                        <span class="bg-green-700 rounded lg:p-6 p-2 text-white lg:my-8 my-2 text-center">
+                            Apply Now
+                        </span>
+                    </a>
+                 </p>
             </div>
         </div>
     </div>
@@ -27,27 +33,23 @@
                     <div class="col-span-1">
                         <div class="mb-3 flex">
                             <span><i class="fa-solid fa-house"></i></span>
-                            <span class="ml-3">No. 7, Suite 9 Maiduguri Road, <br> Kano State Nigeria</span>
+                            <span class="ml-3">No. 1 Engr. Surajo Garba Complex <br> beside Bari Science Academy <br> along Falgore road Bari Town of Rogo LG <br> Kano State</span>
                         </div>
                         <div class="mb-3 flex">
                             <span><i class="fa-solid fa-phone"></i></span>
-                            <span class="ml-3"><a href="tel:+2348076073192">+ 234 805 492 6771</a></span>
-                        </div>
-                        <div class="mb-3 flex">
-                            <span><i class="fa-solid fa-phone"></i></span>
-                            <span class="ml-3"><a href="tel:+2349044580579">+ 234 706 326 6839</a></span>
+                            <span class="ml-3"><a href="tel:+2348076073192">+ 234 000 000 0000</a></span>
                         </div>
                         <div class="mb-3 flex">
                             <span><i class="fa-solid fa-envelope"></i></span>
-                            <span class="ml-3"><a href="mailto:info@binaailmasaajidfoundation.org">info@binaailmasaajidfoundation.org</a></span>
+                            <span class="ml-3"><a href="mailto:info@micohsat.com.ng">info@micohsat.com.ng</a></span>
                         </div>
                         <div class="mb-3 flex">
                             <span><i class="fa-solid fa-globe"></i></span>
-                            <span class="ml-3"><a href="https://binaailmasaajidfoundation.org">www.binaailmasaajidfoundation.org</a></span>
+                            <span class="ml-3"><a href="https://micohsat.com.ng">www.micohsat.com.ng</a></span>
                         </div>
                     </div>
                     <div class="col-span-3">
-                        <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.00577658201!2d8.56711001476027!3d11.974101591515751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ae818863bee5e1%3A0x1cc977729cc08919!2s7%2C%209%20Maiduguri%20Road%2C%20Unguwa%20Uku%20700102%2C%20Kano!5e0!3m2!1sen!2sng!4v1669826563871!5m2!1sen!2sng" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.025210656037!2d7.820605974969194!3d11.550049188649735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ad8b4136b2d8bb%3A0xc4dd384bbfb057fb!2sRogo%20Local%20Government!5e0!3m2!1sen!2sng!4v1672322764889!5m2!1sen!2sng" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
