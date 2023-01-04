@@ -89,6 +89,49 @@ class ApplicationController extends Controller
         }
     }
 
+    public function applicationPayment(){
+        /* API URL */
+        $url = 'https://api.zainpay.ng/zainbox/card/initialize/payment';
+            
+        /* Init cURL resource */
+        $ch = curl_init($url);
+            
+        /* Array Parameter Data */
+        $data = [
+            'amount'=>'100', 
+            'txnRef'=>'miki20230101', 
+            'mobileNumber'=>'08068593127', 
+            'zainboxCode'=>'_eOUShwgHjnOCVsiglbf0', 
+            'emailAddress'=>'kabiryusufbashir@gmail.com', 
+            'callBackUrl'=>'https://micohsat.com.ng/application/payment/callback', 
+        ];
+            
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            
+        /* set the content type json */
+        $headers = [];
+        $headers[] = 'Content-Type:application/json';
+        $token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3phaW5wYXkubmciLCJpYXQiOjE2NzA4NjQ4MTgsImlkIjpiM2Y4NTQyZC1lMWYyLTRhMzEtOTI4YS1jNGViNGQ1NGU3YWIsIm5hbWUiOm1pY29oc2F0QGdtYWlsLmNvbSwicm9sZSI6bWljb2hzYXRAZ21haWwuY29tLCJzZWNyZXRLZXkiOjhCOGg5UjhtTVBDVnRxMFp2OU9oYXJzejg1MWlnRWFsVlFuaG5KdTZodHVnY30.8GChYMDEzl7NqeZi-wagKy-SV7FyMX2XMW8Uphc7kqA";
+        $headers[] = "Authorization: Bearer ".$token;
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            
+        /* execute request */
+        $result = curl_exec($ch);
+        
+        dd($result);
+        
+        /* close cURL resource */
+        curl_close($ch);
+    }
+
+    public function applicationPaymentCallBack(){
+        dd('Hit');
+    }
+
     public function dashboard(){
 
         $programmes = Programme::orderby('name', 'asc')->get();

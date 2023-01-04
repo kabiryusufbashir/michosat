@@ -32,6 +32,8 @@ Route::post('/applynow', [ApplicationController::class, 'applyNow'])->name('appl
 Route::get('/apply/login', [ApplicationController::class, 'applicationLogin'])->name('application-login');
 Route::post('/applynow/login', [ApplicationController::class, 'applyNowLogin'])->name('applynowlogin');
 Route::get('/apply/logout', [ApplicationController::class, 'applicationLogout'])->name('application-logout');
+Route::get('/payment', [ApplicationController::class, 'applicationPayment'])->name('application-payment');
+Route::get('/application/payment/callback', [ApplicationController::class, 'applicationPaymentCallBack'])->name('application-payment-callback');
 
 // APPLICATION PORTAL 
 Route::group(['prefix' => 'application'], function () {
