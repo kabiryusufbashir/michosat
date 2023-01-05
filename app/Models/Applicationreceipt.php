@@ -17,6 +17,7 @@ class Applicationreceipt extends Model
         'year',
         'status',
         'registered_by',
+        'pin'
     ];
 
     public function dateFormat($date){
