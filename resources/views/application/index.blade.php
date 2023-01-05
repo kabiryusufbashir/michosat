@@ -22,7 +22,8 @@
                         <div class="font-medium mb-1 lg:text-lg">Welcome, </div>
                         <div class="font-semibold mb-1 lg:text-2xl lg:flex items-center">
                             <div class="font-medium mb-1 text-sm">
-                                {{ Auth::guard('application')->user()->name }}
+                                Application No: {{ Auth::guard('application')->user()->application_no }} <br>
+                                Name: {{ Auth::guard('application')->user()->name }} <br>
                             </div>
                         </div>
                     </div>
@@ -92,13 +93,16 @@
                                 <span>Step 2: Next of Kin /</span>
                             </a>
                             <a id="indicatorNavThree" href="#">
-                                <span>Step 3: Programme and Photo /</span>
+                                <span>Step 3: Sponsor /</span>
                             </a>
                             <a id="indicatorNavFour"  href="#">
-                                <span>Step 4: 0' Level Result  /</span>
+                                <span>Step 4: Programme and Photo  /</span>
                             </a>
                             <a id="indicatorNavFive"  href="#">
-                                <span>Step 5: A' Level Result  /</span>
+                                <span>Step 5: 0' Level Result  /</span>
+                            </a>
+                            <a id="indicatorNavSix"  href="#">
+                                <span>Step 6: Qualifications  /</span>
                             </a>
                         </div>
                         <form action="{{ route('application-registration-form') }}" method="POST" enctype="multipart/form-data">
@@ -257,6 +261,65 @@
                             </div>
                             <!-- step 3 -->
                             <div id="stepThree" class="hidden">
+                                <!-- Name  -->
+                                <div class="my-4">
+                                    <label for="sponsor_name" class="input-title">Name</label><br>
+                                    <input required type="text" name="sponsor_name" placeholder="Name" class="input-field">
+                                    @error('sponsor_name')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- Phone  -->
+                                <div class="my-4">
+                                    <label for="sponsor_phone" class="input-title">Phone</label><br>
+                                    <input required type="text" name="sponsor_phone" placeholder="Phone" class="input-field">
+                                    @error('sponsor_phone')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- Address  -->
+                                <div class="my-4">
+                                    <label for="sponsor_address" class="input-title">Address</label><br>
+                                    <input required type="text" name="sponsor_address" placeholder="Address" class="input-field">
+                                    @error('sponsor_address')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- City  -->
+                                <div class="my-4">
+                                    <label for="sponsor_city" class="input-title">City</label><br>
+                                    <input required type="text" name="sponsor_city" placeholder="City" class="input-field">
+                                    @error('sponsor_city')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- LGA  -->
+                                <div class="my-4">
+                                    <label for="sponsor_lga" class="input-title">LGA</label><br>
+                                    <input required type="text" name="sponsor_lga" placeholder="LGA" class="input-field">
+                                    @error('sponsor_lga')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- State  -->
+                                <div class="my-4">
+                                    <label for="sponsor_state" class="input-title">State</label><br>
+                                    <input required type="text" name="sponsor_state" placeholder="State" class="input-field">
+                                    @error('sponsor_state')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                                <!-- Country  -->
+                                <div class="my-4">
+                                    <label for="sponsor_country" class="input-title">Country</label><br>
+                                    <input required type="text" name="sponsor_country" placeholder="Country" class="input-field">
+                                    @error('sponsor_country')
+                                        {{$message}}
+                                    @enderror
+                                </div>
+                            </div>
+                            <!-- step 4 -->
+                            <div id="stepFour" class="hidden">
                                 <!-- Photo  -->
                                 <div class="my-4">
                                     <label for="name" class="text-lg font-medium border-b-4 border-green-700">Applicant Photo</label><br>
@@ -286,8 +349,8 @@
                                 </div>
                                 
                             </div>
-                            <!-- Step 4 -->
-                            <div id="stepFour" class="hidden">
+                            <!-- Step 5 -->
+                            <div id="stepFive" class="hidden">
                                 <div class="grid grid-cols-2 gap-4">
                                     <!-- Subject one  -->
                                     <div>
@@ -329,8 +392,43 @@
                                             <!-- Subject  -->
                                             <label for="one_subject" class="input-title">Subject</label><br>
                                             <div class="lg:flex grid">
-                                                <input type="text" name="one_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
-                                                <input type="text" name="one_subject_grade[]" placeholder="Grade" class="input-field mb-2">
+                                                <div class="w-full mr-2">
+                                                    <select type="text" name="one_subject_name[]" class="input-field mb-2 mr-10">
+                                                        <option value=""></option>
+                                                        <option value="COMMERCE">COMMERCE</option>
+                                                        <option value="FINANCIAL ACCOUNTING">FINANCIAL ACCOUNTING</option>
+                                                        <option value="CHRISTIAN RELIGIOUS STUDIES">CHRISTIAN RELIGIOUS STUDIES</option>
+                                                        <option value="ECONOMICS">ECONOMICS</option>
+                                                        <option value="GEOGRAPHY">GEOGRAPHY</option>
+                                                        <option value="GOVERNMENT">GOVERNMENT</option>
+                                                        <option value="ISLAMIC STUDIES">ISLAMIC STUDIES</option>
+                                                        <option value="LITERATURE IN ENGLISH">LITERATURE IN ENGLISH</option>
+                                                        <option value="CIVIC EDUCATION">CIVIC EDUCATION</option>
+                                                        <option value="ENGLISH LANGUAGE">ENGLISH LANGUAGE</option>
+                                                        <option value="HAUSA">HAUSA</option>
+                                                        <option value="IGBO">IGBO</option>
+                                                        <option value="YORUBA">YORUBA</option>
+                                                        <option value="FURTHER MATHEMATICS">FURTHER MATHEMATICS</option>
+                                                        <option value="GENERAL MATHEMATICS">GENERAL MATHEMATICS</option>
+                                                        <option value="AGRICULTURAL SCIENCE">AGRICULTURAL SCIENCE</option>
+                                                        <option value="BIOLOGY">BIOLOGY</option>
+                                                        <option value="CHEMISTRY">CHEMISTRY</option>
+                                                        <option value="PHYSICS">PHYSICS</option>
+                                                    </select>
+                                                </div>
+                                                <div class="w-full">
+                                                    <select type="text" name="one_subject_grade[]" placeholder="Grade" class="input-field mb-2">
+                                                        <option value=""></option>
+                                                        <option value="A1">A1</option>
+                                                        <option value="B2">B2</option>
+                                                        <option value="B3">B3</option>
+                                                        <option value="C4">C4</option>
+                                                        <option value="C5">C5</option>
+                                                        <option value="D7">D7</option>
+                                                        <option value="E8">E8</option>
+                                                        <option value="F9">F9</option>
+                                                    </select>
+                                                </div>
                                                 @error('one_subject')
                                                     {{$message}}
                                                 @enderror
@@ -380,8 +478,43 @@
                                             <!-- Subject  -->
                                             <label for="two_subject" class="input-title">Subject</label><br>
                                             <div class="lg:flex grid">
-                                                <input type="text" name="two_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
-                                                <input type="text" name="two_subject_grade[]" placeholder="Grade" class="input-field mb-2">
+                                                <div class="w-full mr-2">
+                                                    <select type="text" name="two_subject_name[]" class="input-field mb-2 mr-10">
+                                                        <option value=""></option>
+                                                        <option value="COMMERCE">COMMERCE</option>
+                                                        <option value="FINANCIAL ACCOUNTING">FINANCIAL ACCOUNTING</option>
+                                                        <option value="CHRISTIAN RELIGIOUS STUDIES">CHRISTIAN RELIGIOUS STUDIES</option>
+                                                        <option value="ECONOMICS">ECONOMICS</option>
+                                                        <option value="GEOGRAPHY">GEOGRAPHY</option>
+                                                        <option value="GOVERNMENT">GOVERNMENT</option>
+                                                        <option value="ISLAMIC STUDIES">ISLAMIC STUDIES</option>
+                                                        <option value="LITERATURE IN ENGLISH">LITERATURE IN ENGLISH</option>
+                                                        <option value="CIVIC EDUCATION">CIVIC EDUCATION</option>
+                                                        <option value="ENGLISH LANGUAGE">ENGLISH LANGUAGE</option>
+                                                        <option value="HAUSA">HAUSA</option>
+                                                        <option value="IGBO">IGBO</option>
+                                                        <option value="YORUBA">YORUBA</option>
+                                                        <option value="FURTHER MATHEMATICS">FURTHER MATHEMATICS</option>
+                                                        <option value="GENERAL MATHEMATICS">GENERAL MATHEMATICS</option>
+                                                        <option value="AGRICULTURAL SCIENCE">AGRICULTURAL SCIENCE</option>
+                                                        <option value="BIOLOGY">BIOLOGY</option>
+                                                        <option value="CHEMISTRY">CHEMISTRY</option>
+                                                        <option value="PHYSICS">PHYSICS</option>
+                                                    </select>
+                                                </div>
+                                                <div class="w-full">
+                                                    <select type="text" name="two_subject_grade[]" placeholder="Grade" class="input-field mb-2">
+                                                        <option value=""></option>
+                                                        <option value="A1">A1</option>
+                                                        <option value="B2">B2</option>
+                                                        <option value="B3">B3</option>
+                                                        <option value="C4">C4</option>
+                                                        <option value="C5">C5</option>
+                                                        <option value="D7">D7</option>
+                                                        <option value="E8">E8</option>
+                                                        <option value="F9">F9</option>
+                                                    </select>
+                                                </div>
                                                 @error('two_subject')
                                                     {{$message}}
                                                 @enderror
@@ -393,10 +526,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Step 5 -->
-                            <div id="stepFive" class="hidden">
+                            <!-- Step 6 -->
+                            <div id="stepSix" class="hidden">
                                 <!-- A Level Photo  -->
-                                <div class="my-4">
+                                <!-- <div class="my-4">
                                     <label for="name" class="text-lg font-medium border-b-4 border-green-700">Upload A' Level Result</label><br>
                                     <div class="grid grid-cols-2 gap-2 items-center mt-3">
                                         <div>
@@ -406,19 +539,20 @@
                                     @error('applicant_a_level_result')
                                         {{$message}}
                                     @enderror
-                                </div>
-                                <!-- <div class="border-b-2 my-2">
-                                    <label for="subject" class="input-title">Subject</label><br>
-                                    <div class="lg:flex">
-                                        <input type="text" name="a_level_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">
-                                        <input type="text" name="a_level_subject_grade[]" placeholder="Grade" class="input-field mb-2">
-                                        @error('subject')
+                                </div> -->
+                                <div class="border-b-2 my-2">
+                                    <label for="subject" class="input-title">Qualification</label><br>
+                                    <div class="lg:grid">
+                                        <input type="text" name="school[]" placeholder="Subject Attended" class="input-field mb-2 mr-10">
+                                        <input type="text" name="certificate[]" placeholder="Certificate Obtained" class="input-field mb-2">
+                                        <input type="text" name="year[]" placeholder="Year Graduated" class="input-field mb-2">
+                                        @error('qualification')
                                             {{$message}}
                                         @enderror
                                     </div>
-                                </div> -->
-                                <!-- <div id="two_SubjectSection" class="my-4"></div> -->
-                                <!-- <div id="two_addField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Subject + </div> -->
+                                </div>
+                                <div id="qualificationSection" class="my-4"></div>
+                                <div id="qualificationaddField" class="bg-blue-800 text-white p-2 rounded float-right mb-3 text-xs cursor-pointer">Add Qualification + </div>
                                 <br><br>
                                 <div class="flex items-center my-4">
                                     <span><input type="checkbox" name="agree" id="agreeBtn"></span>
@@ -432,9 +566,10 @@
                             <div id="indicator" class="lg:flex grid justify-around my-5">
                                 <div id="stepOneIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 1: Personal Data</div>
                                 <div id="stepTwoIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 2: Next of Kin</div>
-                                <div id="stepThreeIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 3: Programme & Photo</div>
-                                <div id="stepFourIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 4: 0' Level Result</div>
-                                <div id="stepFiveIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 5: A' Level Result</div>
+                                <div id="stepThreeIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 3: Sponsor</div>
+                                <div id="stepFourIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 4: Programme & Photo</div>
+                                <div id="stepFiveIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 5: 0' Level Result </div>
+                                <div id="stepSixIndicator" class="bg-blue-800 text-white p-2 rounded mb-3 text-xs cursor-pointer">Step 6: Qualifications</div>
                             </div>
                         </form>
                     </div>                    
@@ -446,8 +581,43 @@
                                 '<div class="border-b-2 my-2">'+
                                     '<label for="subject" class="input-title">Subject</label><br>'+
                                     '<div class="lg:flex grid">'+
-                                        '<input type="text" name="one_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
-                                        '<input type="text" name="one_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
+                                        '<div class="w-full mr-2">'+
+                                            '<select type="text" name="one_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
+                                                '<option value=""></option>'+
+                                                '<option value="COMMERCE">COMMERCE</option>'+
+                                                '<option value="FINANCIAL ACCOUNTING">FINANCIAL ACCOUNTING</option>'+
+                                                '<option value="CHRISTIAN RELIGIOUS STUDIES">CHRISTIAN RELIGIOUS STUDIES</option>'+
+                                                '<option value="ECONOMICS">ECONOMICS</option>'+
+                                                '<option value="GEOGRAPHY">GEOGRAPHY</option>'+
+                                                '<option value="GOVERNMENT">GOVERNMENT</option>'+
+                                                '<option value="ISLAMIC STUDIES">ISLAMIC STUDIES</option>'+
+                                                '<option value="LITERATURE IN ENGLISH">LITERATURE IN ENGLISH</option>'+
+                                                '<option value="CIVIC EDUCATION">CIVIC EDUCATION</option>'+
+                                                '<option value="ENGLISH LANGUAGE">ENGLISH LANGUAGE</option>'+
+                                                '<option value="HAUSA">HAUSA</option>'+
+                                                '<option value="IGBO">IGBO</option>'+
+                                                '<option value="YORUBA">YORUBA</option>'+
+                                                '<option value="FURTHER MATHEMATICS">FURTHER MATHEMATICS</option>'+
+                                                '<option value="GENERAL MATHEMATICS">GENERAL MATHEMATICS</option>'+
+                                                '<option value="AGRICULTURAL SCIENCE">AGRICULTURAL SCIENCE</option>'+
+                                                '<option value="BIOLOGY">BIOLOGY</option>'+
+                                                '<option value="CHEMISTRY">CHEMISTRY</option>'+
+                                                '<option value="PHYSICS">PHYSICS</option>'+
+                                            '</select>'+
+                                        '</div>'+
+                                        '<div class="w-full">'+
+                                            '<select type="text" name="one_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
+                                                '<option value=""></option>'+
+                                                '<option value="A1">A1</option>'+
+                                                '<option value="B2">B2</option>'+
+                                                '<option value="B3">B3</option>'+
+                                                '<option value="C4">C4</option>'+
+                                                '<option value="C5">C5</option>'+
+                                                '<option value="D7">D7</option>'+
+                                                '<option value="E8">E8</option>'+
+                                                '<option value="F9">F9</option>'+
+                                            '</select>'+
+                                        '</div>'+
                                     '</div>'+
                                 '</div>'
 
@@ -460,15 +630,67 @@
                         let two_SubjectSection = document.querySelector('#two_SubjectSection')
                         const two_divContent = 
                                 '<div class="border-b-2 my-2">'+
-                                    '<label for="subject" class="input-title">Subject</label><br>'+
+                                    '<label for="two_subject" class="input-title">Subject</label><br>'+
                                     '<div class="lg:flex grid">'+
-                                        '<input type="text" name="two_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
-                                        '<input type="text" name="two_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
+                                        '<div class="w-full mr-2">'+
+                                            '<select type="text" name="two_subject_name[]" placeholder="Subject Name" class="input-field mb-2 mr-10">'+
+                                                '<option value=""></option>'+
+                                                '<option value="COMMERCE">COMMERCE</option>'+
+                                                '<option value="FINANCIAL ACCOUNTING">FINANCIAL ACCOUNTING</option>'+
+                                                '<option value="CHRISTIAN RELIGIOUS STUDIES">CHRISTIAN RELIGIOUS STUDIES</option>'+
+                                                '<option value="ECONOMICS">ECONOMICS</option>'+
+                                                '<option value="GEOGRAPHY">GEOGRAPHY</option>'+
+                                                '<option value="GOVERNMENT">GOVERNMENT</option>'+
+                                                '<option value="ISLAMIC STUDIES">ISLAMIC STUDIES</option>'+
+                                                '<option value="LITERATURE IN ENGLISH">LITERATURE IN ENGLISH</option>'+
+                                                '<option value="CIVIC EDUCATION">CIVIC EDUCATION</option>'+
+                                                '<option value="ENGLISH LANGUAGE">ENGLISH LANGUAGE</option>'+
+                                                '<option value="HAUSA">HAUSA</option>'+
+                                                '<option value="IGBO">IGBO</option>'+
+                                                '<option value="YORUBA">YORUBA</option>'+
+                                                '<option value="FURTHER MATHEMATICS">FURTHER MATHEMATICS</option>'+
+                                                '<option value="GENERAL MATHEMATICS">GENERAL MATHEMATICS</option>'+
+                                                '<option value="AGRICULTURAL SCIENCE">AGRICULTURAL SCIENCE</option>'+
+                                                '<option value="BIOLOGY">BIOLOGY</option>'+
+                                                '<option value="CHEMISTRY">CHEMISTRY</option>'+
+                                                '<option value="PHYSICS">PHYSICS</option>'+
+                                            '</select>'+
+                                        '</div>'+
+                                        '<div class="w-full">'+
+                                            '<select type="text" name="two_subject_grade[]" placeholder="Grade" class="input-field mb-2">'+
+                                                '<option value=""></option>'+
+                                                '<option value="A1">A1</option>'+
+                                                '<option value="B2">B2</option>'+
+                                                '<option value="B3">B3</option>'+
+                                                '<option value="C4">C4</option>'+
+                                                '<option value="C5">C5</option>'+
+                                                '<option value="D7">D7</option>'+
+                                                '<option value="E8">E8</option>'+
+                                                '<option value="F9">F9</option>'+
+                                            '</select>'+
+                                        '</div>'+
                                     '</div>'+
                                 '</div>'
 
                         two_addField.addEventListener('click', ()=>{
                             two_subjectSection.insertAdjacentHTML('beforeend', two_divContent)
+                        })
+
+                        // Add Qualification 
+                        let qualificationaddField = document.querySelector('#qualificationaddField')
+                        let qualificationSection = document.querySelector('#qualificationSection')
+                        const qualification_divContent = 
+                            '<div class="border-b-2 my-2">'+
+                                '<label for="subject" class="input-title">Qualification</label><br>'+
+                                    '<div class="lg:grid">'+
+                                        '<input type="text" name="school[]" placeholder="Subject Attended" class="input-field mb-2 mr-10">'+
+                                        '<input type="text" name="certificate[]" placeholder="Certificate Obtained" class="input-field mb-2">'+
+                                        '<input type="text" name="year[]" placeholder="Year Graduated" class="input-field mb-2">'+
+                                    '</div>'+
+                                '</div>'
+
+                            qualificationaddField.addEventListener('click', ()=>{
+                            qualificationSection.insertAdjacentHTML('beforeend', qualification_divContent)
                         })
 
                         //Agree
@@ -490,6 +712,7 @@
                         let stepThreeIndicator = document.querySelector('#stepThreeIndicator')
                         let stepFourIndicator = document.querySelector('#stepFourIndicator')
                         let stepFiveIndicator = document.querySelector('#stepFiveIndicator')
+                        let stepSixIndicator = document.querySelector('#stepSixIndicator')
                         
                         // Steps 
                         let stepOne = document.querySelector('#stepOne')
@@ -497,6 +720,7 @@
                         let stepThree = document.querySelector('#stepThree')
                         let stepFour = document.querySelector('#stepFour')
                         let stepFive = document.querySelector('#stepFive')
+                        let stepSix = document.querySelector('#stepSix')
                         
                         // NavIndicator 
                         let indicatorNavOne = document.querySelector('#indicatorNavOne')
@@ -504,6 +728,7 @@
                         let indicatorNavThree = document.querySelector('#indicatorNavThree')
                         let indicatorNavFour = document.querySelector('#indicatorNavFour')
                         let indicatorNavFive = document.querySelector('#indicatorNavFive')
+                        let indicatorNavSix = document.querySelector('#indicatorNavSix')
                         
                         stepOneIndicator.addEventListener('click', ()=>{
                             
@@ -513,12 +738,14 @@
                                 stepThree.classList.add('hidden');
                                 stepFour.classList.add('hidden');
                                 stepFive.classList.add('hidden');
+                                stepSix.classList.add('hidden');
                             
                                 indicatorNavOne.classList.add('active-nav-indicator')
                                 indicatorNavTwo.classList.remove('active-nav-indicator')
                                 indicatorNavThree.classList.remove('active-nav-indicator')
                                 indicatorNavFour.classList.remove('active-nav-indicator')
                                 indicatorNavFive.classList.remove('active-nav-indicator')
+                                indicatorNavSix.classList.remove('active-nav-indicator')
                             
                             }
                             
@@ -532,12 +759,14 @@
                                 stepThree.classList.add('hidden');
                                 stepFour.classList.add('hidden');
                                 stepFive.classList.add('hidden');
+                                stepSix.classList.add('hidden');
                                 
                                 indicatorNavTwo.classList.add('active-nav-indicator')
                                 indicatorNavOne.classList.remove('active-nav-indicator')
                                 indicatorNavThree.classList.remove('active-nav-indicator')
                                 indicatorNavFour.classList.remove('active-nav-indicator')
                                 indicatorNavFive.classList.remove('active-nav-indicator')
+                                indicatorNavSix.classList.remove('active-nav-indicator')
                             }
 
                         })
@@ -549,12 +778,14 @@
                                 stepTwo.classList.add('hidden');
                                 stepFour.classList.add('hidden');
                                 stepFive.classList.add('hidden');
+                                stepSix.classList.add('hidden');
                                 
                                 indicatorNavThree.classList.add('active-nav-indicator')
                                 indicatorNavOne.classList.remove('active-nav-indicator')
                                 indicatorNavTwo.classList.remove('active-nav-indicator')
                                 indicatorNavFour.classList.remove('active-nav-indicator')
                                 indicatorNavFive.classList.remove('active-nav-indicator')
+                                indicatorNavSix.classList.remove('active-nav-indicator')
                             
                             }
 
@@ -567,12 +798,14 @@
                                 stepTwo.classList.add('hidden');
                                 stepThree.classList.add('hidden');
                                 stepFive.classList.add('hidden');
+                                stepSix.classList.add('hidden');
                                 
                                 indicatorNavFour.classList.add('active-nav-indicator')
                                 indicatorNavOne.classList.remove('active-nav-indicator')
                                 indicatorNavTwo.classList.remove('active-nav-indicator')
                                 indicatorNavThree.classList.remove('active-nav-indicator')
                                 indicatorNavFive.classList.remove('active-nav-indicator')
+                                indicatorNavSix.classList.remove('active-nav-indicator')
                             
                             }
                         })
@@ -584,12 +817,33 @@
                                 stepTwo.classList.add('hidden');
                                 stepThree.classList.add('hidden');
                                 stepFour.classList.add('hidden');
+                                stepSix.classList.add('hidden');
                                 
                                 indicatorNavFive.classList.add('active-nav-indicator')
                                 indicatorNavOne.classList.remove('active-nav-indicator')
                                 indicatorNavTwo.classList.remove('active-nav-indicator')
                                 indicatorNavThree.classList.remove('active-nav-indicator')
                                 indicatorNavFour.classList.remove('active-nav-indicator')
+                                indicatorNavSix.classList.remove('active-nav-indicator')
+                            
+                            }
+                        })
+
+                        stepSixIndicator.addEventListener('click', ()=>{
+                            if(stepSix.classList.contains('hidden')){
+                                stepSix.classList.remove('hidden');
+                                stepOne.classList.add('hidden');
+                                stepTwo.classList.add('hidden');
+                                stepThree.classList.add('hidden');
+                                stepFour.classList.add('hidden');
+                                stepFive.classList.add('hidden');
+                                
+                                indicatorNavSix.classList.add('active-nav-indicator')
+                                indicatorNavOne.classList.remove('active-nav-indicator')
+                                indicatorNavTwo.classList.remove('active-nav-indicator')
+                                indicatorNavThree.classList.remove('active-nav-indicator')
+                                indicatorNavFour.classList.remove('active-nav-indicator')
+                                indicatorNavFive.classList.remove('active-nav-indicator')
                             
                             }
                         })

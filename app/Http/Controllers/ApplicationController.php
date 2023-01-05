@@ -15,6 +15,7 @@ use App\Models\Applicantresult;
 use App\Models\Applicantresultalevel;
 use App\Models\Applicantbio;
 use App\Models\Card;
+use App\Models\Applicantqualification;
 
 class ApplicationController extends Controller
 {
@@ -231,6 +232,13 @@ class ApplicationController extends Controller
             'kin_lga' => ['required'],
             'kin_state' => ['required'],
             'kin_country' => ['required'],
+            'sponsor_name' => ['required'],
+            'sponsor_phone' => ['required'],
+            'sponsor_city' => ['required'],
+            'sponsor_address' => ['required'],
+            'sponsor_lga' => ['required'],
+            'sponsor_state' => ['required'],
+            'sponsor_country' => ['required'],
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'programme' => ['required'],
         ]);
@@ -271,6 +279,13 @@ class ApplicationController extends Controller
                     'kin_lga' => $request->kin_lga,
                     'kin_state' => $request->kin_state,
                     'kin_country' => $request->kin_country,
+                    'sponsor_name' => $request->sponsor_name,
+                    'sponsor_phone' => $request->sponsor_phone,
+                    'sponsor_address' => $request->sponsor_address,
+                    'sponsor_city' => $request->sponsor_city,
+                    'sponsor_lga' => $request->sponsor_lga,
+                    'sponsor_state' => $request->sponsor_state,
+                    'sponsor_country' => $request->sponsor_country,
                     'photo' => $imageName,
                     'applicant_a_level_result' => $applicant_a_level_resultimageName,
                     'programme' => $request->programme,
@@ -303,6 +318,13 @@ class ApplicationController extends Controller
                     'kin_lga' => $request->kin_lga,
                     'kin_state' => $request->kin_state,
                     'kin_country' => $request->kin_country,
+                    'sponsor_name' => $request->sponsor_name,
+                    'sponsor_phone' => $request->sponsor_phone,
+                    'sponsor_address' => $request->sponsor_address,
+                    'sponsor_city' => $request->sponsor_city,
+                    'sponsor_lga' => $request->sponsor_lga,
+                    'sponsor_state' => $request->sponsor_state,
+                    'sponsor_country' => $request->sponsor_country,
                     'photo' => $imageName,
                     'applicant_a_level_result' => $applicant_a_level_resultimageName,
                     'programme' => $request->programme,
@@ -360,46 +382,84 @@ class ApplicationController extends Controller
 
                 try{
 
-                    // Add Result A Level 
-                    $two_data = Array(
-                        'two_subject_name' => $request->two_subject_name,
-                        'two_subject_grade' => $request->two_subject_grade,        
+                    if($request->two_subject_name['0'] != null){
+                        // Add Result Two Level 
+                        $two_data = Array(
+                            'two_subject_name' => $request->two_subject_name,
+                            'two_subject_grade' => $request->two_subject_grade,        
+                        );
+
+                        $check_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'Second')->count();
+                    
+                        if($check_record == 0){
+                            if($two_result = $two_data['two_subject_name']){
+                                for($x=0; $x<count($two_result); $x++){
+                                    $result_add = new Applicantresult;
+                                    $result_add['applicant_email'] = $applicant_email;
+                                    $result_add['exam_type'] = $request->two_exam_type;
+                                    $result_add['exam_no'] = $request->two_exam_no;
+                                    $result_add['exam_year'] = $request->two_exam_year;
+                                    $result_add['exam_center'] = $request->two_exam_center;
+                                    $result_add['sitting'] = 'Second';
+                                    $result_add['subject'] = $two_data['two_subject_name'][$x];
+                                    $result_add['grade'] = $two_data['two_subject_grade'][$x];
+                                    $result_add->save();
+                                }
+                            }
+                        }else{
+                            $delete_previous_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'Second')->delete();
+                            if($two_result = $two_data['two_subject_name']){
+                                for($x=0; $x<count($two_result); $x++){
+                                    $result_add = new Applicantresult;
+                                    $result_add['applicant_email'] = $applicant_email;
+                                    $result_add['exam_type'] = $request->two_exam_type;
+                                    $result_add['exam_no'] = $request->two_exam_no;
+                                    $result_add['exam_year'] = $request->two_exam_year;
+                                    $result_add['exam_center'] = $request->two_exam_center;
+                                    $result_add['sitting'] = 'Second';
+                                    $result_add['subject'] = $two_data['subject_name'][$x];
+                                    $result_add['grade'] = $two_data['subject_grade'][$x];
+                                    $result_add->save();
+                                }
+                            }
+                        }
+                    }
+                    
+
+                    // Add Applicant Qualification 
+                    $qualification = Array(
+                        'school' => $request->school,
+                        'certificate' => $request->certificate,
+                        'year' => $request->year,        
                     );
 
-                    $check_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'Second')->count();
+                    $check_record = Applicantqualification::where('applicant_email', $applicant_email)->count();
                 
                     if($check_record == 0){
-                        if($two_result = $two_data['two_subject_name']){
+                        if($two_result = $qualification['school']){
                             for($x=0; $x<count($two_result); $x++){
-                                $result_add = new Applicantresult;
+                                $result_add = new Applicantqualification;
                                 $result_add['applicant_email'] = $applicant_email;
-                                $result_add['exam_type'] = $request->two_exam_type;
-                                $result_add['exam_no'] = $request->two_exam_no;
-                                $result_add['exam_year'] = $request->two_exam_year;
-                                $result_add['exam_center'] = $request->two_exam_center;
-                                $result_add['sitting'] = 'Second';
-                                $result_add['subject'] = $two_data['two_subject_name'][$x];
-                                $result_add['grade'] = $two_data['two_subject_grade'][$x];
+                                $result_add['school'] = $qualification['school'][$x];
+                                $result_add['certificate'] = $qualification['certificate'][$x];
+                                $result_add['year'] = $qualification['year'][$x];
                                 $result_add->save();
                             }
                         }
                     }else{
-                        $delete_previous_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'Second')->delete();
-                        if($two_result = $two_data['two_subject_name']){
+                        $delete_previous_record = $check_record = Applicantqualification::where('applicant_email', $applicant_email)->delete();
+                        if($two_result = $qualification['school']){
                             for($x=0; $x<count($two_result); $x++){
-                                $result_add = new Applicantresult;
+                                $result_add = new Applicantqualification;
                                 $result_add['applicant_email'] = $applicant_email;
-                                $result_add['exam_type'] = $request->two_exam_type;
-                                $result_add['exam_no'] = $request->two_exam_no;
-                                $result_add['exam_year'] = $request->two_exam_year;
-                                $result_add['exam_center'] = $request->two_exam_center;
-                                $result_add['sitting'] = 'Second';
-                                $result_add['subject'] = $two_data['subject_name'][$x];
-                                $result_add['grade'] = $two_data['subject_grade'][$x];
+                                $result_add['school'] = $qualification['school'][$x];
+                                $result_add['certificate'] = $qualification['certificate'][$x];
+                                $result_add['year'] = $qualification['year'][$x];
                                 $result_add->save();
                             }
                         }
                     }
+
                     //Update Logic
                     try{
                         $registration = Applicationreceipt::where('email', $applicant_email)->update([
