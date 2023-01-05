@@ -490,6 +490,7 @@ class ApplicationController extends Controller
 
         $applicant_bio = Applicantbio::where('applicant_email', $applicant_email)->first();
         $applicant_result = Applicantresult::where('applicant_email', $applicant_email)->get();
+        $applicant_qualification = Applicantqualification::where('applicant_email', $applicant_email)->get();
         
         $applicant_result_first = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'First')->get();
         $applicant_result_first_type = Applicantresult::select('exam_type')->where('applicant_email', $applicant_email)->where('sitting', 'First')->pluck('exam_type')->first();
@@ -513,7 +514,7 @@ class ApplicationController extends Controller
         'school', 'applicant_bio', 'applicant_result', 
         'applicant_result_first', 'applicant_result_first_type', 'applicant_result_first_no', 'applicant_result_first_year', 'applicant_result_first_center',    
         'applicant_result_second', 'applicant_result_second_type', 'applicant_result_second_no', 'applicant_result_second_year', 'applicant_result_second_center', 
-        'applicant_result_a_level'));
+        'applicant_result_a_level', 'applicant_qualification'));
     }
 
     public function printAdmissionLetter(){

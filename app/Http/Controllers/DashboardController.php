@@ -31,6 +31,7 @@ use App\Models\Exam;
 use App\Models\Result;
 use App\Models\Studentcgpa;
 use App\Models\Card;
+use App\Models\Applicantqualification;
 
 class DashboardController extends Controller
 {
@@ -269,6 +270,7 @@ class DashboardController extends Controller
         $applicant_email = $applicant_bio->applicant_email;
         
         $applicant_result = Applicantresult::where('applicant_email', $applicant_email)->get();
+        $applicant_qualification = Applicantqualification::where('applicant_email', $applicant_email)->get();
 
         $applicant_result_first = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'First')->get();
         $applicant_result_first_type = Applicantresult::select('exam_type')->where('applicant_email', $applicant_email)->where('sitting', 'First')->pluck('exam_type')->first();
@@ -291,7 +293,7 @@ class DashboardController extends Controller
         return view('dashboard.application.check_applications_edit', compact('applicant_bio', 'applicant_result',
         'applicant_result_first', 'applicant_result_first_type', 'applicant_result_first_no', 'applicant_result_first_year', 'applicant_result_first_center',    
         'applicant_result_second', 'applicant_result_second_type', 'applicant_result_second_no', 'applicant_result_second_year', 'applicant_result_second_center',
-        'applicant_result_a_level', 'applicant_fullname', 'applicant_no'));
+        'applicant_result_a_level', 'applicant_fullname', 'applicant_no', 'applicant_qualification'));
     }
 
     

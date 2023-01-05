@@ -386,6 +386,43 @@
                             </div>
                         @endif     
                     </div>
+                    @if(count($applicant_qualification) > 0)
+                    <div class="bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
+                        <div class="w-full">
+                            <div class="border px-4">
+                                <div class="text-xl py-2 text-gray-500">Qualification</div>
+                            </div>
+                        </div>
+                        @foreach($applicant_qualification as $qualification)
+                            <div class="border">
+                                <div class="grid grid-cols-4 gap-4">
+                                    <div class="px-6 py-2 text-gray-500 font-semibold">
+                                        SCHOOL
+                                    </div>
+                                    <div class="px-6 py-2  text-gray-500">
+                                        {{ $qualification->school }}
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-4 gap-4">
+                                    <div class="px-6 py-2 text-gray-500 font-semibold">
+                                        CERTIFICATE
+                                    </div>
+                                    <div class="px-6 py-2  text-gray-500">
+                                        {{ $qualification->certificate }}
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-4 gap-4">
+                                    <div class="px-6 py-2 text-gray-500 font-semibold">
+                                        YEAR
+                                    </div>
+                                    <div class="px-6 py-2  text-gray-500">
+                                        {{ $qualification->year }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
                     <!-- A ' Level  -->
                     <div class="bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
                         @if($applicant_bio->applicant_a_level_result)
