@@ -19,6 +19,7 @@
                 width: 210mm;
                 height: 287mm;
                 font-size: 10px;
+                margin: 2% 0px;
             }
 
             html {
@@ -32,17 +33,44 @@
     </head>
     <body>
         <div class="mt-2">
-            <!-- Print Course  -->
-            <div class="flex justify-between px-6 items-center">
-                <div class="col-span-1">
-                    <img style="width:80px; height:80px;" class="w-24" src="{{ $school->photo }}" alt="">
+            <!-- Letter Head  -->
+            <div class="px-6 text-center">
+                
+                <div>
+                    <img style="width:80px;" class="w-28 mx-auto" src="{{ $school->photo }}" alt="">
                 </div>
+                <div>
+                    <div>
+                        MIKIYA INTERNATIONAL COLLEGE
+                    </div>
+                    <div>
+                        OF HEALTH SCIENCE AND TECHNOLOGY (MICOHSAT) BARI
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        ADDRESS: NO 1 ENG. SURAJO GARBA COMPLEX ALONG FALGORE
+                    </div>
+                    <div>
+                        ROAD BARI TOWN ROGO LG KANO STATE
+                    </div>
+                </div>
+                <div>
+                    EMAIL: MICOHSAT2022@GMAIL.COM
+                </div>
+                <div>
+                    PHONE: 08026948116, 08031320836, 07085564076
+                </div>
+                <div>
+                    Motto: Humanity Service
+                </div>
+            </div>
+            <div class="px-6 items-center">
                 <div class="col-span-2">
-                    <div class="font-semibold text-xl text-center">{{ $school->name }}</div>
-                    <div class="font-semibold text-xl text-center">{{ $applicant_bio->year }} Application Form</div>
+                    <div class="font-semibold text-xl text-center">{{ $applicant_bio->year }} Acknowledgement Slip</div>
                 </div>
-                <div class="col-span-1">
-                    <img style="width:80px; height:80px;" class="w-24" src="{{ $applicant_bio->photo }}" alt="">
+                <div class="px-10">
+                    <img style="width:65px;" class="w-32 border" src="{{ $applicant_bio->photo }}" alt="">
                 </div>
             </div>
             <!-- Personal Information -->
@@ -50,6 +78,14 @@
                 <div class="w-full">
                     <div class="border px-4">
                         <div class="text-xl py-2 text-gray-500">Personal Information</div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-4 border">
+                    <div class="px-6 py-2  text-gray-500 font-semibold">
+                        APPLICATION NO
+                    </div>
+                    <div class="px-6 py-2  text-gray-500">
+                        {{ Auth::guard('application')->user()->application_no }}
                     </div>
                 </div>
                 <div class="grid grid-cols-4 gap-4 border">
@@ -197,6 +233,64 @@
                     </div>
                 </div>
             </div>
+            <!-- Sponsor -->
+            <div class="bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
+                <div class="w-full">
+                    <div class="border px-4">
+                        <div class="text-xl py-2 text-gray-500">Sponsor Information</div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-4 border">
+                    <div class="px-6 py-2 text-gray-500 font-semibold">
+                        NAME
+                    </div>
+                    <div class="px-6 py-2  text-gray-500">
+                        {{ $applicant_bio->sponsor_name }}
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-4 border">
+                    <div class="px-6 py-2  text-gray-500 font-semibold">
+                        CITY
+                    </div>
+                    <div class="px-6 py-2  text-gray-500">
+                        {{ $applicant_bio->sponsor_city }}
+                    </div>
+                    <div class="px-6 py-2  text-gray-500 font-semibold">
+                        ADDRESS
+                    </div>
+                    <div class="px-6 py-2  text-gray-500">
+                        {{ $applicant_bio->sponsor_address }}
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-4 border">
+                    <div class="px-6 py-2  text-gray-500 font-semibold">
+                        LGA
+                    </div>
+                    <div class="px-6 py-2  text-gray-500">
+                        {{ $applicant_bio->sponsor_lga }}
+                    </div>
+                    <div class="px-6 py-2  text-gray-500 font-semibold">
+                        STATE
+                    </div>
+                    <div class="px-6 py-2  text-gray-500">
+                        {{ $applicant_bio->sponsor_state }}
+                    </div>
+                </div>
+                <div class="grid grid-cols-4 gap-4 border">
+                    <div class="px-6 py-2  text-gray-500 font-semibold">
+                        COUNTRY
+                    </div>
+                    <div class="px-6 py-2  text-gray-500">
+                        {{ $applicant_bio->sponsor_country }}
+                    </div>
+                    <div class="px-6 py-2  text-gray-500 font-semibold">
+                        PHONE
+                    </div>
+                    <div class="px-6 py-2  text-gray-500">
+                        {{ $applicant_bio->sponsor_phone }}
+                    </div>
+                </div>
+            </div>
             <!-- Result -->
             <div class="grid grid-cols-2 gap-4 bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
                 @if($applicant_result_first)
@@ -222,8 +316,20 @@
                                                     <tr class="text-left whitespace-nowrap border-b">
                                                         <th class="px-6 py-2  text-gray-500">
                                                             Exam Type: {{ $applicant_result_first_type }} <br>
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="text-left whitespace-nowrap border-b">
+                                                        <th class="px-6 py-2  text-gray-500">
                                                             Exam No: {{ $applicant_result_first_no }} <br>
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="text-left whitespace-nowrap border-b">
+                                                        <th class="px-6 py-2  text-gray-500">
                                                             Exam Year: {{ $applicant_result_first_year }} <br>
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="text-left whitespace-nowrap border-b">
+                                                        <th class="px-6 py-2  text-gray-500">
                                                             Exam Center: {{ $applicant_result_first_center }} <br>
                                                         </th>
                                                     </tr>
@@ -256,7 +362,7 @@
                         </div>
                     </div>
                 @endif     
-                @if($applicant_result_second)
+                @if(count($applicant_result_second) > 0)
                     <!-- O Level  -->
                     <div>
                         <div class="my-3">
@@ -279,8 +385,20 @@
                                                     <tr class="text-left whitespace-nowrap border-b">
                                                         <th class="px-6 py-2  text-gray-500">
                                                             Exam Type: {{ $applicant_result_second_type }} <br>
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="text-left whitespace-nowrap border-b">
+                                                        <th class="px-6 py-2  text-gray-500">
                                                             Exam No: {{ $applicant_result_second_no }} <br>
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="text-left whitespace-nowrap border-b">
+                                                        <th class="px-6 py-2  text-gray-500">
                                                             Exam Year: {{ $applicant_result_second_year }} <br>
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="text-left whitespace-nowrap border-b">
+                                                        <th class="px-6 py-2  text-gray-500">
                                                             Exam Center: {{ $applicant_result_second_center }} <br>
                                                         </th>
                                                     </tr>

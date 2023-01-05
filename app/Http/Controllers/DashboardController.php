@@ -284,13 +284,14 @@ class DashboardController extends Controller
         
         $applicant_result_a_level = Applicantresultalevel::where('applicant_email', $applicant_email)->get();
 
-        $applicant_name = Application::select('name')->where('email', $applicant_email)->first();
+        $applicant_name = Application::select('name', 'application_no')->where('email', $applicant_email)->first();
         $applicant_fullname = $applicant_name->name;
+        $applicant_no = $applicant_name->application_no;
 
         return view('dashboard.application.check_applications_edit', compact('applicant_bio', 'applicant_result',
         'applicant_result_first', 'applicant_result_first_type', 'applicant_result_first_no', 'applicant_result_first_year', 'applicant_result_first_center',    
         'applicant_result_second', 'applicant_result_second_type', 'applicant_result_second_no', 'applicant_result_second_year', 'applicant_result_second_center',
-        'applicant_result_a_level', 'applicant_fullname'));
+        'applicant_result_a_level', 'applicant_fullname', 'applicant_no'));
     }
 
     

@@ -19,6 +19,7 @@
                 width: 210mm;
                 height: 287mm;
                 font-size: 10px;
+                margin: 2% 0px;
             }
 
             html {
@@ -32,14 +33,44 @@
     </head>
     <body>
         <div class="mt-2">
-            <!-- Print Admission  -->
+            <!-- Letter Head  -->
+            <div class="px-6 text-center">
+                
+                <div>
+                    <img style="width:80px;" class="w-28 mx-auto" src="{{ $school->photo }}" alt="">
+                </div>
+                <div>
+                    <div>
+                        MIKIYA INTERNATIONAL COLLEGE
+                    </div>
+                    <div>
+                        OF HEALTH SCIENCE AND TECHNOLOGY (MICOHSAT) BARI
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        ADDRESS: NO 1 ENG. SURAJO GARBA COMPLEX ALONG FALGORE
+                    </div>
+                    <div>
+                        ROAD BARI TOWN ROGO LG KANO STATE
+                    </div>
+                </div>
+                <div>
+                    EMAIL: MICOHSAT2022@GMAIL.COM
+                </div>
+                <div>
+                    PHONE: 08026948116, 08031320836, 07085564076
+                </div>
+                <div>
+                    Motto: Humanity Service
+                </div>
+            </div>
             <div class="flex justify-between px-6 items-center">
                 <div class="col-span-2">
-                    <div class="font-semibold text-xl text-center">{{ $school->name }}</div>
                     <div class="font-semibold text-xl text-center">{{ $applicant_bio->year }} Admission Letter</div>
                 </div>
                 <div class="col-span-1">
-                    <img class="w-24" src="{{ $school->photo }}" alt="">
+                    <img style="width:50px;" class="w-24" src="{{ $school->photo }}" alt="">
                 </div>
             </div>
             <!-- Personal Information -->

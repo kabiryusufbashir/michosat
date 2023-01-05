@@ -36,6 +36,14 @@
                         </div>
                         <div class="grid grid-cols-4 gap-4 border">
                             <div class="px-6 py-2  text-gray-500 font-semibold">
+                                APPLICATION NO
+                            </div>
+                            <div class="px-6 py-2  text-gray-500">
+                                {{ $applicant_no }}
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-4 border">
+                            <div class="px-6 py-2  text-gray-500 font-semibold">
                                 NAME
                             </div>
                             <div class="px-6 py-2  text-gray-500">
@@ -179,9 +187,67 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Sponsor -->
+                    <div class="bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
+                        <div class="w-full">
+                            <div class="border px-4">
+                                <div class="text-xl py-2 text-gray-500">Sponsor Information</div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-4 border">
+                            <div class="px-6 py-2 text-gray-500 font-semibold">
+                                NAME
+                            </div>
+                            <div class="px-6 py-2  text-gray-500">
+                                {{ $applicant_bio->sponsor_name }}
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-4 border">
+                            <div class="px-6 py-2  text-gray-500 font-semibold">
+                                CITY
+                            </div>
+                            <div class="px-6 py-2  text-gray-500">
+                                {{ $applicant_bio->sponsor_city }}
+                            </div>
+                            <div class="px-6 py-2  text-gray-500 font-semibold">
+                                ADDRESS
+                            </div>
+                            <div class="px-6 py-2  text-gray-500">
+                                {{ $applicant_bio->sponsor_address }}
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-4 border">
+                            <div class="px-6 py-2  text-gray-500 font-semibold">
+                                LGA
+                            </div>
+                            <div class="px-6 py-2  text-gray-500">
+                                {{ $applicant_bio->sponsor_lga }}
+                            </div>
+                            <div class="px-6 py-2  text-gray-500 font-semibold">
+                                STATE
+                            </div>
+                            <div class="px-6 py-2  text-gray-500">
+                                {{ $applicant_bio->sponsor_state }}
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-4 border">
+                            <div class="px-6 py-2  text-gray-500 font-semibold">
+                                COUNTRY
+                            </div>
+                            <div class="px-6 py-2  text-gray-500">
+                                {{ $applicant_bio->sponsor_country }}
+                            </div>
+                            <div class="px-6 py-2  text-gray-500 font-semibold">
+                                PHONE
+                            </div>
+                            <div class="px-6 py-2  text-gray-500">
+                                {{ $applicant_bio->sponsor_phone }}
+                            </div>
+                        </div>
+                    </div>
                     <!-- Result -->
                     <div class="grid grid-cols-2 gap-4 bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
-                        @if($applicant_result_first)
+                        @if(count($applicant_result_first) > 0)
                             <!-- O Level  -->
                             <div>
                                 <div class="my-3">
@@ -204,8 +270,20 @@
                                                             <tr class="text-left whitespace-nowrap border-b">
                                                                 <th class="px-6 py-2  text-gray-500">
                                                                     Exam Type: {{ $applicant_result_first_type }} <br>
+                                                                </th>
+                                                            </tr>
+                                                            <tr class="text-left whitespace-nowrap border-b">
+                                                                <th class="px-6 py-2  text-gray-500">
                                                                     Exam No: {{ $applicant_result_first_no }} <br>
+                                                                </th>
+                                                            </tr>
+                                                            <tr class="text-left whitespace-nowrap border-b">
+                                                                <th class="px-6 py-2  text-gray-500">
                                                                     Exam Year: {{ $applicant_result_first_year }} <br>
+                                                                </th>
+                                                            </tr>
+                                                            <tr class="text-left whitespace-nowrap border-b">
+                                                                <th class="px-6 py-2  text-gray-500">
                                                                     Exam Center: {{ $applicant_result_first_center }} <br>
                                                                 </th>
                                                             </tr>
@@ -238,7 +316,7 @@
                                 </div>
                             </div>
                         @endif     
-                        @if($applicant_result_second)
+                        @if(count($applicant_result_second) > 0)
                             <!-- O Level  -->
                             <div>
                                 <div class="my-3">
@@ -261,8 +339,20 @@
                                                             <tr class="text-left whitespace-nowrap border-b">
                                                                 <th class="px-6 py-2  text-gray-500">
                                                                     Exam Type: {{ $applicant_result_second_type }} <br>
+                                                                </th>
+                                                            </tr>
+                                                            <tr class="text-left whitespace-nowrap border-b">
+                                                                <th class="px-6 py-2  text-gray-500">
                                                                     Exam No: {{ $applicant_result_second_no }} <br>
+                                                                </th>
+                                                            </tr>
+                                                            <tr class="text-left whitespace-nowrap border-b">
+                                                                <th class="px-6 py-2  text-gray-500">
                                                                     Exam Year: {{ $applicant_result_second_year }} <br>
+                                                                </th>
+                                                            </tr>
+                                                            <tr class="text-left whitespace-nowrap border-b">
+                                                                <th class="px-6 py-2  text-gray-500">
                                                                     Exam Center: {{ $applicant_result_second_center }} <br>
                                                                 </th>
                                                             </tr>
