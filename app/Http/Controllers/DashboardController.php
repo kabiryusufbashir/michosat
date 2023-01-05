@@ -30,6 +30,7 @@ use App\Models\Timetable;
 use App\Models\Exam;
 use App\Models\Result;
 use App\Models\Studentcgpa;
+use App\Models\Card;
 
 class DashboardController extends Controller
 {
@@ -158,6 +159,67 @@ class DashboardController extends Controller
     }
 
     // Application 
+    public function allCard(){
+        $cards = Card::select('time_generated')->distinct()->orderby('id', 'desc')->paginate(20);
+        return view('dashboard.application.allcards', compact('cards'));
+    }
+
+    public function printCard($card){
+        $cards = Card::where('time_generated', $card)->orderby('id', 'desc')->get();
+        $school = User::where('category', 1)->first();
+        return view('dashboard.application.printcards', compact('cards', 'card', 'school'));
+    }
+
+    public function generateCard(Request $request){
+        $data = $request->validate([
+            'card_no' => ['required'],
+        ]);
+
+        $card_no = $request->card_no;
+        $time_generated = date('Ymdhis');
+
+        $pin = [];
+        $generated_1 = 'miMcTohseoatPBiatlCiagscc0';
+        $generated_2 = $time_generated;
+        $generated_1_shuffle = str_shuffle($generated_1);
+        $generated_2_shuffle = str_shuffle($generated_2);
+        $generated = $generated_1_shuffle.''.$generated_2_shuffle;
+        $generated_sub = substr($generated, 11, -10);
+
+        for($x=1; $x<=$card_no; $x++){
+            $pin_generated = str_shuffle($generated_sub);
+            array_push($pin, $pin_generated);
+        }
+
+        // Add Result 
+        $data = Array(
+            'pin' => $pin,
+        );
+
+        try{
+            
+            if($result = $data['pin']){
+                for($x=0; $x<count($result); $x++){
+                    $check_record = Card::where('pin', $data['pin'][$x])->count();
+                    
+                    if($check_record == 0){
+                        $result_add = new Card;
+                        $result_add['pin'] = $data['pin'][$x];
+                        $result_add['application_year'] = '2022/2023';
+                        $result_add['time_generated'] = $time_generated;
+                        $result_add->save();
+                    }
+                }
+            }
+
+            return redirect()->route('root-all-card')->with('success', 'Pins Generated');
+            
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
+
+    }
+
     public function application(){
         return view('dashboard.application.index');
     }

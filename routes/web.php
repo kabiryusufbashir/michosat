@@ -121,6 +121,10 @@ Route::group(['prefix' => 'admin'], function (){
     Route::delete('/student/{student}', [DashboardController::class, 'deleteStudent'])->name('student-delete')->middleware('auth:web');
 
     // Application
+    Route::post('/generate/card', [DashboardController::class, 'generateCard'])->name('root-generate-card')->middleware('auth:web');
+    Route::get('/all/card', [DashboardController::class, 'allCard'])->name('root-all-card')->middleware('auth:web');
+    Route::get('/used/card', [DashboardController::class, 'usedCard'])->name('root-used-card')->middleware('auth:web');
+    Route::get('/all/{card}/print', [DashboardController::class, 'printCard'])->name('root-print-card')->middleware('auth:web');
     Route::get('/application', [DashboardController::class, 'application'])->name('root-application')->middleware('auth:web');
     Route::get('/allapplication', [DashboardController::class, 'allApplication'])->name('all-application')->middleware('auth:web');
     Route::get('/check-payment', [DashboardController::class, 'checkPayment'])->name('check-payment')->middleware('auth:web');

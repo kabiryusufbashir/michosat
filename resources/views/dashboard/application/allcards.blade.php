@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Application
+    Scratch Cards
 @endsection
 
 @section('contents')
@@ -17,10 +17,8 @@
             <!-- User Info  -->
             @include('includes.root_user_info')
             <div class="text-center text-xl text-gray-600 mt-2 ml-4 mr-7 rounded py-3">@include('includes.messages')</div>
-            <!-- Settings Menu  -->
-            @include('includes.root_application_index')
+            <!-- All Department  -->
+            @include('includes.root_application_all_cards')
         </div>
-        <!-- Scratch Card  -->
-        @include('dashboard.application.generate_card')
     </div>
 @endsection
