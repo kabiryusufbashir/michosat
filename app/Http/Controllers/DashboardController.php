@@ -160,7 +160,7 @@ class DashboardController extends Controller
 
     // Application 
     public function allCard(){
-        $cards = Card::select('time_generated')->distinct()->orderby('id', 'desc')->paginate(20);
+        $cards = Card::select('time_generated')->distinct()->paginate(20);
         return view('dashboard.application.allcards', compact('cards'));
     }
 
@@ -218,6 +218,11 @@ class DashboardController extends Controller
             return back()->with('error', 'Please try again... '.$e);
         }
 
+    }
+
+    public function usedCard(){
+        $cards = Applicationreceipt::where('receipt', '!=', '')->where('pin', '!=', '')->paginate(50);
+        return view('dashboard.application.usedcards', compact('cards'));
     }
 
     public function application(){

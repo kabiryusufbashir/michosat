@@ -31,4 +31,18 @@ class Applicationreceipt extends Model
         }
     }
 
+    public function applicantName($email){
+        if($email){
+            $applicant_name = Application::where('email', $email)->first();
+                if($applicant_name){
+                    $name = $applicant_name->name;
+                    return $name;
+                }else{
+                    return '';
+                }
+        }else{
+            return '';
+        }
+    }
+
 }
