@@ -14,9 +14,13 @@ class Application extends Authenticatable
 
     protected $fillable = [
         'name',
+        'first_name',
+        'surname',
+        'middle_name',
         'email',
         'password',
         'year',
+        'application_no',
     ];
 
     public function checkPayment()

@@ -20,22 +20,31 @@ class ApplicationController extends Controller
 {
     public function applyNow(Request $request){
         $data = $request->validate([
-            'name' => ['required'],
+            'first_name' => ['required'],
+            'surname' => ['required'],
             'email' => 'required|',
             'old_password' => ['required'],
         ]);
         
-        $full_name = $request->name;
+        $full_name = $request->first_name.' '.$request->surname.' '.$request->last_name;
         $email = $request->email;
         $password = Hash::make($request->old_password);
+        
+        $application_count = Application::count();
 
+        $application_no = '2022_2023_'.$application_count + 1;
+        
         try{
             $check_record = Application::where('email', $email)->count();
 
             if($check_record == 0){
                 
                 $name = Application::create([
+                    'application_no' => $application_no,
                     'name' => $full_name,
+                    'first_name' => $request->first_name,
+                    'surname' => $request->surname,
+                    'middle_name' => $request->middle_name,
                     'email' => $email,
                     'password' => $password,
                     'year' => '2022/2023',

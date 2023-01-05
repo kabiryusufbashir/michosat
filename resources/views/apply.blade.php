@@ -25,8 +25,16 @@
                     <form action="{{ route('applynow') }}" method="POST">
                         @csrf
                         <div class="my-3">
-                            <label for="full_name" class="font-medium">Full Name</label><br>
-                            <input required class="input-field" type="text" name="name" id="name" placeholder="Full Name">
+                            <label for="first_name" class="font-medium">First Name</label><br>
+                            <input required class="input-field" type="text" name="first_name" id="first_name" placeholder="First Name">
+                        </div>
+                        <div class="my-3">
+                            <label for="surname" class="font-medium">Surname</label><br>
+                            <input required class="input-field" type="text" name="surname" id="surname" placeholder="Surname">
+                        </div>
+                        <div class="my-3">
+                            <label for="last_name" class="font-medium">Middle Name</label><br>
+                            <input class="input-field" type="text" name="middle_name" id="middle_name" placeholder="Middle Name">
                         </div>
                         <div class="my-3">
                             <label for="staff_id" class="font-medium">Email Address</label><br>
