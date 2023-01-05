@@ -66,11 +66,11 @@
                 @if(Auth::guard('application')->user()->checkPayment() == 0)
                     <div class="bg-white lg:py-24 py-8 px-6 text-gray-600 lg:ml-4 lg:mr-8 mb-5 rounded col-span-2">
                         <form action="{{ route('application-payment-receipt') }}" method="POST" class="lg:w-2/3 w-full" enctype="multipart/form-data">
-                            <h1 class="py-2 font-semibold">Upload your Application payment receipt {{ Auth::guard('application')->user()->name }}</h1>
+                            <h1 class="py-2 font-semibold">Enter Your Application PIN {{ Auth::guard('application')->user()->name }}</h1>
                             @csrf
                                 <div class="lg:flex my-5">
-                                    <label for="semester" class="text-lg font-medium border-b-4 border-green-700 lg:ml-4">Application Payment Receipt</label><br><br>
-                                    <input class="input-field" type="file" name="receipt">
+                                    <label for="semester" class="text-lg font-medium border-b-4 border-green-700 lg:ml-4">Application PIN</label><br><br>
+                                    <input autofocus class="input-field" type="text" name="receipt">
                                     @error('receipt')
                                         {{$message}}
                                     @enderror

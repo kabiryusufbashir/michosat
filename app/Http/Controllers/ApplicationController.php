@@ -14,6 +14,7 @@ use App\Models\Programme;
 use App\Models\Applicantresult;
 use App\Models\Applicantresultalevel;
 use App\Models\Applicantbio;
+use App\Models\Card;
 
 class ApplicationController extends Controller
 {
@@ -161,32 +162,45 @@ class ApplicationController extends Controller
 
     public function applicationPaymentReceipt(Request $request){
         $data = $request->validate([
-            'receipt' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'receipt' => 'required',
         ]);
 
         $applicant_email = Auth::guard('application')->user()->email;
         $applicant_name = Auth::guard('application')->user()->name;
         $receipt = $request->receipt;
 
-        $receiptimageName = '/images/payment/application/'.$applicant_name.'.'.$request->receipt->extension();  
+        // $receiptimageName = '/images/payment/application/'.$applicant_name.'.'.$request->receipt->extension();  
 
-        try{
+        // Check if PIN exists
+        $check_pin = Card::where('pin', $receipt)->count();
+            if($check_pin > 0){
+                //Check if PIN has been used
+                $check_if_pin_used = Applicationreceipt::where('receipt', $receipt)->where('pin', $receipt)->count();
+                    if($check_if_pin_used == 0){                
+                        try{
 
-            $session = Applicationreceipt::create([
-                'email'=> $applicant_email,
-                'receipt'=> $receiptimageName,
-                'amount'=> '4000',
-                'year'=> '2022/2023',
-                'status'=> 1,
-            ]);
-            
-            $request->receipt->move('images/payment/application', $receiptimageName);
-                 
-            return redirect()->route('application-dashboard')->with('success', 'Payment Submitted');
-        
-        }catch(Exception $e){
-            return redirect()->route('application-dashboard')->with('error', 'Please try again... '.$e);
-        }        
+                            $session = Applicationreceipt::create([
+                                'email'=> $applicant_email,
+                                'receipt'=> $receipt,
+                                'pin'=> $receipt,
+                                'amount'=> '4000',
+                                'year'=> '2022/2023',
+                                'status'=> 2,
+                            ]);
+                            
+                            // $request->receipt->move('images/payment/application', $receiptimageName);
+                                
+                            return redirect()->route('application-dashboard')->with('success', 'Payment Confirmed!');
+                        
+                        }catch(Exception $e){
+                            return redirect()->route('application-dashboard')->with('error', 'Please try again... '.$e);
+                        }
+                    }else{
+                        return back()->with('error', 'PIN already Used!');                
+                    }
+            }else{
+                return back()->with('error', 'Invalid PIN!');    
+            }        
     }
 
     public function applicationRegistrationForm(Request $request){
