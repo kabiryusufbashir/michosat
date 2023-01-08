@@ -261,7 +261,7 @@ class DashboardController extends Controller
     }
 
     public function checkApplication(){
-        $check_applications = Applicantbio::orderby('created_at', 'asc')->where('year', '2022/2023')->paginate(40);
+        $check_applications = Applicantbio::orderby('created_at', 'desc')->where('year', '2022/2023')->paginate(40);
         return view('dashboard.application.check_applications', compact('check_applications'));
     }
 

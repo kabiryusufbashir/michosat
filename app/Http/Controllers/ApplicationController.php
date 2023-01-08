@@ -575,6 +575,7 @@ class ApplicationController extends Controller
                 $applicant = Applicantbio::where('applicant_email', $applicant_email)->update([
                     'sponsor_name' => $request->sponsor_name,
                     'sponsor_phone' => $request->sponsor_phone,
+                    'year' => '2022/2023',
                 ]);
 
                 //Update Logic

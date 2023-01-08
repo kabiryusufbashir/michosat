@@ -109,10 +109,10 @@
         </div>
         <script type="text/javascript">
             window.print()
-            setTimeout(function () {
+            /* setTimeout(function () {
                 window.close();
                 window.location = '../../../application/dashboard';
-           }, 500);
+           }, 500); */
         </script>
     </body>
 </html>

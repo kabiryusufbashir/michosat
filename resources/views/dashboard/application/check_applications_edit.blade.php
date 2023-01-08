@@ -20,7 +20,7 @@
             <!-- Edit check_application  -->
             <div class="bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5 rounded">
                 <h1 class="text-lg font-semibold py-4 w-full">{{ $applicant_fullname }} Application Form</h1>
-                <div class="p-4">
+                <div class="p-4 text-x">
                     <!-- Print Course  -->
                     <div class="px-6 items-center">
                         <div>
@@ -247,65 +247,65 @@
                     </div>
                     <!-- Result -->
                     <div class="grid grid-cols-2 gap-4 bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
-                        @if(count($applicant_result_first) > 0)
-                            <!-- O Level  -->
+                        @if($applicant_result_first)
+                        <!-- O Level  -->
                             <div>
-                                <div class="my-3">
+                                <div class="my-3 text-xs">
                                     <div class="flex flex-col">
                                         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                                             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                                                 <div class="overflow-hidden">
                                                     <table class="w-full"">
                                                         <thead class="border">
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2 text-gray-500 border">
                                                                     0' Level Result
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2 text-gray-500 border">
                                                                     First Sitting
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     Exam Type: {{ $applicant_result_first_type }} <br>
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     Exam No: {{ $applicant_result_first_no }} <br>
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     Exam Year: {{ $applicant_result_first_year }} <br>
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     Exam Center: {{ $applicant_result_first_center }} <br>
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap">
-                                                                <th class="px-6 py-2  text-gray-500 border">
+                                                            <div class="grid grid-cols-2 text-left whitespace-nowrap">
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     SUBJECT
-                                                                </th>
-                                                                <th class="px-6 py-2  text-gray-500 border">
+                                                                </div>
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     GRADE
-                                                                </th>
-                                                            </tr>
+                                                                </div>
+                                                            </div>
                                                         </thead>
                                                         <tbody>
                                                             @foreach($applicant_result_first as $course)
-                                                                <tr class="divide-y divide-gray-300 border-b-2">
-                                                                    <td class="px-6 py-4 text-sm text-gray-500 border">
+                                                                <div class="grid grid-cols-2">
+                                                                    <div class="px-6 py-4 text-gray-500 border">
                                                                         {{ $course->subject }}
-                                                                    </td>
-                                                                    <td class="px-6 py-4 text-sm text-gray-500 border">
+                                                                    </div>
+                                                                    <div class="px-6 py-4 text-gray-500 border">
                                                                         {{ $course->grade }}
-                                                                    </td>
-                                                                </tr>
+                                                                    </div>
+                                                                </div>
                                                             @endforeach     
                                                         </tbody>
                                                     </table>
@@ -319,62 +319,62 @@
                         @if(count($applicant_result_second) > 0)
                             <!-- O Level  -->
                             <div>
-                                <div class="my-3">
+                                <div class="my-3 text-xs">
                                     <div class="flex flex-col">
                                         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                                             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                                                 <div class="overflow-hidden">
                                                     <table class="w-full"">
                                                         <thead class="border">
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2 text-gray-500 border">
                                                                     0' Level Result
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2 text-gray-500 border">
                                                                     Second Sitting
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     Exam Type: {{ $applicant_result_second_type }} <br>
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     Exam No: {{ $applicant_result_second_no }} <br>
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     Exam Year: {{ $applicant_result_second_year }} <br>
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap border-b">
-                                                                <th class="px-6 py-2  text-gray-500">
+                                                            <tr class="text-left whitespace-nowrap border">
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     Exam Center: {{ $applicant_result_second_center }} <br>
-                                                                </th>
+                                                                </div>
                                                             </tr>
-                                                            <tr class="text-left whitespace-nowrap">
-                                                                <th class="px-6 py-2  text-gray-500 border">
+                                                            <div class="grid grid-cols-2 text-left whitespace-nowrap">
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     SUBJECT
-                                                                </th>
-                                                                <th class="px-6 py-2  text-gray-500 border">
+                                                                </div>
+                                                                <div class="px-6 py-2  text-gray-500 border">
                                                                     GRADE
-                                                                </th>
-                                                            </tr>
+                                                                </div>
+                                                            </div>
                                                         </thead>
                                                         <tbody>
                                                             @foreach($applicant_result_second as $course)
-                                                                <tr class="divide-y divide-gray-300 border-b-2">
-                                                                    <td class="px-6 py-4 text-sm text-gray-500 border">
+                                                                <div class="grid grid-cols-2">
+                                                                    <div class="px-6 py-4 text-gray-500 border">
                                                                         {{ $course->subject }}
-                                                                    </td>
-                                                                    <td class="px-6 py-4 text-sm text-gray-500 border">
+                                                                    </div>
+                                                                    <div class="px-6 py-4 text-gray-500 border">
                                                                         {{ $course->grade }}
-                                                                    </td>
-                                                                </tr>
+                                                                    </div>
+                                                                </div>
                                                             @endforeach     
                                                         </tbody>
                                                     </table>
@@ -386,43 +386,60 @@
                             </div>
                         @endif     
                     </div>
+                    <!-- Qualification -->
                     @if(count($applicant_qualification) > 0)
-                    <div class="bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
-                        <div class="w-full">
-                            <div class="border px-4">
-                                <div class="text-xl py-2 text-gray-500">Qualification</div>
+                        <div class="bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
+                            <div class="w-full">
+                                <div class="border px-4">
+                                    <div class="py-2 text-gray-500">Qualification</div>
+                                </div>
                             </div>
+                            @foreach($applicant_qualification as $qualification)
+                                <div class="border text-xs">
+                                    <div class="grid grid-cols-4 gap-4">
+                                        <div class="px-6 py-2 text-gray-500 font-semibold">
+                                            SCHOOL
+                                        </div>
+                                        <div class="px-6 py-2  text-gray-500">
+                                            {{ $qualification->school }}
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-4 gap-4">
+                                        <div class="px-6 py-2 text-gray-500 font-semibold">
+                                            GRADE
+                                        </div>
+                                        <div class="px-6 py-2  text-gray-500">
+                                            {{ $qualification->grade }}
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-4 gap-4">
+                                        <div class="px-6 py-2 text-gray-500 font-semibold">
+                                            CGPA
+                                        </div>
+                                        <div class="px-6 py-2  text-gray-500">
+                                            {{ $qualification->cgpa }}
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-4 gap-4">
+                                        <div class="px-6 py-2 text-gray-500 font-semibold">
+                                            CERTIFICATE
+                                        </div>
+                                        <div class="px-6 py-2  text-gray-500">
+                                            {{ $qualification->certificate }}
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-4 gap-4">
+                                        <div class="px-6 py-2 text-gray-500 font-semibold">
+                                            YEAR
+                                        </div>
+                                        <div class="px-6 py-2  text-gray-500">
+                                            {{ $qualification->year }}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
-                        @foreach($applicant_qualification as $qualification)
-                            <div class="border">
-                                <div class="grid grid-cols-4 gap-4">
-                                    <div class="px-6 py-2 text-gray-500 font-semibold">
-                                        SCHOOL
-                                    </div>
-                                    <div class="px-6 py-2  text-gray-500">
-                                        {{ $qualification->school }}
-                                    </div>
-                                </div>
-                                <div class="grid grid-cols-4 gap-4">
-                                    <div class="px-6 py-2 text-gray-500 font-semibold">
-                                        CERTIFICATE
-                                    </div>
-                                    <div class="px-6 py-2  text-gray-500">
-                                        {{ $qualification->certificate }}
-                                    </div>
-                                </div>
-                                <div class="grid grid-cols-4 gap-4">
-                                    <div class="px-6 py-2 text-gray-500 font-semibold">
-                                        YEAR
-                                    </div>
-                                    <div class="px-6 py-2  text-gray-500">
-                                        {{ $qualification->year }}
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                @endif
+                    @endif
                     <!-- A ' Level  -->
                     <div class="bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
                         @if($applicant_bio->applicant_a_level_result)
