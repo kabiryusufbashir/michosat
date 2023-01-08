@@ -33,8 +33,10 @@ class ApplicationController extends Controller
         
         $application_count = Application::count();
 
-        $application_no = '2022_2023_'.$application_count + 1;
-        
+        $year = date('y');
+        $month = date('m');
+        $application_no = 'MICOHSAT'.$year.''.$month.'/'.$application_count + 1;
+
         try{
             $check_record = Application::where('email', $email)->count();
 
