@@ -102,7 +102,7 @@
                                 <span>Step 5: 0' Level Result  /</span>
                             </a>
                             <a id="indicatorNavSix"  href="#">
-                                <span>Step 6: Qualifications  /</span>
+                                <span>Step 6: Additional Qualifications  /</span>
                             </a>
                         </div>
                         <form action="{{ route('application-registration-form') }}" method="POST" enctype="multipart/form-data">
@@ -424,6 +424,7 @@
                                                         <option value="B3">B3</option>
                                                         <option value="C4">C4</option>
                                                         <option value="C5">C5</option>
+                                                        <option value="C6">C6</option>
                                                         <option value="D7">D7</option>
                                                         <option value="E8">E8</option>
                                                         <option value="F9">F9</option>
@@ -510,6 +511,7 @@
                                                         <option value="B3">B3</option>
                                                         <option value="C4">C4</option>
                                                         <option value="C5">C5</option>
+                                                        <option value="C6">C6</option>
                                                         <option value="D7">D7</option>
                                                         <option value="E8">E8</option>
                                                         <option value="F9">F9</option>
@@ -541,7 +543,7 @@
                                     @enderror
                                 </div> -->
                                 <div class="border-b-2 my-2">
-                                    <label for="subject" class="input-title">Qualification</label><br>
+                                    <label for="subject" class="input-title">Additional Qualification</label><br>
                                     <div class="lg:grid">
                                         <input type="text" name="school[]" placeholder="Subject Attended" class="input-field mb-2 mr-10">
                                         <input type="text" name="certificate[]" placeholder="Certificate Obtained" class="input-field mb-2">
@@ -556,7 +558,9 @@
                                 <br><br>
                                 <div class="flex items-center my-4">
                                     <span><input type="checkbox" name="agree" id="agreeBtn"></span>
-                                    <span class="ml-1 text-xs">I agree that whatever Information I given is correct to the best of my understanding and I will be held accountable for any wrong Information given.</span>
+                                    <span class="ml-1 text-xs">
+                                        I hereby delared that all the particulars given are correct to the best of my knowledge. I will agree with the penalty to be prosecuted if discovered at any point that the information given is false. If admitted I will be bound by the rules and regulations of MICOHSAT.
+                                    </span>
                                 </div>
                                 <div id="submitBtn" class="text-center my-4 hidden">
                                     <button class="submit-btn">SUBMIT</button>
@@ -613,6 +617,7 @@
                                                 '<option value="B3">B3</option>'+
                                                 '<option value="C4">C4</option>'+
                                                 '<option value="C5">C5</option>'+
+                                                '<option value="C6">C6</option>'+
                                                 '<option value="D7">D7</option>'+
                                                 '<option value="E8">E8</option>'+
                                                 '<option value="F9">F9</option>'+
@@ -664,6 +669,7 @@
                                                 '<option value="B3">B3</option>'+
                                                 '<option value="C4">C4</option>'+
                                                 '<option value="C5">C5</option>'+
+                                                '<option value="C6">C6</option>'+
                                                 '<option value="D7">D7</option>'+
                                                 '<option value="E8">E8</option>'+
                                                 '<option value="F9">F9</option>'+
