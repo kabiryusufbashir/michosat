@@ -38,13 +38,25 @@ Route::get('/application/payment/callback', [ApplicationController::class, 'appl
 // APPLICATION PORTAL 
 Route::group(['prefix' => 'application'], function () {
     Route::get('/dashboard', [ApplicationController::class, 'dashboard'])->name('application-dashboard')->middleware('auth:application');
+    // Registration 
+    Route::get('/registration/bio', [ApplicationController::class, 'registrationBio'])->name('application-registration-bio')->middleware('auth:application');
+    Route::post('/registration/bio', [ApplicationController::class, 'registrationBioSubmit'])->name('application-registration-bio-submit')->middleware('auth:application');
+    Route::get('/registration/programme', [ApplicationController::class, 'registrationPhoto'])->name('application-registration-photo')->middleware('auth:application');
+    Route::post('/registration/photo', [ApplicationController::class, 'registrationPhotoSubmit'])->name('application-registration-photo-submit')->middleware('auth:application');
+    Route::get('/registration/result', [ApplicationController::class, 'registrationResult'])->name('application-registration-result')->middleware('auth:application');
+    Route::post('/registration/result', [ApplicationController::class, 'registrationResultSubmit'])->name('application-registration-result-submit')->middleware('auth:application');
+    Route::get('/registration/qualification', [ApplicationController::class, 'registrationQualification'])->name('application-registration-qualification')->middleware('auth:application');
+    Route::post('/registration/qualification', [ApplicationController::class, 'registrationQualificationSubmit'])->name('application-registration-qualification-submit')->middleware('auth:application');
+    Route::get('/registration/kin', [ApplicationController::class, 'registrationKin'])->name('application-registration-kin')->middleware('auth:application');
+    Route::post('/registration/kin', [ApplicationController::class, 'registrationKinSubmit'])->name('application-registration-kin-submit')->middleware('auth:application');
+    Route::get('/registration/sponsor', [ApplicationController::class, 'registrationSponsor'])->name('application-registration-sponsor')->middleware('auth:application');
+    Route::post('/registration/sponsor', [ApplicationController::class, 'registrationSponsorSubmit'])->name('application-registration-sponsor-submit')->middleware('auth:application');
     
     // PAYMENT
     Route::get('/payment', [ApplicationController::class, 'payment'])->name('student-payment')->middleware('auth:application');
     Route::post('/payment/submit', [ApplicationController::class, 'applicationPaymentReceipt'])->name('application-payment-receipt')->middleware('auth:application');
     
-    // Registration 
-    Route::post('/submit', [ApplicationController::class, 'applicationRegistrationForm'])->name('application-registration-form')->middleware('auth:application');
+    // Print 
     Route::get('/print/slip', [ApplicationController::class, 'printSlip'])->name('print-slip')->middleware('auth:application');
     Route::get('/print/admission/letter', [ApplicationController::class, 'printAdmissionLetter'])->name('print-admission')->middleware('auth:application');
 

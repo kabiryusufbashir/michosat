@@ -12,6 +12,8 @@ class Applicantqualification extends Model
     protected $fillable = [
         'applicant_email',
         'school',
+        'grade',
+        'cgpa',
         'certificate',
         'year',
     ];

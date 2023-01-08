@@ -160,6 +160,7 @@ class ApplicationController extends Controller
                 $page_title = 'dashboard';
             }else if($payment_status == 2){
                 $page_title = 'document';
+                return redirect()->route('application-registration-bio');
             }else if($payment_status == 4){
                 $page_title = 'slip';
             }else if($payment_status == 5){
@@ -170,6 +171,428 @@ class ApplicationController extends Controller
         }
 
         return view('application.index', compact('page_title', 'programmes'));
+    }
+
+    public function registrationBio(){
+        
+        $email = Auth::guard('application')->user()->email;
+        $page_title = 'document';
+        $applicant = Applicantbio::where('applicant_email', $email)->first();
+
+        return view('application.registration.step_1', compact('page_title', 'applicant'));
+    
+    }
+
+    public function registrationBioSubmit(Request $request){
+        $data = $request->validate([
+            'gender' => ['required'],
+            'dob' => ['required'],
+            'marital_status' => ['required'],
+            'phone' => ['required'],
+            'city' => ['required'],
+            'address' => ['required'],
+            'lga' => ['required'],
+            'state' => ['required'],
+            'country' => ['required'],
+        ]);
+
+        $applicant_email = Auth::guard('application')->user()->email;
+        
+        $check_record = Applicantbio::where('applicant_email', $applicant_email)->count();
+
+        try{
+            if($check_record == 0){
+                $applicant = Applicantbio::create([
+                    'applicant_email' => $applicant_email,
+                    'gender' => $request->gender,
+                    'dob' => $request->dob,
+                    'marital_status' => $request->marital_status,
+                    'phone' => $request->phone,
+                    'address' => $request->address,
+                    'city' => $request->city,
+                    'lga' => $request->lga,
+                    'state' => $request->state,
+                    'country' => $request->country,
+                ]);
+
+                return redirect()->route('application-registration-photo');
+
+            }else{
+                $applicant = Applicantbio::where('applicant_email', $applicant_email)->update([
+                    'applicant_email' => $applicant_email,
+                    'gender' => $request->gender,
+                    'dob' => $request->dob,
+                    'marital_status' => $request->marital_status,
+                    'phone' => $request->phone,
+                    'address' => $request->address,
+                    'city' => $request->city,
+                    'lga' => $request->lga,
+                    'state' => $request->state,
+                    'country' => $request->country,
+                ]);
+
+                return redirect()->route('application-registration-photo');
+            }
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
+
+    }
+
+    public function registrationPhoto(){
+
+        $programmes = Programme::orderby('name', 'asc')->get();
+        $email = Auth::guard('application')->user()->email;
+        $page_title = 'document';
+        $applicant = Applicantbio::where('applicant_email', $email)->first();
+
+        return view('application.registration.step_2', compact('page_title', 'programmes', 'applicant'));
+    
+    }
+
+    public function registrationPhotoSubmit(Request $request){
+        $data = $request->validate([
+            'programme' => ['required'],
+        ]);
+
+        $applicant_email = Auth::guard('application')->user()->email;
+
+        $photo = $request->photo;
+        $applicant_name = Auth::guard('application')->user()->name;
+        
+        if(!empty($photo)){
+            $imageName = '/images/application/applicant/'.$applicant_name.'.'.$request->photo->extension();  
+        }
+        
+            try{
+                
+                if(!empty($photo)){
+                    $applicant = Applicantbio::where('applicant_email', $applicant_email)->update([
+                        'programme' => $request->programme,
+                        'photo' => $imageName,
+                    ]);
+                }else{
+                    $applicant = Applicantbio::where('applicant_email', $applicant_email)->update([
+                        'programme' => $request->programme,
+                    ]);
+                }
+
+                if(!empty($photo)){
+                    $request->photo->move('images/application/applicant', $imageName);
+                }
+                    
+                return redirect()->route('application-registration-result');
+
+            }catch(Exception $e){
+                return back()->with('error', 'Please try again... '.$e);
+            }
+
+    }
+ 
+    public function registrationResult(){
+
+        $programmes = Programme::orderby('name', 'asc')->get();
+        $applicant_email = Auth::guard('application')->user()->email;
+        $page_title = 'document';
+        $applicant = Applicantbio::where('applicant_email', $applicant_email)->first();
+
+        $applicant_result_first = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'First')->get();
+        $applicant_result_first_type = Applicantresult::select('exam_type')->where('applicant_email', $applicant_email)->where('sitting', 'First')->pluck('exam_type')->first();
+        $applicant_result_first_no = Applicantresult::select('exam_no')->where('applicant_email', $applicant_email)->where('sitting', 'First')->pluck('exam_no')->first();
+        $applicant_result_first_year = Applicantresult::select('exam_year')->where('applicant_email', $applicant_email)->where('sitting', 'First')->pluck('exam_year')->first();
+        $applicant_result_first_center = Applicantresult::select('exam_center')->where('applicant_email', $applicant_email)->where('sitting', 'First')->pluck('exam_center')->first();
+        
+        $applicant_result_second = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'Second')->get();
+        $applicant_result_second_type = Applicantresult::select('exam_type')->where('applicant_email', $applicant_email)->where('sitting', 'Second')->pluck('exam_type')->first();
+        $applicant_result_second_no = Applicantresult::select('exam_no')->where('applicant_email', $applicant_email)->where('sitting', 'Second')->pluck('exam_no')->first();
+        $applicant_result_second_year = Applicantresult::select('exam_year')->where('applicant_email', $applicant_email)->where('sitting', 'Second')->pluck('exam_year')->first();
+        $applicant_result_second_center = Applicantresult::select('exam_center')->where('applicant_email', $applicant_email)->where('sitting', 'Second')->pluck('exam_center')->first();
+        
+
+        return view('application.registration.step_3', compact(
+            'page_title', 'programmes', 'applicant', 
+            'applicant_result_first', 'applicant_result_first_type', 'applicant_result_first_no', 'applicant_result_first_year', 'applicant_result_first_center',    
+            'applicant_result_second', 'applicant_result_second_type', 'applicant_result_second_no', 'applicant_result_second_year', 'applicant_result_second_center'
+        ));
+    
+    }
+
+    public function registrationResultSubmit(Request $request){
+        $applicant_email = Auth::guard('application')->user()->email;
+
+        // Add Result 
+        $data = Array(
+            'subject_name' => $request->one_subject_name,
+            'subject_grade' => $request->one_subject_grade,
+        );
+
+        try{
+            $check_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'First')->count();
+            
+            if($check_record == 0){
+                if($result = $data['subject_name']){
+                    for($x=0; $x<count($result); $x++){
+                        $result_add = new Applicantresult;
+                        $result_add['applicant_email'] = $applicant_email;
+                        $result_add['exam_type'] = $request->one_exam_type;
+                        $result_add['exam_no'] = $request->one_exam_no;
+                        $result_add['exam_year'] = $request->one_exam_year;
+                        $result_add['exam_center'] = $request->one_exam_center;
+                        $result_add['sitting'] = 'First';
+                        $result_add['subject'] = $data['subject_name'][$x];
+                        $result_add['grade'] = $data['subject_grade'][$x];
+                        $result_add->save();
+                    }
+                }
+            }else{
+                $delete_previous_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'First')->delete();
+                if($result = $data['subject_name']){
+                    for($x=0; $x<count($result); $x++){
+                        $result_add = new Applicantresult;
+                        $result_add['applicant_email'] = $applicant_email;
+                        $result_add['exam_type'] = $request->one_exam_type;
+                        $result_add['exam_no'] = $request->one_exam_no;
+                        $result_add['exam_year'] = $request->one_exam_year;
+                        $result_add['exam_center'] = $request->one_exam_center;
+                        $result_add['sitting'] = 'First';
+                        $result_add['subject'] = $data['subject_name'][$x];
+                        $result_add['grade'] = $data['subject_grade'][$x];
+                        $result_add->save();
+                    }
+                }
+            }
+
+            if($request->two_exam_type != null){
+                // Add Result Two Level 
+                $two_data = Array(
+                    'two_subject_name' => $request->two_subject_name,
+                    'two_subject_grade' => $request->two_subject_grade,        
+                );
+
+                $check_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'Second')->count();
+            
+                if($check_record == 0){
+                    if($two_result = $two_data['two_subject_name']){
+                        for($x=0; $x<count($two_result); $x++){
+                            $result_add = new Applicantresult;
+                            $result_add['applicant_email'] = $applicant_email;
+                            $result_add['exam_type'] = $request->two_exam_type;
+                            $result_add['exam_no'] = $request->two_exam_no;
+                            $result_add['exam_year'] = $request->two_exam_year;
+                            $result_add['exam_center'] = $request->two_exam_center;
+                            $result_add['sitting'] = 'Second';
+                            $result_add['subject'] = $two_data['two_subject_name'][$x];
+                            $result_add['grade'] = $two_data['two_subject_grade'][$x];
+                            $result_add->save();
+                        }
+                    }
+                }else{
+                    $delete_previous_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'Second')->delete();
+                    if($two_result = $two_data['two_subject_name']){
+                        for($x=0; $x<count($two_result); $x++){
+                            $result_add = new Applicantresult;
+                            $result_add['applicant_email'] = $applicant_email;
+                            $result_add['exam_type'] = $request->two_exam_type;
+                            $result_add['exam_no'] = $request->two_exam_no;
+                            $result_add['exam_year'] = $request->two_exam_year;
+                            $result_add['exam_center'] = $request->two_exam_center;
+                            $result_add['sitting'] = 'Second';
+                            $result_add['subject'] = $two_data['two_subject_name'][$x];
+                            $result_add['grade'] = $two_data['two_subject_grade'][$x];
+                            $result_add->save();
+                        }
+                    }
+                }
+            }
+
+            return redirect()->route('application-registration-qualification');
+        
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
+    }
+
+    public function registrationQualification(){
+        $applicant_email = Auth::guard('application')->user()->email;
+        $page_title = 'document';
+        $qualifications = Applicantqualification::where('applicant_email', $applicant_email)->get();
+
+        return view('application.registration.step_4', compact('page_title', 'qualifications'));
+    }
+
+    public function registrationQualificationSubmit(Request $request){
+        $applicant_email = Auth::guard('application')->user()->email;
+
+        // Add Applicant Qualification 
+        $qualification = Array(
+            'school' => $request->school,
+            'grade' => $request->grade,
+            'cgpa' => $request->cgpa,
+            'certificate' => $request->certificate,
+            'year' => $request->year,        
+        );
+
+        $check_record = Applicantqualification::where('applicant_email', $applicant_email)->count();
+    
+        try{
+            if($check_record == 0){
+                if($two_result = $qualification['school']){
+                    for($x=0; $x<count($two_result); $x++){
+                        $result_add = new Applicantqualification;
+                        $result_add['applicant_email'] = $applicant_email;
+                        $result_add['school'] = $qualification['school'][$x];
+                        $result_add['grade'] = $qualification['grade'][$x];
+                        $result_add['cgpa'] = $qualification['cgpa'][$x];
+                        $result_add['certificate'] = $qualification['certificate'][$x];
+                        $result_add['year'] = $qualification['year'][$x];
+                        $result_add->save();
+                    }
+                }
+            }else{
+                $delete_previous_record = $check_record = Applicantqualification::where('applicant_email', $applicant_email)->delete();
+                if($two_result = $qualification['school']){
+                    for($x=0; $x<count($two_result); $x++){
+                        $result_add = new Applicantqualification;
+                        $result_add['applicant_email'] = $applicant_email;
+                        $result_add['school'] = $qualification['school'][$x];
+                        $result_add['grade'] = $qualification['grade'][$x];
+                        $result_add['cgpa'] = $qualification['cgpa'][$x];
+                        $result_add['certificate'] = $qualification['certificate'][$x];
+                        $result_add['year'] = $qualification['year'][$x];
+                        $result_add->save();
+                    }
+                }
+            }
+
+            return redirect()->route('application-registration-kin');
+        
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
+    }
+
+    public function registrationKin(){
+
+        $email = Auth::guard('application')->user()->email;
+        $page_title = 'document';
+        $applicant = Applicantbio::where('applicant_email', $email)->first();
+
+        return view('application.registration.step_5', compact('page_title', 'applicant'));
+    
+    }
+
+    public function registrationKinSubmit(Request $request){
+        $data = $request->validate([
+            'kin_name' => ['required'],
+            'kin_relation' => ['required'],
+            'kin_phone' => ['required'],
+            'kin_city' => ['required'],
+            'kin_address' => ['required'],
+            'kin_lga' => ['required'],
+            'kin_state' => ['required'],
+            'kin_country' => ['required'],
+        ]);
+
+        $applicant_email = Auth::guard('application')->user()->email;
+        
+        $check_record = Applicantbio::where('applicant_email', $applicant_email)->count();
+
+        try{
+            if($check_record == 0){
+                $applicant = Applicantbio::create([
+                    'kin_name' => $request->kin_name,
+                    'kin_relation' => $request->kin_relation,
+                    'kin_phone' => $request->kin_phone,
+                    'kin_address' => $request->kin_address,
+                    'kin_city' => $request->kin_city,
+                    'kin_lga' => $request->kin_lga,
+                    'kin_state' => $request->kin_state,
+                    'kin_country' => $request->kin_country,
+                ]);
+
+                return redirect()->route('application-registration-sponsor');
+
+            }else{
+                $applicant = Applicantbio::where('applicant_email', $applicant_email)->update([
+                    'kin_name' => $request->kin_name,
+                    'kin_relation' => $request->kin_relation,
+                    'kin_phone' => $request->kin_phone,
+                    'kin_address' => $request->kin_address,
+                    'kin_city' => $request->kin_city,
+                    'kin_lga' => $request->kin_lga,
+                    'kin_state' => $request->kin_state,
+                    'kin_country' => $request->kin_country,
+                ]);
+
+                return redirect()->route('application-registration-sponsor');
+            }
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
+    }
+
+    public function registrationSponsor(){
+
+        $email = Auth::guard('application')->user()->email;
+        $page_title = 'document';
+        $applicant = Applicantbio::where('applicant_email', $email)->first();
+
+        return view('application.registration.step_6', compact('page_title', 'applicant'));
+    
+    }
+
+    public function registrationSponsorSubmit(Request $request){
+        $data = $request->validate([
+            'sponsor_name' => ['required'],
+            'sponsor_phone' => ['required'],
+        ]);
+
+        $applicant_email = Auth::guard('application')->user()->email;
+        
+        $check_record = Applicantbio::where('applicant_email', $applicant_email)->count();
+
+        try{
+            if($check_record == 0){
+                $applicant = Applicantbio::create([
+                    'sponsor_name' => $request->sponsor_name,
+                    'sponsor_phone' => $request->sponsor_phone,
+                    'year' => '2022/2023',
+                ]);
+
+                //Update Logic
+                try{
+                    $registration = Applicationreceipt::where('email', $applicant_email)->update([
+                        'status' => 4,
+                    ]);
+                    
+                    return redirect()->route('application-dashboard')->with('success', 'Application Submitted');
+        
+                }catch(Exception $e){
+                    return back()->with('error', 'Please try again... '.$e);
+                }
+
+            }else{
+                $applicant = Applicantbio::where('applicant_email', $applicant_email)->update([
+                    'sponsor_name' => $request->sponsor_name,
+                    'sponsor_phone' => $request->sponsor_phone,
+                ]);
+
+                //Update Logic
+                try{
+                    $registration = Applicationreceipt::where('email', $applicant_email)->update([
+                        'status' => 4,
+                    ]);
+                    
+                    return redirect()->route('application-dashboard')->with('success', 'Application Submitted');
+        
+                }catch(Exception $e){
+                    return back()->with('error', 'Please try again... '.$e);
+                }
+
+            }
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
     }
 
     public function applicationPaymentReceipt(Request $request){
@@ -213,278 +636,6 @@ class ApplicationController extends Controller
             }else{
                 return back()->with('error', 'Invalid PIN!');    
             }        
-    }
-
-    public function applicationRegistrationForm(Request $request){
-        $data = $request->validate([
-            'gender' => ['required'],
-            'dob' => ['required'],
-            'marital_status' => ['required'],
-            'phone' => ['required'],
-            'city' => ['required'],
-            'address' => ['required'],
-            'lga' => ['required'],
-            'state' => ['required'],
-            'country' => ['required'],
-            'kin_name' => ['required'],
-            'kin_relation' => ['required'],
-            'kin_phone' => ['required'],
-            'kin_city' => ['required'],
-            'kin_address' => ['required'],
-            'kin_lga' => ['required'],
-            'kin_state' => ['required'],
-            'kin_country' => ['required'],
-            'sponsor_name' => ['required'],
-            'sponsor_phone' => ['required'],
-            'sponsor_city' => ['required'],
-            'sponsor_address' => ['required'],
-            'sponsor_lga' => ['required'],
-            'sponsor_state' => ['required'],
-            'sponsor_country' => ['required'],
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'programme' => ['required'],
-        ]);
-
-        $applicant_email = Auth::guard('application')->user()->email;
-        $applicant_name = Auth::guard('application')->user()->name;
-        $photo = $request->photo;
-        $applicant_a_level_result = $request->applicant_a_level_result;
-
-        $imageName = '/images/application/applicant/'.$applicant_name.'.'.$request->photo->extension();  
-        
-        if(!empty($applicant_a_level_result)){
-            $applicant_a_level_resultimageName = '/images/application/applicant_a_level_result/'.$applicant_name.'.'.$request->applicant_a_level_result->extension();  
-        }else{
-            $applicant_a_level_resultimageName = '';
-        }
-
-        $check_record = Applicantbio::where('applicant_email', $applicant_email)->count();
-
-        try{
-            if($check_record == 0){
-                $applicant = Applicantbio::create([
-                    'applicant_email' => $applicant_email,
-                    'gender' => $request->gender,
-                    'dob' => $request->dob,
-                    'marital_status' => $request->marital_status,
-                    'phone' => $request->phone,
-                    'address' => $request->address,
-                    'city' => $request->city,
-                    'lga' => $request->lga,
-                    'state' => $request->state,
-                    'country' => $request->country,
-                    'kin_name' => $request->kin_name,
-                    'kin_relation' => $request->kin_relation,
-                    'kin_phone' => $request->kin_phone,
-                    'kin_address' => $request->kin_address,
-                    'kin_city' => $request->kin_city,
-                    'kin_lga' => $request->kin_lga,
-                    'kin_state' => $request->kin_state,
-                    'kin_country' => $request->kin_country,
-                    'sponsor_name' => $request->sponsor_name,
-                    'sponsor_phone' => $request->sponsor_phone,
-                    'sponsor_address' => $request->sponsor_address,
-                    'sponsor_city' => $request->sponsor_city,
-                    'sponsor_lga' => $request->sponsor_lga,
-                    'sponsor_state' => $request->sponsor_state,
-                    'sponsor_country' => $request->sponsor_country,
-                    'photo' => $imageName,
-                    'applicant_a_level_result' => $applicant_a_level_resultimageName,
-                    'programme' => $request->programme,
-                    'year' => '2022/2023',
-                ]);
-            
-                $request->photo->move('images/application/applicant', $imageName);
-                if(!empty($applicant_a_level_result)){
-                    $request->applicant_a_level_result->move('images/application/applicant_a_level_result', $applicant_a_level_resultimageName);
-                }
-            }else{
-                $delete_previous_record = Applicantbio::where('applicant_email', $applicant_email)->delete();
-            
-                $applicant = Applicantbio::create([
-                    'applicant_email' => $applicant_email,
-                    'gender' => $request->gender,
-                    'dob' => $request->dob,
-                    'marital_status' => $request->marital_status,
-                    'phone' => $request->phone,
-                    'address' => $request->address,
-                    'city' => $request->city,
-                    'lga' => $request->lga,
-                    'state' => $request->state,
-                    'country' => $request->country,
-                    'kin_name' => $request->kin_name,
-                    'kin_relation' => $request->kin_relation,
-                    'kin_phone' => $request->kin_phone,
-                    'kin_address' => $request->kin_address,
-                    'kin_city' => $request->kin_city,
-                    'kin_lga' => $request->kin_lga,
-                    'kin_state' => $request->kin_state,
-                    'kin_country' => $request->kin_country,
-                    'sponsor_name' => $request->sponsor_name,
-                    'sponsor_phone' => $request->sponsor_phone,
-                    'sponsor_address' => $request->sponsor_address,
-                    'sponsor_city' => $request->sponsor_city,
-                    'sponsor_lga' => $request->sponsor_lga,
-                    'sponsor_state' => $request->sponsor_state,
-                    'sponsor_country' => $request->sponsor_country,
-                    'photo' => $imageName,
-                    'applicant_a_level_result' => $applicant_a_level_resultimageName,
-                    'programme' => $request->programme,
-                    'year' => '2022/2023',
-                ]);
-            
-                $request->photo->move('images/application/applicant', $imageName);
-                if(!empty($applicant_a_level_result)){
-                    $request->applicant_a_level_result->move('images/application/applicant_a_level_result', $applicant_a_level_resultimageName);
-                }
-            }
-
-            // Add Result 
-            $data = Array(
-                'subject_name' => $request->one_subject_name,
-                'subject_grade' => $request->one_subject_grade,
-            );
-
-            try{
-
-                $check_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'First')->count();
-                
-                if($check_record == 0){
-                    if($result = $data['subject_name']){
-                        for($x=0; $x<count($result); $x++){
-                            $result_add = new Applicantresult;
-                            $result_add['applicant_email'] = $applicant_email;
-                            $result_add['exam_type'] = $request->one_exam_type;
-                            $result_add['exam_no'] = $request->one_exam_no;
-                            $result_add['exam_year'] = $request->one_exam_year;
-                            $result_add['exam_center'] = $request->one_exam_center;
-                            $result_add['sitting'] = 'First';
-                            $result_add['subject'] = $data['subject_name'][$x];
-                            $result_add['grade'] = $data['subject_grade'][$x];
-                            $result_add->save();
-                        }
-                    }
-                }else{
-                    $delete_previous_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'First')->delete();
-                    if($result = $data['subject_name']){
-                        for($x=0; $x<count($result); $x++){
-                            $result_add = new Applicantresult;
-                            $result_add['applicant_email'] = $applicant_email;
-                            $result_add['exam_type'] = $request->one_exam_type;
-                            $result_add['exam_no'] = $request->one_exam_no;
-                            $result_add['exam_year'] = $request->one_exam_year;
-                            $result_add['exam_center'] = $request->one_exam_center;
-                            $result_add['sitting'] = 'First';
-                            $result_add['subject'] = $data['subject_name'][$x];
-                            $result_add['grade'] = $data['subject_grade'][$x];
-                            $result_add->save();
-                        }
-                    }
-                }
-
-                try{
-
-                    if($request->two_subject_name['0'] != null){
-                        // Add Result Two Level 
-                        $two_data = Array(
-                            'two_subject_name' => $request->two_subject_name,
-                            'two_subject_grade' => $request->two_subject_grade,        
-                        );
-
-                        $check_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'Second')->count();
-                    
-                        if($check_record == 0){
-                            if($two_result = $two_data['two_subject_name']){
-                                for($x=0; $x<count($two_result); $x++){
-                                    $result_add = new Applicantresult;
-                                    $result_add['applicant_email'] = $applicant_email;
-                                    $result_add['exam_type'] = $request->two_exam_type;
-                                    $result_add['exam_no'] = $request->two_exam_no;
-                                    $result_add['exam_year'] = $request->two_exam_year;
-                                    $result_add['exam_center'] = $request->two_exam_center;
-                                    $result_add['sitting'] = 'Second';
-                                    $result_add['subject'] = $two_data['two_subject_name'][$x];
-                                    $result_add['grade'] = $two_data['two_subject_grade'][$x];
-                                    $result_add->save();
-                                }
-                            }
-                        }else{
-                            $delete_previous_record = Applicantresult::where('applicant_email', $applicant_email)->where('sitting', 'Second')->delete();
-                            if($two_result = $two_data['two_subject_name']){
-                                for($x=0; $x<count($two_result); $x++){
-                                    $result_add = new Applicantresult;
-                                    $result_add['applicant_email'] = $applicant_email;
-                                    $result_add['exam_type'] = $request->two_exam_type;
-                                    $result_add['exam_no'] = $request->two_exam_no;
-                                    $result_add['exam_year'] = $request->two_exam_year;
-                                    $result_add['exam_center'] = $request->two_exam_center;
-                                    $result_add['sitting'] = 'Second';
-                                    $result_add['subject'] = $two_data['subject_name'][$x];
-                                    $result_add['grade'] = $two_data['subject_grade'][$x];
-                                    $result_add->save();
-                                }
-                            }
-                        }
-                    }
-                    
-
-                    // Add Applicant Qualification 
-                    $qualification = Array(
-                        'school' => $request->school,
-                        'certificate' => $request->certificate,
-                        'year' => $request->year,        
-                    );
-
-                    $check_record = Applicantqualification::where('applicant_email', $applicant_email)->count();
-                
-                    if($check_record == 0){
-                        if($two_result = $qualification['school']){
-                            for($x=0; $x<count($two_result); $x++){
-                                $result_add = new Applicantqualification;
-                                $result_add['applicant_email'] = $applicant_email;
-                                $result_add['school'] = $qualification['school'][$x];
-                                $result_add['certificate'] = $qualification['certificate'][$x];
-                                $result_add['year'] = $qualification['year'][$x];
-                                $result_add->save();
-                            }
-                        }
-                    }else{
-                        $delete_previous_record = $check_record = Applicantqualification::where('applicant_email', $applicant_email)->delete();
-                        if($two_result = $qualification['school']){
-                            for($x=0; $x<count($two_result); $x++){
-                                $result_add = new Applicantqualification;
-                                $result_add['applicant_email'] = $applicant_email;
-                                $result_add['school'] = $qualification['school'][$x];
-                                $result_add['certificate'] = $qualification['certificate'][$x];
-                                $result_add['year'] = $qualification['year'][$x];
-                                $result_add->save();
-                            }
-                        }
-                    }
-
-                    //Update Logic
-                    try{
-                        $registration = Applicationreceipt::where('email', $applicant_email)->update([
-                            'status' => 4,
-                        ]);
-                        
-                        return back()->with('success', 'Application Submitted');
-            
-                    }catch(Exception $e){
-                        return back()->with('error', 'Please try again... '.$e);
-                    }
-
-                }catch(Exception $e){
-                    return back()->with('error', 'Please try again... '.$e);
-                }
-
-            }catch(Exception $e){
-                return back()->with('error', 'Please try again... '.$e);
-            }
-    
-        }catch(Exception $e){
-            return back->with('error', 'Please try again... '.$e);
-        }
     }
 
     public function printSlip(){
