@@ -10,9 +10,10 @@
         @include('layouts.banner')
         <div class="absolute lg:top-72 top-24 hidden lg:block">
             <div class="bg-white font-extrabold p-8 ml-auto" id="slogan">        
-                <p class="text-gray-700 font-semibold p-3">2022/2023 admission is ongoing. 
+                <p class="text-gray-700 font-semibold p-3">
+                    2022/2023 Admission is ongoing <br>
                     <a href="{{ route('apply') }}">
-                        <span class="bg-green-700 rounded lg:p-6 p-2 text-white lg:my-8 my-2 text-center">
+                        <span class="bg-green-700 rounded lg:p-3 p-2 text-white lg:mt-12 my-2 text-center text-xl">
                             Apply Now
                         </span>
                     </a>
@@ -23,14 +24,14 @@
     <!-- Body Contents  -->
     <div class="pt-8 pb-5 text-justify">
         <!-- About Us  -->
-        <div id="about-us" class="lg:px-24 px-8 py-8 lg:mt-8 lg:grid grid-cols-2 gap-10">
+        <div id="about-us" class="lg:px-24 px-8 py-8 lg:mt-8 my-12 lg:grid grid-cols-2 gap-10">
             <div>
                 <div class="text-gray-700 lg:my-8">
                     <h1 class="text-3xl font-semibold">Welcome to the MICOHSAT, your gateway to the best health professional courses</h1>
                 </div>
                 <div class="text-gray-700 my-8">
                     <p>
-                        Our Mission is to effectively train a qualitative health care providers with the use of highly groomed staff at both Academic and Professional level. To be Leading institution in the production of well trained and qualitative health care providers across the community.
+                        Our Mission is to effectively train a qualitative health care providers with the use of highly groomed staff at both Academic and Professional level. To be Leading institution in the production of well trained and qualitative health care providers across the country.
                     </p>
                 </div>
                 <a href="{{ route('apply') }}">

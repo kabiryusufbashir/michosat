@@ -1,4 +1,4 @@
-<div id="carouselExampleCrossfade" class="carousel slide carousel-fade relative" data-bs-ride="carousel">
+<div id="carouselExampleCrossfade" class="carousel slide carousel-fade relative lg:top-8 top-24" data-bs-ride="carousel">
     <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
         <button type="button" data-bs-target="#carouselExampleCrossfade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCrossfade" data-bs-slide-to="1" aria-label="Slide 2"></button>
