@@ -30,7 +30,7 @@
                 </div>
                 <div class="text-gray-700 my-8">
                     <p>
-                        Our Mission is to effectively train a qualitative health care providers with the use of higher groomed staff at both Academic and Professional level. To be Leading institution in the production of well trained and qualitative health care providers across the community.
+                        Our Mission is to effectively train a qualitative health care providers with the use of highly groomed staff at both Academic and Professional level. To be Leading institution in the production of well trained and qualitative health care providers across the community.
                     </p>
                 </div>
                 <a href="{{ route('apply') }}">

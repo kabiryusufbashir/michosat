@@ -197,7 +197,7 @@
                     <div class="mt-4">
                         <h1 class="text-3xl font-bold mb-4">Vision</h1>
                         <p class="py-1 lg:w-2/3 w-full">
-                            Leading institution in the production of well trained and qualitative health care providers across the community
+                            Leading institution in the production of well trained and qualitative health care providers across the country
                         </p>
                     </div>
                 </div>

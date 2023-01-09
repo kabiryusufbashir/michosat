@@ -63,7 +63,7 @@
                                     <label for="subject" class="input-title">Additional Qualification</label><br>
                                         @foreach($qualifications as $qualification)
                                             <div class="lg:grid">
-                                                <input type="text" value="{{ $qualification->school }}" name="school[]" placeholder="Subject Attended" class="input-field mb-2 mr-10">
+                                                <input type="text" value="{{ $qualification->school }}" name="school[]" placeholder="School Attended" class="input-field mb-2 mr-10">
                                                 <input type="text" value="{{ $qualification->grade }}" name="grade[]" placeholder="Grade" class="input-field mb-2 mr-10">
                                                 <input type="text" value="{{ $qualification->cgpa }}" name="cgpa[]" placeholder="CGPA" class="input-field mb-2 mr-10">
                                                 <input type="text" value="{{ $qualification->certificate }}" name="certificate[]" placeholder="Certificate Obtained" class="input-field mb-2">
@@ -102,7 +102,7 @@
                             '<div class="border-b-2 my-2">'+
                                 '<label for="subject" class="input-title">Additional Qualification</label><br>'+
                                     '<div class="lg:grid">'+
-                                        '<input type="text" name="school[]" placeholder="Subject Attended" class="input-field mb-2 mr-10">'+
+                                        '<input type="text" name="school[]" placeholder="School Attended" class="input-field mb-2 mr-10">'+
                                         '<input type="text" name="grade[]" placeholder="Grade" class="input-field mb-2">'+
                                         '<input type="text" name="cgpa[]" placeholder="CGPA" class="input-field mb-2">'+
                                         '<input type="text" name="certificate[]" placeholder="Certificate Obtained" class="input-field mb-2">'+
