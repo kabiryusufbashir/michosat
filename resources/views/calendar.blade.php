@@ -8,7 +8,7 @@
     <!-- Body Contents  -->
     <div class="pt-8 pb-5 text-left">
         <!-- About Us  -->
-        <div class="text-center lg:text-3xl text-xl font-semibold mt-8">Calendar</div>
+        <div class="text-center lg:text-3xl text-xl font-semibold mt-24">Calendar</div>
         <div>
             <img class="w-24 mx-auto mt-8" src="{{ asset('images/admission.png') }}" alt="Admission">
         </div>

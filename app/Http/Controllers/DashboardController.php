@@ -44,6 +44,10 @@ class DashboardController extends Controller
         return view('courses');
     }
 
+    public function courseFee(){
+        return view('coursefee');
+    }
+
     public function entry(){
         return view('entry');
     }

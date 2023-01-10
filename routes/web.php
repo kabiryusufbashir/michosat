@@ -24,6 +24,7 @@ Route::get('/courses', [DashboardController::class, 'courses'])->name('courses')
 Route::get('/entry', [DashboardController::class, 'entry'])->name('entry');
 Route::get('/calendar', [DashboardController::class, 'calendarFront'])->name('calendar-front');
 Route::get('/process-of-admission', [DashboardController::class, 'processOfAdmission'])->name('process-of-admission');
+Route::get('/course/fee', [DashboardController::class, 'courseFee'])->name('course-fee');
 Route::get('/apply', [DashboardController::class, 'apply'])->name('apply');
 Route::get('/contact', [DashboardController::class, 'contact'])->name('contact');
 
