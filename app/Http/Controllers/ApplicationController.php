@@ -35,7 +35,7 @@ class ApplicationController extends Controller
 
         $year = date('y');
         $month = date('m');
-        $application_no = 'MICOHSAT'.$year.''.$month.'/'.$application_count + 1;
+        $application_no = 'MICOHSAT'.$year.''.$month.''.$application_count + 1;
 
         try{
             $check_record = Application::where('email', $email)->count();

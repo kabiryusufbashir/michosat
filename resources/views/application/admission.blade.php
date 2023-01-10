@@ -41,67 +41,73 @@
                 </div>
                 <div>
                     <div>
-                        MIKIYA INTERNATIONAL COLLEGE
-                    </div>
-                    <div>
-                        OF HEALTH SCIENCE AND TECHNOLOGY (MICOHSAT) BARI
+                        MIKIYA INTERNATIONAL COLLEGE OF HEALTH SCIENCE AND TECHNOLOGY (MICOHSAT) BARI
                     </div>
                 </div>
                 <div>
                     <div>
-                        ADDRESS: NO 1 ENG. SURAJO GARBA COMPLEX ALONG FALGORE
-                    </div>
-                    <div>
-                        ROAD BARI TOWN ROGO LG KANO STATE
+                        ADDRESS: NO 1 ENG. SURAJO GARBA COMPLEX ALONG FALGORE ROAD BARI TOWN ROGO LG KANO STATE
                     </div>
                 </div>
                 <div>
-                    EMAIL: MICOHSAT2022@GMAIL.COM
+                    WEBSITE: www.micohsat.com.ng | EMAIL: MICOHSAT2022@GMAIL.COM
                 </div>
                 <div>
-                    PHONE: 08026948116, 08031320836, 07085564076
+                    Tel: 08026948116, 08031320836
                 </div>
                 <div>
                     Motto: Humanity Service
                 </div>
             </div>
-            <div class="flex justify-between px-6 items-center">
-                <div class="col-span-2">
-                    <div class="font-semibold text-xl text-center">{{ $applicant_bio->year }} Admission Letter</div>
-                </div>
-                <div class="col-span-1">
-                    <img style="width:50px;" class="w-24" src="{{ $school->photo }}" alt="">
-                </div>
+            <div class="px-6 mt-5 ml-4 mb-12">
+                <div class="text-sm mb-2">Provost: Ahmad Idris Falgore RCHP, PMP, ACIPM, RHEP (NDCH, SCHEW, CHO, BSC, MCH, MSCPH, DFM, PGDPM, LMIH, IEGD)</div>
+                <div class="text-sm">Registrar: Mansir Basiru Nuhu RHEP, (CHEW, HDHEP, BSC )</div>
             </div>
-            <!-- Personal Information -->
-            <div class="bg-white py-3 px-6 ml-4 mr-8 text-gray-600 my-5">
-                <div class="mb-8 text-2xl">
-                    {{ Auth::guard('application')->user()->name }}
-                </div>
-                <div class="mb-8">
-                    {{ $applicant_bio->address }}, <br>
-                    {{ $applicant_bio->lga }}, <br>
-                    {{ $applicant_bio->state }}, <br>
-                    {{ $applicant_bio->country }} <br>
-                </div>
-                <div class="mb-8">
-                    Dear <b>{{ Auth::guard('application')->user()->name }}</b>
+            
+            <div class="px-6 text-sm float-right mb-4">Date: 30th January 2023</div>
+            <div class="px-6 text-sm ml-4 my-2">
+                <div class="mb-2">
+                    Name: <b>{{ Auth::guard('application')->user()->name }}</b>
                 </div>
                 <div>
-                    <p>
-                        We are pleased to inform you that you have been admitted to the study {{ $applicant_bio->programme($applicant_bio->programme) }} 
-                        to the class of {{ $applicant_bio->year }} for the {{ $school->name }}. 
-                        You will find a full admission package attached to this admission letter. 
-                        It includes all the documents needed to follow up the registration which have to be submitted before the registration period closes. 
-                        Congratulation. We are looking forward to seeing you.
-                    </p>
+                    Application No: <b>{{ Auth::guard('application')->user()->application_no }}</b>
                 </div>
             </div>
-
-            <div class="px-8 float-right mt-12">
-                <div>.......................................................</div>
-                <div>Mal Mansur Basiru Nuhu</div>
-                <div>Ag. Registrar</div>
+            <div class="px-6 text-sm ml-4 text-center font-semibold text-xl mt-12">
+                PROVISIONAL OFFER OF ADMISSION (2022/2023 SESSION)
+            </div>
+            <div class="px-6 text-sm ml-4 my-2 py-2">
+                <p>
+                    I am pleased to inform you that you have been offered a provisional admission in to this college to pursue a programme leading to the award of <b>{{ $applicant_bio->programme($applicant_bio->programme) }}</b>.
+                </p>
+            </div>
+            <div class="px-6 text-sm ml-4 my-2 py-2">
+                <p>
+                    The offer is made to the following conditions;
+                </p>
+            </div>
+            <div class="px-6 text-sm ml-8 my-2 py-2">
+                <p>
+                    1.	That you possess the minimum qualification for the programme, <br>
+                    2.	That you are found physically and mentally fit, <br>
+                    3.	That you are to produce at the time of registration the original and three photocopies of all your credentials including the certificates of all school attended, medical fitness, birth/declaration of age, signed application slip, three passport size photograph and the filled acceptant form,  <br>
+                    4.	That  you pay your registration fees (tuition fees and other charges) when due (fees are not refundable after payment), <br>
+                    5.	That you renew your registration at the beginning of every semester or session as applicable. Failure to do that would amount to voluntary withdrawal, <br>
+                    6.	That the college reserves the right to withdraw your admission whenever it discover that you have been given the false information, you score below minimum or you shows an unacceptable behavior. <br>
+                    7.	That the graduation from the chosen program is predicated on the meeting of all the college academic board requirement.<br>
+                </p>
+            </div>
+            <div class="px-6 text-sm ml-4 my-2 py-2 mt-12">
+                <p>
+                    Congratulations,
+                </p>
+                <p>
+                    <img class="width:30px;" src="{{ asset('images/signature.png') }}" alt="signature">
+                </p>
+                <p>
+                    Mansir Bashir Nuhu RCHP, RHEP <br>
+                    Registrar for provost
+                </p>
             </div>
         </div>
         <div class="w-full fixed text-center bottom-0 text-sm">
