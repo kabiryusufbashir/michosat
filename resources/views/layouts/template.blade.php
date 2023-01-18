@@ -112,6 +112,11 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="{{ route('course-fee') }}">
+                                        COURSE FEE
+                                    </a>
+                                </li>
+                                <li>
                                     <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100" href="{{ route('calendar-front') }}">
                                         ACADEMIC CALENDAR
                                     </a>
@@ -194,6 +199,14 @@
                 <li class="py-3 px-8">
                     <a href="{{ route('apply') }}" class="flex justify-between border-b-1 items-center">
                         <span>Apply Now</span>
+                        &nbsp;&nbsp;
+                        <span><i class="fa-solid fa-briefcase text-2xl"></i></span>
+                    </a>
+                </li>
+                <hr>
+                <li class="py-3 px-8">
+                    <a href="{{ route('course-fee') }}" class="flex justify-between border-b-1 items-center">
+                        <span>Course Fee</span>
                         &nbsp;&nbsp;
                         <span><i class="fa-solid fa-briefcase text-2xl"></i></span>
                     </a>

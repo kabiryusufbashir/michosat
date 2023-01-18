@@ -26,7 +26,7 @@
                 <div class="text-gray-700 my-4 ml-2">
                     <p>
                         1. Create an account to begin the application process. <br>
-                        2. Purchase a Scratch card at sum of four thousand naira (N4,000) only at: <br> <div class="ml-4">- College premises, <br> - Access bank Kafur Malumfashi, <br> - Zenith Bank Gwarzo Kabuga, <br> - Keystone Bank Makarfi <br> - or an accredited agent. </div>
+                        2. Purchase a Scratch card at sum of four thousand naira (N4,000) only at: <br> <div class="ml-4">- College premises, <br> - Access bank Kafur Malumfashi, <br> - Zenith Bank Gwarzo Kabuga, <br> - Keystone Bank Makarfi <br> - BBari Ventures <br> - or an accredited agent. </div>
                         3. Upload your receipt payment on your portal and complete the application process. <br>
                         4. Download your acknowledge slip on your portal <br>
                         5. For enquiries/complaints, Send a mail to the support email <a href="mailto:info@micohsat.com">info@micohsat.com</a><br>

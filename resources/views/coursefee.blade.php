@@ -30,27 +30,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees </div>
-                                                <div class="border p-2">Central registration </div>
+                                                <!-- <div class="border p-2">Central registration </div>
                                                 <div class="border p-2">Departmental registration </div>
                                                 <div class="border p-2">Caution fees </div>
                                                 <div class="border p-2">Medical fees </div>
                                                 <div class="border p-2">Union fees </div>
-                                                <div class="border p-2">Examination fees </div>
+                                                <div class="border p-2">Examination fees </div> -->
                                                 <div class="border p-2">Internet support charges </div>
                                                 <div class="border p-2">JAMB REGULARATION</div>
                                                 <div class="border p-2">Total</div>
                                             </div>
                                             <div class="border">
                                                 <div class="border p-2">70000</div>
-                                                <div class="border p-2">7000</div>
+                                                <!-- <div class="border p-2">7000</div>
                                                 <div class="border p-2">7000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">3000</div>
                                                 <div class="border p-2">1500</div>
-                                                <div class="border p-2">3000</div>
-                                                <div class="border p-2">1000</div>
+                                                <div class="border p-2">3000</div> -->
+                                                <div class="border p-2">300</div>
                                                 <div class="border p-2">To be determined by the JAMB</div>
-                                                <div class="border p-2">97500</div>
+                                                <div class="border p-2">70300</div>
                                             </div>
                                         </div>
                                     </div>
@@ -60,27 +60,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Practical supervison fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">Total</div>
                                             </div>
                                             <div class="border">
                                                 <div class="border p-2">70000</div>
-                                                <div class="border p-2">7000</div>
+                                                <!-- <div class="border p-2">7000</div>
                                                 <div class="border p-2">7000</div>
                                                 <div class="border p-2">5000</div>
-                                                <div class="border p-2">5000</div>
-                                                <div class="border p-2">1000</div>
-                                                <div class="border p-2">95000</div>
+                                                <div class="border p-2">5000</div> -->
+                                                <div class="border p-2">300</div>
+                                                <div class="border p-2">70300</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 7000 to the HOD every semester for handout, Stationaries are to be submitted to the library once.				
+                                    <!-- The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 7000 to the HOD every semester for handout, Stationaries are to be submitted to the library once.				 -->
                                 </div>
                                 <div class="lg:grid grid-cols-2 my-6 lg:w-1/2 w-full">
                                     <div class="border">
@@ -89,12 +89,12 @@
                                         <div class="border p-2">ID card &Name tag fees</div>
                                         <div class="p-2">Stationaries; A4, Biro, Marker, BROOM, Detergent</div>
                                     </div>
-                                    <div class="border">
+                                    <!-- <div class="border">
                                         <div class="border p-2">10000</div>
                                         <div class="border p-2">7000</div>
                                         <div class="border p-2">3000</div>
                                         <div class="p-2"></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </p>
                         </div>
@@ -116,27 +116,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Caution fees</div>
                                                 <div class="border p-2">Medical fees</div>
                                                 <div class="border p-2">Union fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">JAMB REGULARATION</div>
                                                 <div class="border p-2">TOTAL</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">60000</div>
-                                                <div class="border p-2">5000</div>
+                                                <div class="border p-2">55000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">3000</div>
                                                 <div class="border p-2">1500</div>
-                                                <div class="border p-2">3000</div>
-                                                <div class="border p-2">1000</div>
+                                                <div class="border p-2">3000</div> -->
+                                                <div class="border p-2">300</div>
                                                 <div class="border p-2">To be determined by the JAMB</div>
-                                                <div class="border p-2">83500</div>
+                                                <div class="border p-2">55300</div>
                                             </div>
                                         </div>
                                     </div>
@@ -146,27 +146,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Practical supervison fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">Total</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">60000</div>
+                                                <div class="border p-2">55000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
-                                                <div class="border p-2">5000</div>
-                                                <div class="border p-2">5000</div>
-                                                <div class="border p-2">1000</div>
-                                                <div class="border p-2">81000</div>
+                                                <div class="border p-2">5000</div> -->
+                                                <div class="border p-2">300</div>
+                                                <div class="border p-2">55300</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				
+                                    <!-- The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				 -->
                                 </div>
                                 <div class="lg:grid grid-cols-2 my-6 lg:w-1/2 w-full">
                                     <div class="border">
@@ -175,12 +175,12 @@
                                         <div class="border p-2">ID card &Name tag fees</div>
                                         <div class="p-2">Stationaries; A4, Biro, Marker, BROOM, Detergent</div>
                                     </div>
-                                    <div class="border">
+                                    <!-- <div class="border">
                                         <div class="border p-2">10000</div>
                                         <div class="border p-2">5000</div>
                                         <div class="border p-2">3000</div>
                                         <div class="p-2"></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </p>
                         </div>
@@ -202,27 +202,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Caution fees</div>
                                                 <div class="border p-2">Medical fees</div>
                                                 <div class="border p-2">Union fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
-                                                <div class="border p-2">Index fees</div>
+                                                <!-- <div class="border p-2">Index fees</div> -->
                                                 <div class="border p-2">TOTAL</div>
                                             </div>
                                             <div class="border">
                                                 <div class="border p-2">55000</div>
-                                                <div class="border p-2">5000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">3000</div>
                                                 <div class="border p-2">1500</div>
-                                                <div class="border p-2">3000</div>
-                                                <div class="border p-2">1000</div>
+                                                <div class="border p-2">3000</div> -->
+                                                <div class="border p-2">300</div>
                                                 <div class="border p-2">To be determined by the CHPRBN</div>
-                                                <div class="border p-2">78500</div>
+                                                <div class="border p-2">55300</div>
                                             </div>
                                         </div>
                                     </div>
@@ -232,27 +232,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Practical supervison fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">Total</div>
                                             </div>
                                             <div class="border">
                                                 <div class="border p-2">55000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
-                                                <div class="border p-2">5000</div>
-                                                <div class="border p-2">5000</div>
-                                                <div class="border p-2">1000</div>
-                                                <div class="border p-2">76000</div>
+                                                <div class="border p-2">5000</div> -->
+                                                <div class="border p-2">300</div>
+                                                <div class="border p-2">55300</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				
+                                    <!-- The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				 -->
                                 </div>
                                 <div class="lg:grid grid-cols-2 my-6 lg:w-1/2 w-full">
                                     <div class="border">
@@ -261,12 +261,12 @@
                                         <div class="border p-2">ID card &Name tag fees</div>
                                         <div class="p-2">Stationaries; A4, Biro, Marker, BROOM, Detergent</div>
                                     </div>
-                                    <div class="border">
+                                    <!-- <div class="border">
                                         <div class="border p-2">10000</div>
                                         <div class="border p-2">5000</div>
                                         <div class="border p-2">3000</div>
                                         <div class="p-2"></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </p>
                         </div>
@@ -288,27 +288,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Caution fees</div>
                                                 <div class="border p-2">Medical fees</div>
                                                 <div class="border p-2">Union fees</div>
                                                 <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Index fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
-                                                <div class="border p-2">Index fees</div>
                                                 <div class="border p-2">TOTAL</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">46000</div>
-                                                <div class="border p-2">5000</div>
+                                                <div class="border p-2">40000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">3000</div>
                                                 <div class="border p-2">1500</div>
-                                                <div class="border p-2">2000</div>
-                                                <div class="border p-2">1000</div>
+                                                <div class="border p-2">2000</div> -->
+                                                <div class="border p-2">300</div>
                                                 <div class="border p-2">To be determined by the CHPRBN</div>
-                                                <div class="border p-2">68500</div>
+                                                <div class="border p-2">40300</div>
                                             </div>
                                         </div>
                                     </div>
@@ -318,27 +318,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Practical supervison fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">Total</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">46000</div>
+                                                <div class="border p-2">40000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
-                                                <div class="border p-2">5000</div>
-                                                <div class="border p-2">4000</div>
-                                                <div class="border p-2">1000</div>
-                                                <div class="border p-2">66000</div>
+                                                <div class="border p-2">4000</div> -->
+                                                <div class="border p-2">300</div>
+                                                <div class="border p-2">40300</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 4000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				
+                                    <!-- The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 4000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				 -->
                                 </div>
                                 <div class="lg:grid grid-cols-2 my-6 lg:w-1/2 w-full">
                                     <div class="border">
@@ -347,12 +347,12 @@
                                         <div class="border p-2">ID card &Name tag fees</div>
                                         <div class="p-2">Stationaries; A4, Biro, Marker, BROOM, Detergent</div>
                                     </div>
-                                    <div class="border">
+                                    <!-- <div class="border">
                                         <div class="border p-2">10000</div>
                                         <div class="border p-2">4000</div>
                                         <div class="border p-2">3000</div>
                                         <div class="p-2"></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </p>
                         </div>
@@ -374,27 +374,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Caution fees</div>
                                                 <div class="border p-2">Medical fees</div>
                                                 <div class="border p-2">Union fees</div>
                                                 <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Index fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
-                                                <div class="border p-2">Index fees</div>
                                                 <div class="border p-2">TOTAL</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">48000</div>
-                                                <div class="border p-2">5000</div>
+                                                <div class="border p-2">40000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">3000</div>
                                                 <div class="border p-2">1500</div>
-                                                <div class="border p-2">3000</div>
-                                                <div class="border p-2">1000</div>
+                                                <div class="border p-2">3000</div> -->
+                                                <div class="border p-2">300</div>
                                                 <div class="border p-2">To be determined by the board</div>
-                                                <div class="border p-2">71500</div>
+                                                <div class="border p-2">40300</div>
                                             </div>
                                         </div>
                                     </div>
@@ -404,27 +404,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Practical supervison fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">Total</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">48000</div>
+                                                <div class="border p-2">40000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
-                                                <div class="border p-2">5000</div>
-                                                <div class="border p-2">3000</div>
-                                                <div class="border p-2">1000</div>
-                                                <div class="border p-2">67000</div>
+                                                <div class="border p-2">3000</div> -->
+                                                <div class="border p-2">300</div>
+                                                <div class="border p-2">40300</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				
+                                    <!-- The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				 -->
                                 </div>
                                 <div class="lg:grid grid-cols-2 my-6 lg:w-1/2 w-full">
                                     <div class="border">
@@ -433,12 +433,12 @@
                                         <div class="border p-2">ID card &Name tag fees</div>
                                         <div class="p-2">Stationaries; A4, Biro, Marker, BROOM, Detergent</div>
                                     </div>
-                                    <div class="border">
+                                    <!-- <div class="border">
                                         <div class="border p-2">10000</div>
                                         <div class="border p-2">5000</div>
                                         <div class="border p-2">3000</div>
                                         <div class="p-2"></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </p>
                         </div>
@@ -460,27 +460,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Caution fees</div>
                                                 <div class="border p-2">Medical fees</div>
                                                 <div class="border p-2">Union fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">JAMB REGULARATION</div>
                                                 <div class="border p-2">TOTAL</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">50000</div>
-                                                <div class="border p-2">5000</div>
+                                                <div class="border p-2">40000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">3000</div>
                                                 <div class="border p-2">1500</div>
-                                                <div class="border p-2">3000</div>
-                                                <div class="border p-2">1000</div>
+                                                <div class="border p-2">3000</div> -->
+                                                <div class="border p-2">300</div>
                                                 <div class="border p-2">To be determined by the JAMB</div>
-                                                <div class="border p-2">73500</div>
+                                                <div class="border p-2">40300</div>
                                             </div>
                                         </div>
                                     </div>
@@ -490,27 +490,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Practical supervison fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">Total</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">50000</div>
+                                                <div class="border p-2">40000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
-                                                <div class="border p-2">5000</div>
-                                                <div class="border p-2">3000</div>
-                                                <div class="border p-2">1000</div>
-                                                <div class="border p-2">69000</div>
+                                                <div class="border p-2">3000</div> -->
+                                                <div class="border p-2">300</div>
+                                                <div class="border p-2">40300</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				
+                                    <!-- The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				 -->
                                 </div>
                                 <div class="lg:grid grid-cols-2 my-6 lg:w-1/2 w-full">
                                     <div class="border">
@@ -519,12 +519,12 @@
                                         <div class="border p-2">ID card &Name tag fees</div>
                                         <div class="p-2">Stationaries; A4, Biro, Marker, BROOM, Detergent</div>
                                     </div>
-                                    <div class="border">
+                                    <!-- <div class="border">
                                         <div class="border p-2">10000</div>
                                         <div class="border p-2">5000</div>
                                         <div class="border p-2">3000</div>
                                         <div class="p-2"></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </p>
                         </div>
@@ -546,27 +546,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Caution fees</div>
                                                 <div class="border p-2">Medical fees</div>
                                                 <div class="border p-2">Union fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">JAMB REGULARATION</div>
                                                 <div class="border p-2">TOTAL</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">50000</div>
-                                                <div class="border p-2">5000</div>
+                                                <div class="border p-2">40000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">3000</div>
                                                 <div class="border p-2">1500</div>
-                                                <div class="border p-2">3000</div>
-                                                <div class="border p-2">1000</div>
+                                                <div class="border p-2">3000</div> -->
+                                                <div class="border p-2">300</div>
                                                 <div class="border p-2">To be determined by the JAMB</div>
-                                                <div class="border p-2">73500</div>
+                                                <div class="border p-2">40300</div>
                                             </div>
                                         </div>
                                     </div>
@@ -576,27 +576,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Practical supervison fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">Total</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">50000</div>
+                                                <div class="border p-2">40000</div>
+                                                <!-- <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">5000</div>
-                                                <div class="border p-2">5000</div>
-                                                <div class="border p-2">3000</div>
-                                                <div class="border p-2">1000</div>
-                                                <div class="border p-2">69000</div>
+                                                <div class="border p-2">3000</div> -->
+                                                <div class="border p-2">300</div>
+                                                <div class="border p-2">40300</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				
+                                    <!-- The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				 -->
                                 </div>
                                 <div class="lg:grid grid-cols-2 my-6 lg:w-1/2 w-full">
                                     <div class="border">
@@ -605,12 +605,12 @@
                                         <div class="border p-2">ID card &Name tag fees</div>
                                         <div class="p-2">Stationaries; A4, Biro, Marker, BROOM, Detergent</div>
                                     </div>
-                                    <div class="border">
+                                    <!-- <div class="border">
                                         <div class="border p-2">10000</div>
                                         <div class="border p-2">5000</div>
                                         <div class="border p-2">3000</div>
                                         <div class="p-2"></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </p>
                         </div>
@@ -632,27 +632,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Caution fees</div>
                                                 <div class="border p-2">Medical fees</div>
                                                 <div class="border p-2">Union fees</div>
                                                 <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Index fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
-                                                <div class="border p-2">Index fees</div>
                                                 <div class="border p-2">TOTAL</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">40000</div>
-                                                <div class="border p-2">4000</div>
+                                                <div class="border p-2">35000</div>
+                                                <!-- <div class="border p-2">4000</div>
                                                 <div class="border p-2">4000</div>
                                                 <div class="border p-2">5000</div>
                                                 <div class="border p-2">3000</div>
                                                 <div class="border p-2">1500</div>
-                                                <div class="border p-2">3000</div>
-                                                <div class="border p-2">1000</div>
+                                                <div class="border p-2">3000</div> -->
+                                                <div class="border p-2">300</div>
                                                 <div class="border p-2">To be determined by the board</div>
-                                                <div class="border p-2">61500</div>
+                                                <div class="border p-2">35300</div>
                                             </div>
                                         </div>
                                     </div>
@@ -662,27 +662,27 @@
                                         <div class="lg:grid grid-cols-2">
                                             <div class="border">
                                                 <div class="border p-2">Tution fees</div>
-                                                <div class="border p-2">Central registration</div>
+                                                <!-- <div class="border p-2">Central registration</div>
                                                 <div class="border p-2">Departmental registration</div>
                                                 <div class="border p-2">Practical supervison fees</div>
-                                                <div class="border p-2">Examination fees</div>
+                                                <div class="border p-2">Examination fees</div> -->
                                                 <div class="border p-2">Internet support charges</div>
                                                 <div class="border p-2">Total</div>
                                             </div>
                                             <div class="border">
-                                                <div class="border p-2">40000</div>
-                                                <div class="border p-2">4000</div>
+                                                <div class="border p-2">35000</div>
+                                                <!-- <div class="border p-2">4000</div>
                                                 <div class="border p-2">4000</div>
                                                 <div class="border p-2">3000</div>
-                                                <div class="border p-2">5000</div>
-                                                <div class="border p-2">1000</div>
-                                                <div class="border p-2">57000</div>
+                                                <div class="border p-2">5000</div> -->
+                                                <div class="border p-2">300</div>
+                                                <div class="border p-2">35300</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				
+                                    <!-- The 10,000 and 3000 are to be paid to the students affairs officer for uniform/Lab coat as well as ID card &Name tag once, 5000 to the HOD every semester for handout, Stationaries are to be submitted to the library once				 -->
                                 </div>
                                 <div class="lg:grid grid-cols-2 my-6 lg:w-1/2 w-full">
                                     <div class="border">
@@ -691,12 +691,12 @@
                                         <div class="border p-2">ID card &Name tag fees</div>
                                         <div class="p-2">Stationaries; A4, Biro, Marker, BROOM, Detergent</div>
                                     </div>
-                                    <div class="border">
+                                    <!-- <div class="border">
                                         <div class="border p-2">10000</div>
                                         <div class="border p-2">5000</div>
                                         <div class="border p-2">3000</div>
                                         <div class="p-2"></div>
-                                    </div>
+                                    </div> -->
                                 </div>    
                             </p>
                         </div>

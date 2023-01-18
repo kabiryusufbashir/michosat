@@ -92,7 +92,7 @@
         <!-- Staff  -->
         <div id="staffSection" class="lg:px-24 px-8 mt-4 py-8">
             <div class="text-center text-3xl font-semibold mb-4 py-6">Our Staff</div>
-            <div id="staffSection" class="lg:grid grid-cols-3 gap-6">    
+            <div id="staffSection" class="lg:grid grid-cols-4 gap-6">    
                 <div>
                     <div class="pb-6">
                         <img class="w-52 mx-auto rounded-full" src="{{ asset('images/2.jpg') }}" alt="Provost">
@@ -115,6 +115,14 @@
                     </div>
                     <div class="text-center mb-8">
                         Rayyanu Ado Bari <br> Ag. Bursar
+                    </div>
+                </div>
+                <div>
+                    <div class="pb-6">
+                        <img class="w-52 mx-auto rounded-full" src="{{ asset('images/5.jpg') }}" alt="Ag Librarian">
+                    </div>
+                    <div class="text-center mb-8">
+                        Yahuza Usman <br> Ag Librarian
                     </div>
                 </div>
             </div>
