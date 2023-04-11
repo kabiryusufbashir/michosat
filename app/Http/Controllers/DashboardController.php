@@ -265,13 +265,15 @@ class DashboardController extends Controller
     }
 
     public function checkApplication(){
-        $check_applications = Applicantbio::orderby('created_at', 'desc')->where('year', '2022/2023')->paginate(40);
+        $check_applications = Applicantbio::where('admission_status', 0)->orderby('created_at', 'desc')->where('year', '2022/2023')->paginate(40);
         return view('dashboard.application.check_applications', compact('check_applications'));
     }
 
     public function checkApplicationEdit($id){
         $applicant_bio = Applicantbio::findOrFail($id);
         $applicant_email = $applicant_bio->applicant_email;
+
+        $programmes = Programme::orderby('name', 'asc')->get();
         
         $applicant_result = Applicantresult::where('applicant_email', $applicant_email)->get();
         $applicant_qualification = Applicantqualification::where('applicant_email', $applicant_email)->get();
@@ -297,25 +299,59 @@ class DashboardController extends Controller
         return view('dashboard.application.check_applications_edit', compact('applicant_bio', 'applicant_result',
         'applicant_result_first', 'applicant_result_first_type', 'applicant_result_first_no', 'applicant_result_first_year', 'applicant_result_first_center',    
         'applicant_result_second', 'applicant_result_second_type', 'applicant_result_second_no', 'applicant_result_second_year', 'applicant_result_second_center',
-        'applicant_result_a_level', 'applicant_fullname', 'applicant_no', 'applicant_qualification'));
+        'applicant_result_a_level', 'applicant_fullname', 'applicant_no', 'applicant_qualification', 'programmes'));
     }
 
-    
     public function checkApplicationUpdate(Request $request, $id){
         
         $registered_by = Auth::user()->id;
+        $programmed_selected = Applicantbio::select('programme')->where('applicant_email', $id)->pluck('programme')->first();
 
         try{
             $registration = Applicationreceipt::where('email', $id)->update([
                 'status' => 5,
                 'registered_by' => $registered_by,
             ]);
+
+            $admission_status = Applicantbio::where('applicant_email', $id)->update([
+                'admission_status' => 1,
+                'programme_admitted' => $programmed_selected,
+            ]);
             
-            return redirect()->route('check-application')->with('success', 'Applicant admitted!');
+            return redirect()->route('check-admission')->with('success', 'Applicant admitted!');
 
         }catch(Exception $e){
             return back()->with('error', 'Please try again... '.$e);
         }
+    }
+
+    public function checkApplicationChangeCourse(Request $request, $id){
+        
+        $registered_by = Auth::user()->id;
+
+        $programmed_selected = $request->programme_admitted;
+
+        try{
+            $registration = Applicationreceipt::where('email', $id)->update([
+                'status' => 5,
+                'registered_by' => $registered_by,
+            ]);
+
+            $admission_status = Applicantbio::where('applicant_email', $id)->update([
+                'admission_status' => 1,
+                'programme_admitted' => $programmed_selected,
+            ]);
+            
+            return redirect()->route('check-admission')->with('success', 'Applicant admitted!');
+
+        }catch(Exception $e){
+            return back()->with('error', 'Please try again... '.$e);
+        }
+    }
+
+    public function checkAdmission(){
+        $check_admissions = Applicantbio::where('admission_status', 1)->orderby('created_at', 'desc')->where('year', '2022/2023')->paginate(40);
+        return view('dashboard.application.check_admission', compact('check_admissions'));
     }
 
     // Department 

@@ -73,5 +73,17 @@
                 </span>
             </div>
         </a>
+        <!-- All registration -->
+        <a href="{{ route('check-admission') }}">
+            <div class="settings-menu-div">
+                <span class="bg-orange-300 p-2 rounded-full">
+                    @include('icons.registration')
+                </span>
+                &nbsp;&nbsp;
+                <span>
+                    <h1>Check Admission</h1>
+                </span>
+            </div>
+        </a>
     </div>
 </div>

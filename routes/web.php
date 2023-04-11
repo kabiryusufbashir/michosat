@@ -146,6 +146,8 @@ Route::group(['prefix' => 'admin'], function (){
     Route::get('/check-application', [DashboardController::class, 'checkApplication'])->name('check-application')->middleware('auth:web');
     Route::get('/check-application/{check_application}/edit', [DashboardController::class, 'checkApplicationEdit'])->name('check-application-edit')->middleware('auth:web');
     Route::patch('/check-application/{check_application}/update', [DashboardController::class, 'checkApplicationUpdate'])->name('check-application-update')->middleware('auth:web');
+    Route::patch('/check-application/{check_application}/course', [DashboardController::class, 'checkApplicationChangeCourse'])->name('check-application-change-course')->middleware('auth:web');
+    Route::get('/check-admission', [DashboardController::class, 'checkAdmission'])->name('check-admission')->middleware('auth:web');
     
     // Registration
     Route::get('/registration', [DashboardController::class, 'registration'])->name('root-registration')->middleware('auth:web');

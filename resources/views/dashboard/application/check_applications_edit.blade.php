@@ -469,14 +469,36 @@
                             </div>
                         @endif
                     </div>
-                    <!-- check_application Edit  -->
-                    <form action="{{ route('check-application-update', $applicant_bio->applicant_email) }}" method="POST" class="px-6 lg:px-8 py-8">
-                        @csrf
-                        @method('PATCH') 
-                        <div class="text-center my-4">
-                            <button class="submit-btn">ADMIT</button>
+                    <div class="grid grid-cols-2 gap-4 my-auto">
+                        <div>
+                            <div>Change Course</div>
+                            <div>
+                                <form action="{{ route('check-application-change-course', $applicant_bio->applicant_email) }}" method="POST">
+                                    @csrf
+                                    @method('PATCH') 
+                                    <select name="programme_admitted"  class="input-field">
+                                        <option value=""></option>
+                                        @foreach($programmes as $programme)
+                                            <option value="{{ $programme->id }}">{{ $programme->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="text-center my-4">
+                                        <button class="submit-btn">CHANGE COURSE & ADMIT</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                    </form>
+                        <div>
+                            <!-- check_application Edit  -->
+                            <form action="{{ route('check-application-update', $applicant_bio->applicant_email) }}" method="POST" class="px-6 lg:px-8 py-8">
+                                @csrf
+                                @method('PATCH') 
+                                <div class="text-center my-4">
+                                    <button class="submit-btn">ADMIT COURSE SELECTED</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
