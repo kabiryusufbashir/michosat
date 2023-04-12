@@ -59,6 +59,7 @@ Route::group(['prefix' => 'application'], function () {
     
     // Print 
     Route::get('/print/slip', [ApplicationController::class, 'printSlip'])->name('print-slip')->middleware('auth:application');
+    Route::get('/print/admission/notification/letter', [ApplicationController::class, 'printAdmissionNotificationLetter'])->name('print-admission-notification')->middleware('auth:application');
     Route::get('/print/admission/letter', [ApplicationController::class, 'printAdmissionLetter'])->name('print-admission')->middleware('auth:application');
 
     // SETTINGS

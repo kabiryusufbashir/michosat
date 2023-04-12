@@ -442,12 +442,36 @@
                         </a>
                     </div>
                 @endif
-                <!-- Admission Letter  -->
+                <!-- Admission Notification  -->
                 @if(Auth::guard('application')->user()->checkApplicationProgress() == 3)
                     <div class="bg-white py-6 px-6 text-gray-600 mb-5 lg:ml-4 lg:mr-8 rounded">
                         <a href="{{ route('print-slip') }}">
                             <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center p-3 cursor-pointer text-xs lg:text-sm">
                                 Print Acknowledge Slip
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-white py-6 px-6 text-gray-600 mb-5 lg:ml-4 lg:mr-8 rounded">
+                        <a href="{{ route('print-admission-notification') }}">
+                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center p-3 cursor-pointer text-xs lg:text-sm">
+                                Print Notification of Admission Letter
+                            </div>
+                        </a>
+                    </div>
+                @endif
+                <!-- Admission Letter  -->
+                @if(Auth::guard('application')->user()->checkApplicationProgress() == 4)
+                    <div class="bg-white py-6 px-6 text-gray-600 mb-5 lg:ml-4 lg:mr-8 rounded">
+                        <a href="{{ route('print-slip') }}">
+                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center p-3 cursor-pointer text-xs lg:text-sm">
+                                Print Acknowledge Slip
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-white py-6 px-6 text-gray-600 mb-5 lg:ml-4 lg:mr-8 rounded">
+                        <a href="{{ route('print-admission-notification') }}">
+                            <div class="bg-green-700 text-white lg:w-1/2 rounded mx-auto text-center p-3 cursor-pointer text-xs lg:text-sm">
+                                Print Notification of Admission Letter
                             </div>
                         </a>
                     </div>

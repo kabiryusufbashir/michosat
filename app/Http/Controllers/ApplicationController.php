@@ -671,7 +671,7 @@ class ApplicationController extends Controller
         'applicant_result_a_level', 'applicant_qualification'));
     }
 
-    public function printAdmissionLetter(){
+    public function printAdmissionNotificationLetter(){
         $applicant_email = Auth::guard('application')->user()->email;
 
         $applicant_bio = Applicantbio::where('applicant_email', $applicant_email)->first();
@@ -680,7 +680,27 @@ class ApplicationController extends Controller
         
         $school = User::where('category', 1)->first();
 
-        return view('application.admission', compact('page_title', 'school', 'applicant_bio'));
+        return view('application.admission_notification', compact('page_title', 'school', 'applicant_bio'));
+    }
+
+    public function printAdmissionLetter(){
+        $applicant_email = Auth::guard('application')->user()->email;
+        
+        $check_status = Applicationreceipt::select('status')->where('email', $applicant_email)->pluck('status')->first();
+
+        if($check_status > 5){
+                
+            $applicant_bio = Applicantbio::where('applicant_email', $applicant_email)->first();
+            
+            $page_title = 'letter';
+            
+            $school = User::where('category', 1)->first();
+
+            return view('application.admission', compact('page_title', 'school', 'applicant_bio'));
+        
+        }else{
+            return redirect()->route('application-dashboard')->with('error', 'Acceptance Fee not paid');
+        }
     }
 
     public function settingsPassword(Request $request){
