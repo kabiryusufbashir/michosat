@@ -56,6 +56,19 @@ class Applicantbio extends Model
         }
     }
 
+    public function applicantName($email)
+    {
+        if(!empty($email)){
+            $name = Application::select('name', 'application_no')->where('email', $email)->pluck('name')->first();
+                if(!empty($name)){
+                    return $name;
+                }else{
+                    return '';
+                }
+        }else{
+            return '';
+        }
+    }
     
     public function dateFormat($date){
         if($date){

@@ -22,7 +22,7 @@
                             @foreach($check_applications as $check_application)
                                 <tr class="divide-y divide-gray-300 border-b-2">
                                     <td class="px-6 py-4 text-sm text-gray-500">
-                                        {{ $check_application->applicant_email }}
+                                        {{ $check_application->applicantName($check_application->applicant_email) }}
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-500">
                                         {{ $check_application->dateFormat($check_application->created_at) }}

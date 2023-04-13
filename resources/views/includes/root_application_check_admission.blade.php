@@ -26,7 +26,7 @@
                             @foreach($check_admissions as $check_admission)
                                 <tr class="divide-y divide-gray-300 border-b-2">
                                     <td class="px-6 py-4 text-sm text-gray-500">
-                                        {{ $check_admission->applicant_email }}
+                                        {{ $check_admission->applicantName($check_admission->applicant_email) }}
                                     </td>
                                     <td>
                                         {{ $check_admission->programme($check_admission->programme) }}
